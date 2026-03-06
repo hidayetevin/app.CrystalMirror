@@ -15,7 +15,7 @@ export const WORLD_TWO_LEVELS: Puzzle[] = [
         lightSource: {
             position: { col: 1, row: 6 },
             direction: new Vector2D(0, -1), // Yukarı giden ışın
-            color: 'WHITE',
+            color: 'BLUE',
             intensity: 1.0
         },
         mirrors: [
