@@ -39,10 +39,12 @@ export const WORLD_TWO_LEVELS: Puzzle[] = [
             intensity: 1.0
         },
         mirrors: [
-            { id: 'm_1', position: { col: 4, row: 4 }, angleDegrees: 135, type: 'SLIDE', isMovable: true },
+            // Başlangıçta ışığı kesmeyen, sadece kaydırılabilir bir ayna (45 derece ile sağa gelen ışığı aşağı kırar)
+            { id: 'm_1', position: { col: 2, row: 6 }, angleDegrees: 45, type: 'SLIDE', isMovable: true },
         ],
         crystals: [
-            { id: 'c_1', position: { col: 1, row: 4 }, color: 'BLUE', isTarget: true, fillLevel: 0 },
+            // Oyuncu aynayı (4, 1) noktasına taşıyınca ışık AŞAĞI yönelecek ve bu hedefi vuracak.
+            { id: 'c_1', position: { col: 4, row: 6 }, color: 'BLUE', isTarget: true, fillLevel: 0 },
         ],
     },
     {

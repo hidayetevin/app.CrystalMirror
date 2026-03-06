@@ -34,15 +34,16 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         timeLimit: null,
         lightSource: {
             position: { col: 1, row: 1 },
-            direction: new Vector2D(1, 0), // Sağa giden ışın
+            direction: new Vector2D(0, 1), // AŞAĞI giden ışın
             color: 'YELLOW',
             intensity: 1.0
         },
         mirrors: [
-            { id: 'm_1', position: { col: 4, row: 4 }, angleDegrees: 135, type: 'SLIDE', isMovable: true },
+            // Oyuncu (1, 4) noktasına sürüklediğinde ışığı SAĞA yönlendirir
+            { id: 'm_1', position: { col: 4, row: 6 }, angleDegrees: 45, type: 'SLIDE', isMovable: true },
         ],
         crystals: [
-            { id: 'c_1', position: { col: 1, row: 4 }, color: 'YELLOW', isTarget: true, fillLevel: 0 },
+            { id: 'c_1', position: { col: 5, row: 4 }, color: 'YELLOW', isTarget: true, fillLevel: 0 },
         ],
     }
 ];
