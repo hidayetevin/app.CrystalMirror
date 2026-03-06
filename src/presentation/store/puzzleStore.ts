@@ -4,6 +4,7 @@ import { PuzzleStatus } from '../../domain/value-objects/PuzzleStatus';
 import { SnapMode } from '../../domain/rules/MagneticSnapService';
 import { HintDTO } from '../../application/dto';
 import { useHintCase } from '../../container';
+import { CoordinateSystem } from '../../domain/value-objects/CoordinateSystem';
 
 export interface MoveRecord {
     wasHint: boolean;
@@ -25,7 +26,7 @@ export interface PuzzleState {
     loadPuzzle: (puzzle: Puzzle) => void;
     commitMirrorAngle: (mirrorId: string, angle: number) => void;
     onPuzzleSolved: (fills: Map<string, number>) => void;
-    requestHint: () => Promise<void>;
+    requestHint: (coords: CoordinateSystem) => Promise<void>;
     tick: () => void;
     resetPuzzle: () => void;
     setSnapMode: (mode: SnapMode) => void;
@@ -75,14 +76,14 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
         set({ status: 'SOLVED' });
     },
 
-    requestHint: async () => {
+    requestHint: async (coords: CoordinateSystem) => {
         const { activePuzzle, status, isHintLoading } = get();
         if (!activePuzzle || status !== 'PLAYING' || isHintLoading) return;
 
         set({ isHintLoading: true });
         try {
             // Container üzerinden Hint hesapla (AdMob Reward dahil)
-            const hint = await useHintCase.execute(activePuzzle);
+            const hint = await useHintCase.execute(activePuzzle, coords);
             set({ hintData: hint, hintsUsed: get().hintsUsed + 1 });
         } catch (e) {
             console.error('Hint alınamadı (reklam izlenmedi vs)', e);

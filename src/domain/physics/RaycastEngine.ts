@@ -30,17 +30,18 @@ export class RaycastEngine {
     private readonly MAX_TOTAL_DISTANCE = 4000;
     private readonly MAX_SPLIT_DEPTH = 5;
 
-    constructor(private readonly coords: CoordinateSystem) { }
+    constructor() { }
 
-    trace(puzzle: Puzzle): TraceResult {
+    trace(puzzle: Puzzle, coords: CoordinateSystem): TraceResult {
         const segments: RaySegment[] = [];
         const crystalFills = new Map<string, number>();
 
-        const startOrigin = this.coords.gridToPixel(puzzle.lightSource.position);
+        const startOrigin = coords.gridToPixel(puzzle.lightSource.position);
         const startDir = puzzle.lightSource.direction.normalize();
 
         this.traceRecursive(
             puzzle,
+            coords,
             startOrigin,
             startDir,
             puzzle.lightSource.color,
@@ -56,6 +57,7 @@ export class RaycastEngine {
 
     private traceRecursive(
         puzzle: Puzzle,
+        coords: CoordinateSystem,
         origin: Vector2D,
         direction: Vector2D,
         color: RayColor,
@@ -69,11 +71,11 @@ export class RaycastEngine {
             return;
         }
 
-        const hit = this.findNearestHit(origin, direction, puzzle);
+        const hit = this.findNearestHit(origin, direction, puzzle, coords);
 
         if (!hit) {
             // Çarpışma yoksa canvas sınırlarına kadar uzat
-            const endPoint = this.extendToCanvasBound(origin, direction);
+            const endPoint = this.extendToCanvasBound(origin, direction, coords);
             segments.push({
                 start: origin,
                 end: endPoint,
@@ -110,6 +112,7 @@ export class RaycastEngine {
                     for (const split of splits) {
                         this.traceRecursive(
                             puzzle,
+                            coords,
                             hit.point,
                             split.direction,
                             split.color,
@@ -134,6 +137,7 @@ export class RaycastEngine {
 
             this.traceRecursive(
                 puzzle,
+                coords,
                 hit.point,
                 reflectedDir,
                 color,
@@ -149,12 +153,13 @@ export class RaycastEngine {
     private findNearestHit(
         origin: Vector2D,
         direction: Vector2D,
-        puzzle: Puzzle
+        puzzle: Puzzle,
+        coords: CoordinateSystem
     ): { point: Vector2D; objectId: string; type: 'MIRROR' | 'CRYSTAL'; t: number } | null {
         let nearest: { point: Vector2D; t: number; objectId: string; type: 'MIRROR' | 'CRYSTAL' } | null = null;
 
         for (const mirror of puzzle.mirrors) {
-            const segment = getMirrorSegment(mirror, this.coords);
+            const segment = getMirrorSegment(mirror, coords);
             const hit = raySegmentIntersection(origin, direction, segment);
             if (hit && (!nearest || hit.t < nearest.t)) {
                 nearest = { ...hit, objectId: mirror.id, type: 'MIRROR' };
@@ -162,7 +167,7 @@ export class RaycastEngine {
         }
 
         for (const crystal of puzzle.crystals) {
-            const hit = rayCrystalIntersection(origin, direction, crystal, this.coords);
+            const hit = rayCrystalIntersection(origin, direction, crystal, coords);
             if (hit && (!nearest || hit.t < nearest.t)) {
                 nearest = { ...hit, objectId: crystal.id, type: 'CRYSTAL' };
             }
@@ -172,13 +177,13 @@ export class RaycastEngine {
     }
 
     /** Işını canvas/grid sınırına kadar uzatır */
-    private extendToCanvasBound(origin: Vector2D, dir: Vector2D): Vector2D {
+    private extendToCanvasBound(origin: Vector2D, dir: Vector2D, coords: CoordinateSystem): Vector2D {
         // Koordinatlar grid hücreleri için geçerli olduğundan maksimum genişlik map boyutları olmalı
         const bounds = {
-            minX: this.coords.offsetX,
-            maxX: this.coords.offsetX + this.coords.cellSize * this.coords.cols,
-            minY: this.coords.offsetY,
-            maxY: this.coords.offsetY + this.coords.cellSize * this.coords.rows,
+            minX: coords.offsetX,
+            maxX: coords.offsetX + coords.cellSize * coords.cols,
+            minY: coords.offsetY,
+            maxY: coords.offsetY + coords.cellSize * coords.rows,
         };
 
         const ts = [

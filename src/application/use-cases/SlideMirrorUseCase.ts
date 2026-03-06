@@ -32,7 +32,7 @@ export class SlideMirrorUseCase {
     ): PuzzleStateDTO {
         // Geçersiz veya sınır dışı grid
         if (!coords.isValidCell(newCell)) {
-            const baseTrace = this.raycastEngine.trace(puzzle);
+            const baseTrace = this.raycastEngine.trace(puzzle, coords);
             return { puzzle, raySegments: baseTrace.segments, crystalFills: baseTrace.crystalFills, status: 'PLAYING' };
         }
 
@@ -42,14 +42,14 @@ export class SlideMirrorUseCase {
         const hasLight = puzzle.lightSource.position.col === newCell.col && puzzle.lightSource.position.row === newCell.row;
 
         if (hasMirror || hasCrystal || hasLight) {
-            const baseTrace = this.raycastEngine.trace(puzzle);
+            const baseTrace = this.raycastEngine.trace(puzzle, coords);
             return { puzzle, raySegments: baseTrace.segments, crystalFills: baseTrace.crystalFills, status: 'PLAYING' };
         }
 
         this.soundService.playMirrorSlide();
 
         const updatedPuzzle = applyMirrorPosition(puzzle, mirrorId, newCell);
-        const traceResult = this.raycastEngine.trace(updatedPuzzle);
+        const traceResult = this.raycastEngine.trace(updatedPuzzle, coords);
 
         const isWon = this.winChecker.check(updatedPuzzle, traceResult.crystalFills);
         if (isWon) {

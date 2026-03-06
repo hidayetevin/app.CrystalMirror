@@ -7,6 +7,7 @@ import { IAdService } from '../../domain/ports/IAdService';
 import { HintCalculator } from '../../domain/rules/HintCalculator';
 import { ISoundService } from '../../domain/ports/ISoundService';
 import { RaycastEngine } from '../../domain/physics/RaycastEngine';
+import { CoordinateSystem } from '../../domain/value-objects/CoordinateSystem';
 
 export class UseHintUseCase {
     constructor(
@@ -16,13 +17,13 @@ export class UseHintUseCase {
         private readonly engine: RaycastEngine
     ) { }
 
-    async execute(puzzle: Puzzle): Promise<HintDTO> {
+    async execute(puzzle: Puzzle, coords: CoordinateSystem): Promise<HintDTO> {
         const reward = await this.adService.showRewarded();
         if (!reward.earned) {
             throw new Error('AD_NOT_COMPLETED');
         }
 
-        const hint = this.hintCalculator.calculate(puzzle, this.engine);
+        const hint = this.hintCalculator.calculate(puzzle, this.engine, coords);
         this.soundService.playHint();
 
         return {

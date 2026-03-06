@@ -13,7 +13,7 @@ describe('HintCalculator', () => {
 
     beforeEach(() => {
         coords = new CoordinateSystem(500, 500, 5, 5);
-        engine = new RaycastEngine(coords);
+        engine = new RaycastEngine();
         calculator = new HintCalculator();
 
         puzzle = {
@@ -39,7 +39,7 @@ describe('HintCalculator', () => {
     });
 
     it('calculates the best angle using two-phase scan', () => {
-        const hint = calculator.calculate(puzzle, engine);
+        const hint = calculator.calculate(puzzle, engine, coords);
 
         // İşın sağa gidiyor (x positive), ayna {2,2}'de yatay/dikey ayarlanacak. Kristal {2,0}'da, yani aynanın üstünde.
         // Işını yukarı (y=negative) yansıtması için aynan açı yaklaşık 45 veya 225 derece olmalı.
@@ -54,9 +54,9 @@ describe('HintCalculator', () => {
     });
 
     it('uses cache on subsequent calls', () => {
-        const hint1 = calculator.calculate(puzzle, engine);
+        const hint1 = calculator.calculate(puzzle, engine, coords);
         // Puzzle nesnesini biraz degistirse bile ayni state hashini urettigi icin cache lenicek 
-        const hint2 = calculator.calculate(puzzle, engine);
+        const hint2 = calculator.calculate(puzzle, engine, coords);
 
         // Birebir ayni referans olmasalar da icerik olarak ayni objeyi (cache i) donecektir
         expect(hint2).toEqual(hint1);

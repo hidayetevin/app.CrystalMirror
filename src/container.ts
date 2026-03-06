@@ -42,7 +42,7 @@ export const soundService = new HowlerSoundService();
 export const defaultCoords = new CoordinateSystem(400, 600, 6, 8);
 
 // 2. Domain Services & Engines
-export const raycastEngine = new RaycastEngine(defaultCoords); // RaycastEngine will be re-instantiated or injected with proper coords dynamically in hooks if needed. We can just use it or rely on hooks.
+export const raycastEngine = new RaycastEngine(); // State is calculated locally using canvas coordinations
 export const winChecker = new WinConditionChecker();
 export const starRatingCalculator = new StarRatingCalculator();
 export const dailySeedGenerator = new DailySeedGenerator();

@@ -4,6 +4,7 @@
  */
 import { Puzzle } from '../entities/Puzzle';
 import { RaycastEngine } from '../physics/RaycastEngine';
+import { CoordinateSystem } from '../value-objects/CoordinateSystem';
 
 export interface HintCandidate {
     mirrorId: string;
@@ -29,7 +30,7 @@ function applyMirrorAngle(puzzle: Puzzle, mirrorId: string, angle: number): Puzz
 export class HintCalculator {
     private cache = new Map<string, HintCandidate>();
 
-    calculate(puzzle: Puzzle, engine: RaycastEngine): HintCandidate {
+    calculate(puzzle: Puzzle, engine: RaycastEngine, coords: CoordinateSystem): HintCandidate {
         const cacheKey = this.puzzleStateHash(puzzle);
         if (this.cache.has(cacheKey)) {
             return this.cache.get(cacheKey)!;
@@ -42,7 +43,7 @@ export class HintCalculator {
         for (const mirror of movableMirrors) {
             for (let angle = 0; angle < 360; angle += 5) {
                 const testPuzzle = applyMirrorAngle(puzzle, mirror.id, angle);
-                const result = engine.trace(testPuzzle);
+                const result = engine.trace(testPuzzle, coords);
                 const score = this.totalFillScore(result.crystalFills, puzzle);
 
                 if (score > best.score) {
@@ -60,7 +61,7 @@ export class HintCalculator {
         for (let delta = -10; delta <= 10; delta++) {
             const angle = (best.suggestedAngle + delta + 360) % 360;
             const testPuzzle = applyMirrorAngle(puzzle, best.mirrorId, angle);
-            const result = engine.trace(testPuzzle);
+            const result = engine.trace(testPuzzle, coords);
             const score = this.totalFillScore(result.crystalFills, puzzle);
 
             if (score > best.score) {

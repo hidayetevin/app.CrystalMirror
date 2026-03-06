@@ -14,7 +14,7 @@ describe('MagneticSnapService', () => {
     // Işığı sağa gönder. Hedefi (4,0)'a (üst-sağ) koy
     beforeEach(() => {
         coords = new CoordinateSystem(500, 500, 5, 5);
-        engine = new RaycastEngine(coords);
+        engine = new RaycastEngine();
         snapService = new MagneticSnapService(engine);
 
         puzzle = {
@@ -34,7 +34,7 @@ describe('MagneticSnapService', () => {
 
     it('returns snapped=false in FREE mode', () => {
         // 45 derece olsa tam hedefe gider. Ama mod FREE, snap atmamali.
-        const result = snapService.evaluate(puzzle, 'm1', 45, 'FREE');
+        const result = snapService.evaluate(puzzle, 'm1', 45, coords, 'FREE');
         expect(result.snapped).toBe(false);
         expect(result.snapStrength).toBe(0);
         expect(result.finalAngle).toBe(45);
@@ -42,7 +42,7 @@ describe('MagneticSnapService', () => {
 
     it('snaps accurately when very close (SNAP_THRESHOLD > 0.95)', () => {
         // 45 derece mukemmel. O zaman 43 derece girince 45 e snaplenmesi lazim (findExactSnapAngle ile 1er derecelik tarama)
-        const result = snapService.evaluate(puzzle, 'm1', 43, 'GUIDED');
+        const result = snapService.evaluate(puzzle, 'm1', 43, coords, 'GUIDED');
 
         expect(result.snapped).toBe(true);
         expect(result.finalAngle).toBe(40);

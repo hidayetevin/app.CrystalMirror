@@ -1,8 +1,10 @@
 import React from 'react';
 import { usePuzzleStore } from '../../store';
+import { useCanvasSize } from '../../hooks/useCanvasSize';
 
 export const HintButton: React.FC = () => {
-    const { requestHint, isHintLoading, hintData } = usePuzzleStore();
+    const { requestHint, isHintLoading, hintData, activePuzzle } = usePuzzleStore();
+    const coords = useCanvasSize(activePuzzle?.gridSize.cols || 6, activePuzzle?.gridSize.rows || 8);
 
     if (hintData) {
         // Ipucu zaten alinmissa (ok, hintCalculator sonucu alinmissa) butonu gizle veya aktif goster
@@ -15,12 +17,12 @@ export const HintButton: React.FC = () => {
 
     return (
         <button
-            onClick={requestHint}
-            disabled={isHintLoading}
+            onClick={() => { if (coords) requestHint(coords); }}
+            disabled={isHintLoading || !coords}
             title="Reklam izleyerek ipucu al"
             className={`px-3 py-1.5 rounded-full border text-sm font-bold flex items-center transition-all ${isHintLoading
-                    ? 'bg-gray-800 text-gray-500 border-gray-600 cursor-not-allowed'
-                    : 'bg-[#FFD700]/20 text-[#FFD700] border-[#FFD700]/50 hover:bg-[#FFD700]/30 shadow-[0_0_10px_rgba(255,215,0,0.3)]'
+                ? 'bg-gray-800 text-gray-500 border-gray-600 cursor-not-allowed'
+                : 'bg-[#FFD700]/20 text-[#FFD700] border-[#FFD700]/50 hover:bg-[#FFD700]/30 shadow-[0_0_10px_rgba(255,215,0,0.3)]'
                 }`}
         >
             {isHintLoading ? (

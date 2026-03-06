@@ -23,7 +23,7 @@ const createFakePuzzle = (): Puzzle => ({
 
 describe('RaycastEngine', () => {
     const coords = new CoordinateSystem(500, 500, 5, 5);
-    const engine = new RaycastEngine(coords);
+    const engine = new RaycastEngine();
 
     it('bounces ray off a 45 degree mirror at 90 degree angle', () => {
         const puzzle = createFakePuzzle();
@@ -34,7 +34,7 @@ describe('RaycastEngine', () => {
             position: { col: 2, row: 2 }
         });
 
-        const result = engine.trace(puzzle);
+        const result = engine.trace(puzzle, coords);
 
         expect(result.segments.length).toBeGreaterThan(1); // origin->mirror, mirror->bounds
 
@@ -56,7 +56,7 @@ describe('RaycastEngine', () => {
             position: { col: 3, row: 2 } // Ayni hizada
         });
 
-        const result = engine.trace(puzzle);
+        const result = engine.trace(puzzle, coords);
         const fill = result.crystalFills.get('c1');
 
         // Beklenen: Carpismayi dedekte eder ama filter yuzunden "fill" yapmaz 
@@ -72,7 +72,7 @@ describe('RaycastEngine', () => {
             position: { col: 3, row: 2 }
         });
 
-        const result = engine.trace(puzzle);
+        const result = engine.trace(puzzle, coords);
         const fill = result.crystalFills.get('c1');
 
         expect(fill).toBe(1.0);

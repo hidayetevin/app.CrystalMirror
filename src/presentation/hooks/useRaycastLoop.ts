@@ -4,8 +4,10 @@ import { raycastEngine, winChecker, checkWinConditionCase, hapticService } from 
 import { Mirror } from '../../domain/entities/Mirror';
 import { RaySegment, TraceResult } from '../../domain/physics/RaycastEngine';
 import { SnapResult } from '../../domain/rules/MagneticSnapService';
+import { CoordinateSystem } from '../../domain/value-objects/CoordinateSystem';
 
 interface RaycastLoopProps {
+    coords: CoordinateSystem | null;
     // Animasyon döngüsünde değişiklik yapıp yapmayacağını kontrol eden flag (Performans)
     isDirtyRef: MutableRefObject<boolean>;
     onDrawUpdate: (segments: RaySegment[], fills: Map<string, number>) => void;
@@ -14,6 +16,7 @@ interface RaycastLoopProps {
 }
 
 export function useRaycastLoop({
+    coords,
     isDirtyRef,
     onDrawUpdate,
     onWin,
@@ -61,7 +64,9 @@ export function useRaycastLoop({
             let traceRes: TraceResult = { segments: [], crystalFills: new Map() };
 
             try {
-                traceRes = raycastEngine.trace(activePuzzle);
+                if (coords) {
+                    traceRes = raycastEngine.trace(activePuzzle, coords);
+                }
                 isDirtyRef.current = false; // Temizlendi
 
                 onDrawUpdate(traceRes.segments, traceRes.crystalFills);
@@ -85,7 +90,7 @@ export function useRaycastLoop({
 
         rafId = requestAnimationFrame(tick);
         return () => cancelAnimationFrame(rafId);
-    }, [storePuzzle, isDirtyRef, onDrawUpdate, onWin, status]);
+    }, [storePuzzle, isDirtyRef, onDrawUpdate, onWin, status, coords]);
 
     // Dışarıya sunulan manipülasyon yordamı (Sürklemelerde çağrılır)
     const setEphemeralAngle = (mirrorId: string, angle: number) => {

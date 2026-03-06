@@ -5,6 +5,7 @@ import { Puzzle } from '../../domain/entities/Puzzle';
 import { PuzzleStateDTO } from '../dto';
 import { WinConditionChecker } from '../../domain/rules/WinConditionChecker';
 import { RaycastEngine, RaySegment } from '../../domain/physics/RaycastEngine';
+import { CoordinateSystem } from '../../domain/value-objects/CoordinateSystem';
 
 export class CheckWinConditionUseCase {
     constructor(
@@ -12,13 +13,13 @@ export class CheckWinConditionUseCase {
         private readonly winChecker: WinConditionChecker
     ) { }
 
-    execute(puzzle: Puzzle, fills?: Map<string, number>): PuzzleStateDTO {
+    execute(puzzle: Puzzle, coords: CoordinateSystem, fills?: Map<string, number>): PuzzleStateDTO {
         let currentFills = fills;
         let segments: RaySegment[] = [];
 
         // Fills verilmediyse yeni raycast yap
         if (!currentFills) {
-            const traceResult = this.raycastEngine.trace(puzzle);
+            const traceResult = this.raycastEngine.trace(puzzle, coords);
             currentFills = traceResult.crystalFills;
             segments = traceResult.segments;
         }

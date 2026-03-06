@@ -13,8 +13,8 @@ export class StartPuzzleUseCase {
         private readonly winChecker: WinConditionChecker
     ) { }
 
-    execute(puzzle: Puzzle, _coords: CoordinateSystem): PuzzleStateDTO {
-        const traceResult = this.raycastEngine.trace(puzzle);
+    execute(puzzle: Puzzle, coords: CoordinateSystem): PuzzleStateDTO {
+        const traceResult = this.raycastEngine.trace(puzzle, coords);
         const isWon = this.winChecker.check(puzzle, traceResult.crystalFills);
 
         return {

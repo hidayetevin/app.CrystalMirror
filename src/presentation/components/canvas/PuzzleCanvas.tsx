@@ -48,6 +48,7 @@ export const PuzzleCanvas: React.FC = () => {
 
     // Hook -> loop basliyor
     const { setEphemeralAngle, ephemeralAngles } = useRaycastLoop({
+        coords,
         isDirtyRef,
         onDrawUpdate: handleDrawUpdate,
         onWin: handleWin,

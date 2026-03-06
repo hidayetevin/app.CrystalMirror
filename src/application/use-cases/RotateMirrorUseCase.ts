@@ -30,11 +30,11 @@ export class RotateMirrorUseCase {
         puzzle: Puzzle,
         mirrorId: string,
         newAngle: number,
-        _coords: CoordinateSystem,
+        coords: CoordinateSystem,
         snapMode: SnapMode
     ): PuzzleStateDTO {
         // 1. Snap Değerlendir
-        const snap = this.snapService.evaluate(puzzle, mirrorId, newAngle, snapMode);
+        const snap = this.snapService.evaluate(puzzle, mirrorId, newAngle, coords, snapMode);
 
         if (snap.snapStrength > 0.85 && !snap.snapped) {
             this.soundService.playNudge();
@@ -45,7 +45,7 @@ export class RotateMirrorUseCase {
 
         // 2. Gerçek açıyla güncelle (immutable)
         const finalPuzzle = applyMirrorAngle(puzzle, mirrorId, snap.finalAngle);
-        const traceResult = this.raycastEngine.trace(finalPuzzle);
+        const traceResult = this.raycastEngine.trace(finalPuzzle, coords);
 
         // 3. Kazanma kontrolü
         const isWon = this.winChecker.check(finalPuzzle, traceResult.crystalFills);

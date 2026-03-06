@@ -4,6 +4,7 @@
  */
 import { Puzzle } from '../entities/Puzzle';
 import { RaycastEngine } from '../physics/RaycastEngine';
+import { CoordinateSystem } from '../value-objects/CoordinateSystem';
 
 export type SnapMode = 'GUIDED' | 'FREE';
 
@@ -37,6 +38,7 @@ export class MagneticSnapService {
         puzzle: Puzzle,
         mirrorId: string,
         angle: number,
+        coords: CoordinateSystem,
         mode: SnapMode = 'GUIDED'
     ): SnapResult {
         if (mode === 'FREE') {
@@ -44,7 +46,7 @@ export class MagneticSnapService {
         }
 
         const testPuzzle = applyMirrorAngle(puzzle, mirrorId, angle);
-        const traceResult = this.engine.trace(testPuzzle);
+        const traceResult = this.engine.trace(testPuzzle, coords);
         const fillScore = this.totalFillScore(traceResult.crystalFills, puzzle);
 
         if (fillScore < this.NUDGE_THRESHOLD) {
@@ -52,21 +54,21 @@ export class MagneticSnapService {
         }
 
         if (fillScore >= this.SNAP_THRESHOLD) {
-            const bestAngle = this.findExactSnapAngle(puzzle, mirrorId, angle);
+            const bestAngle = this.findExactSnapAngle(puzzle, mirrorId, angle, coords);
             return { snapped: true, finalAngle: bestAngle, snapStrength: 1.0 };
         }
 
         return { snapped: false, finalAngle: angle, snapStrength: fillScore };
     }
 
-    private findExactSnapAngle(puzzle: Puzzle, mirrorId: string, baseAngle: number): number {
+    private findExactSnapAngle(puzzle: Puzzle, mirrorId: string, baseAngle: number, coords: CoordinateSystem): number {
         let bestAngle = baseAngle;
         let bestScore = -1;
 
         for (let delta = -10; delta <= 10; delta += this.FINE_STEP_DEG) {
             const candidate = (baseAngle + delta + 360) % 360;
             const test = applyMirrorAngle(puzzle, mirrorId, candidate);
-            const score = this.totalFillScore(this.engine.trace(test).crystalFills, puzzle);
+            const score = this.totalFillScore(this.engine.trace(test, coords).crystalFills, puzzle);
             if (score > bestScore) {
                 bestScore = score;
                 bestAngle = candidate;
