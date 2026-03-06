@@ -23,11 +23,20 @@ export const useProgressStore = create<ProgressState>((set, get) => ({
             records[key] = value;
         });
 
-        // Kilit Açma Kuralları (Örn: Forest 5/5 olunca Glacier açık)
+        // Kilit Açma Kuralları
         const forestProgress = [...map.keys()].filter(k => k.startsWith('w1_')).length;
+        const forestTotal = allLevels.filter(p => p.worldId === 'forest').length || 5;
+
+        const glacierProgress = [...map.keys()].filter(k => k.startsWith('w2_')).length;
+        const glacierTotal = allLevels.filter(p => p.worldId === 'glacier').length || 3;
+
         let worlds = ['forest'];
-        if (forestProgress >= 5) { // Forest bitince Glacier aç
+        if (forestProgress >= forestTotal) {
             worlds.push('glacier');
+            // Glacier bitince Waterfall (World 3) aç
+            if (glacierProgress >= glacierTotal) {
+                worlds.push('waterfall');
+            }
         }
 
         set({ levelProgress: records, unlockedWorlds: worlds });
