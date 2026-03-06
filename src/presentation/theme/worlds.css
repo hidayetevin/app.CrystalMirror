@@ -1,0 +1,40 @@
+/*
+ * Dünya temalarına özel renk değişkenleri.
+ */
+
+:root {
+  --crystal-glow: #ffffff;
+}
+
+[data-world="forest"] {
+  --bg-primary: #0D2B1A;
+  --bg-secondary: #1A4A2E;
+  --light-color: #FFD700;
+  --crystal-glow: #ADFF2F;
+  --ui-accent: #4CAF50;
+  --particle: #FFEB3B;
+  --aberration-offset: 1px;
+  --aberration-opacity: 0.2;
+}
+
+[data-world="glacier"] {
+  --bg-primary: #0A1628;
+  --bg-secondary: #0D2744;
+  --light-color: #00E5FF;
+  --crystal-glow: #80DEEA;
+  --ui-accent: #29B6F6;
+  --particle: #E0F7FA;
+  --aberration-offset: 2px;
+  --aberration-opacity: 0.3;
+}
+
+[data-world="waterfall"] {
+  --bg-primary: #1A0A2E;
+  --bg-secondary: #2D1450;
+  --light-color: #FF4FC8;
+  --crystal-glow: #CE93D8;
+  --ui-accent: #AB47BC;
+  --particle: #E1BEE7;
+  --aberration-offset: 1.5px;
+  --aberration-opacity: 0.25;
+}

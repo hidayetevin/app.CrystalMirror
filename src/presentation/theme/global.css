@@ -1,0 +1,15 @@
+/*
+ * Global CSS styles.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Canvas bazlı oyun için kaydırmayı kapat */
+    background-color: #000;
+}

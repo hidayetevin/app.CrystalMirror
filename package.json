@@ -1,0 +1,43 @@
+{
+  "name": "crystal-mirror",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ionic serve",
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext ts,tsx",
+    "build:android": "ionic build && npx cap sync && npx cap open android",
+    "build:ios": "ionic build && npx cap sync && npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor-community/admob": "^8.0.0",
+    "@capacitor/android": "^8.1.0",
+    "@capacitor/core": "^8.1.0",
+    "@capacitor/haptics": "^8.0.1",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/share": "^8.0.1",
+    "howler": "^2.2.4",
+    "i18next": "^25.8.14",
+    "konva": "^10.2.0",
+    "react-i18next": "^16.5.5",
+    "react-konva": "^19.2.3",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.1.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/howler": "^2.2.12",
+    "@types/node": "^25.3.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
+    "autoprefixer": "^10.4.27",
+    "jsdom": "^28.1.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.19",
+    "vitest": "^4.0.18"
+  }
+}

@@ -1,0 +1,40 @@
+{
+    "translation": {
+        "app": {
+            "title": "Crystal Mirror"
+        },
+        "world": {
+            "forest": "Orman Işığı",
+            "glacier": "Buzul Kristali",
+            "waterfall": "Şelale Sırrı",
+            "locked": "{{level}}. bölümü tamamla"
+        },
+        "level": {
+            "complete": "Bölüm Tamamlandı!",
+            "stars_one": "1 Yıldız",
+            "stars_other": "{{count}} Yıldız",
+            "time": "Süre: {{seconds}}s",
+            "next": "Sonraki Bölüm",
+            "retry": "Tekrar Dene"
+        },
+        "hint": {
+            "button": "💡 İpucu Al",
+            "watch_ad": "Reklam izleyerek ipucu kazan",
+            "loading": "İpucu hazırlanıyor...",
+            "arrow": "Bu aynayı döndür"
+        },
+        "daily": {
+            "title": "Günlük Bölüm",
+            "played": "Bugün oynadın! Yarın yeni bölüm.",
+            "share": "Sonucu Paylaş"
+        },
+        "ui": {
+            "continue": "Devam",
+            "back": "Geri"
+        },
+        "settings": {
+            "sound": "Ses",
+            "language": "Dil"
+        }
+    }
+}

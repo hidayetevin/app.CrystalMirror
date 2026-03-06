@@ -1,0 +1,40 @@
+{
+  "translation": {
+    "app": {
+      "title": "Crystal Mirror"
+    },
+    "world": {
+      "forest": "Forest Light",
+      "glacier": "Glacier Crystal",
+      "waterfall": "Waterfall Secret",
+      "locked": "Complete level {{level}}"
+    },
+    "level": {
+      "complete": "Level Complete!",
+      "stars_one": "1 Star",
+      "stars_other": "{{count}} Stars",
+      "time": "Time: {{seconds}}s",
+      "next": "Next Level",
+      "retry": "Retry"
+    },
+    "hint": {
+      "button": "💡 Get Hint",
+      "watch_ad": "Watch an ad to earn a hint",
+      "loading": "Loading hint...",
+      "arrow": "Rotate this mirror"
+    },
+    "daily": {
+      "title": "Daily Challenge",
+      "played": "Already played today! Come back tomorrow.",
+      "share": "Share Result"
+    },
+    "ui": {
+      "continue": "Continue",
+      "back": "Back"
+    },
+    "settings": {
+      "sound": "Sound",
+      "language": "Language"
+    }
+  }
+}

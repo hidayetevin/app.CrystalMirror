@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Default Theme (Forest) */
+    --bg-primary: #0a1f11;
+    --bg-secondary: #132e1b;
+    --ui-accent: #4ade80;
+    --crystal-glow: #86efac;
+}
+
+[data-world="forest"] {
+    --bg-primary: #0a1f11;
+    --bg-secondary: #132e1b;
+    --ui-accent: #4ade80;
+    --crystal-glow: #86efac;
+}
+
+[data-world="glacier"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --ui-accent: #38bdf8;
+    --crystal-glow: #7dd3fc;
+}
+
+[data-world="waterfall"] {
+    --bg-primary: #172554;
+    --bg-secondary: #1e3a8a;
+    --ui-accent: #60a5fa;
+    --crystal-glow: #93c5fd;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+}
