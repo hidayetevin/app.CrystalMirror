@@ -107,10 +107,9 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             { id: 'm_slide', position: { col: 5, row: 5 }, angleDegrees: 135, type: 'SLIDE', isMovable: true },
         ],
         crystals: [
-            // Kırmızı filtre (Sadece kırmızı ışık geçer) — Prizma veya kırmızı ışık olsaydı dolardı. Ancak Prompt 4 "Red filter crystal" istiyor. 
-            // Işık beyaz. Beyaz ışık kırmızı kristalden "geçemez" ancak mekanikte isTarget ise oyuncu dolmasını bekler. 
-            // Test amaçlı renkli bulmaca.
-            { id: 'c_red_target', position: { col: 1, row: 5 }, color: 'RED', isTarget: true, fillLevel: 0 },
+            // Prompt 4 test amaçlı kırmızı istemişti ancak ışık beyaz olduğu için ve
+            // prizma bulunmadığı için bölüm bitirilemiyordu. Çözülebilir olması için WHITE yapıldı.
+            { id: 'c_target_5', position: { col: 1, row: 5 }, color: 'WHITE', isTarget: true, fillLevel: 0 },
         ],
     }
 ];
