@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useProgressStore, usePuzzleStore } from '../../store';
 import { allLevels, soundService } from '../../../container';
 import { Puzzle } from '../../../domain/entities/Puzzle';
@@ -9,11 +10,12 @@ interface Props {
 }
 
 export const LevelSelectScreen: React.FC<Props> = ({ worldId, onSelectLevel, onBack }) => {
+    const { t } = useTranslation();
     const { isLevelUnlocked, levelProgress } = useProgressStore();
     const worldLevels = allLevels.filter(l => l.worldId === worldId);
 
-    // Dünya özelliklerini CSS tabanlı almak için
-    const worldName = worldId === 'forest' ? 'Orman Işığı' : worldId === 'glacier' ? 'Buzul Kristali' : 'Şelale Sırrı';
+    // Dünya özelliklerini dil dosyasından alıyoruz
+    const worldName = t(`world.${worldId}`);
 
     const handleLevelClick = (puzzle: Puzzle) => {
         if (isLevelUnlocked(worldId, puzzle.levelNumber)) {
@@ -31,7 +33,7 @@ export const LevelSelectScreen: React.FC<Props> = ({ worldId, onSelectLevel, onB
 
             <div className="relative z-10 flex items-center p-6 pt-10 mb-4">
                 <button onClick={onBack} className="p-2 bg-white/10 rounded-full active:bg-white/20">
-                    ← Geri
+                    ← {t('ui.back')}
                 </button>
                 <h1 className="flex-1 text-center text-2xl font-[Cinzel_Decorative] drop-shadow-[0_0_10px_var(--crystal-glow)]">
                     {worldName}

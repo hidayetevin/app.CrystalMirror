@@ -3,6 +3,7 @@
  */
 import { Share } from '@capacitor/share';
 import { IShareService, ShareOptions } from '../../domain/ports/IShareService';
+import { i18n } from '../i18n/i18n.config';
 
 export class CapacitorShareService implements IShareService {
     async share(options: ShareOptions): Promise<void> {
@@ -10,14 +11,14 @@ export class CapacitorShareService implements IShareService {
             await Share.share({
                 title: options.title,
                 text: options.text,
-                dialogTitle: 'Crystal Mirror Başarını Paylaş!'
+                dialogTitle: i18n.t('share.dialog_title')
             });
         } catch (e) {
             console.warn('Share is not supported or was cancelled', e);
             if (this.isWeb()) {
                 try {
                     await navigator.clipboard.writeText(`${options.title}\n\n${options.text}`);
-                    alert('Sonuç panoya kopyalandı.');
+                    alert(i18n.t('share.copied'));
                 } catch (e) { }
             }
         }

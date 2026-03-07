@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { usePuzzleStore } from '../../store';
 import { Header } from '../ui/Header';
 import { PuzzleCanvas } from '../canvas/PuzzleCanvas';
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export const GameScreen: React.FC<Props> = ({ onBack, onNextLevel }) => {
+    const { t } = useTranslation();
     const puzzle = usePuzzleStore((s) => s.activePuzzle);
     const status = usePuzzleStore((s) => s.status);
     const tick = usePuzzleStore((s) => s.tick);
@@ -38,7 +40,7 @@ export const GameScreen: React.FC<Props> = ({ onBack, onNextLevel }) => {
     return (
         <div className="flex flex-col w-full min-h-screen bg-[var(--bg-primary)] text-white font-[Rajdhani] select-none" data-world={puzzle.worldId}>
             {/* Oyun Alanı */}
-            <Header onBack={onBack} title={`Bölüm ${puzzle.levelNumber}`} />
+            <Header onBack={onBack} title={t('ui.level_title', { level: puzzle.levelNumber })} />
 
             <div className="flex-1 flex items-center justify-center relative overflow-hidden">
                 {/* Glow efekti (arkaplan) */}

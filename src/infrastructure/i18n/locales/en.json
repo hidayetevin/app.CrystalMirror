@@ -1,5 +1,19 @@
 {
   "translation": {
+    "tutorial": {
+      "slide1_title": "Light Source & Crystal",
+      "slide1_desc": "The goal of the game is to guide the light from the <1>Light Source</1> to the <3>Crystal</3>.",
+      "slide1_light": "Light Source",
+      "slide1_crystal": "Target Crystal",
+      "slide2_title": "Control Mirrors",
+      "slide2_desc": "You can change their angles by clicking on the mirrors and dragging the <1>control wheel</1> around them.",
+      "slide2_note": "Note: You can carry mirrors with a box pattern in the middle to empty spaces by holding them down.",
+      "slide3_title": "Red Blocker & Green Mirror",
+      "slide3_desc": "Blue mirrors have a <1>red barrier</1> where they face the crystal. Only the <3>Neon Green</3> mirror can provide light to the crystal!",
+      "slide3_blocked": "Blocked (Blue)",
+      "slide3_finisher": "Finisher (Green)",
+      "slide3_note": "Always try to direct the light to the green mirror."
+    },
     "app": {
       "title": "Crystal Mirror"
     },
@@ -7,13 +21,16 @@
       "forest": "Forest Light",
       "glacier": "Glacier Crystal",
       "waterfall": "Waterfall Secret",
-      "locked": "Complete level {{level}}"
+      "locked": "Complete level {{level}}",
+      "locked_prev": "COMPLETE PREVIOUS WORLD"
     },
     "level": {
       "complete": "Level Complete!",
       "stars_one": "1 Star",
       "stars_other": "{{count}} Stars",
       "time": "Time: {{seconds}}s",
+      "time_label": "TIME",
+      "hints_label": "HINTS",
       "next": "Next Level",
       "retry": "Retry"
     },
@@ -21,16 +38,36 @@
       "button": "💡 Get Hint",
       "watch_ad": "Watch an ad to earn a hint",
       "loading": "Loading hint...",
-      "arrow": "Rotate this mirror"
+      "arrow": "Rotate this mirror",
+      "active": "Hint active! Rotate the highlighted mirror...",
+      "loading_short": "Loading",
+      "button_short": "Get Hint"
     },
     "daily": {
-      "title": "Daily Challenge",
+      "title": "Daily Puzzle",
       "played": "Already played today! Come back tomorrow.",
-      "share": "Share Result"
+      "share": "Share Result",
+      "completed": "Mission Completed!",
+      "completed_desc": "You've solved today's crystal mystery. Come back tomorrow for a new secret."
     },
     "ui": {
       "continue": "Continue",
-      "back": "Back"
+      "back": "Back",
+      "start": "Start Adventure",
+      "daily_puzzle": "Daily Puzzle",
+      "worlds": "Worlds",
+      "levels": "Levels",
+      "return_back": "Go Back",
+      "share": "Share",
+      "menu": "Menu",
+      "skip": "Skip",
+      "next": "Next",
+      "lets_start": "Let's Start!",
+      "level_title": "Level {{level}}"
+    },
+    "share": {
+      "dialog_title": "Share your Crystal Mirror Success!",
+      "copied": "Result copied to clipboard."
     },
     "settings": {
       "sound": "Sound",

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import { usePuzzleStore } from '../../store';
 
 interface Slide {
@@ -8,81 +9,8 @@ interface Slide {
     content: React.ReactNode;
 }
 
-const slides: Slide[] = [
-    {
-        title: 'Işık Kaynağı & Kristal',
-        icon: '🌟',
-        color: '#FFCC00',
-        content: (
-            <div className="space-y-4 text-center">
-                <p>Oyunun amacı, <b>Işık Kaynağından</b> çıkan ışığı <b>Kristale</b> ulaştırmaktır.</p>
-                <div className="flex justify-center items-center gap-8 py-4">
-                    <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 rounded-full border border-yellow-400 bg-yellow-400/20 shadow-[0_0_15px_#FFCC00] flex items-center justify-center">
-                            <div className="w-4 h-4 rounded-full bg-white shadow-[0_0_10px_#fff]"></div>
-                        </div>
-                        <span className="text-xs mt-2 text-gray-400">Işık Kaynağı</span>
-                    </div>
-                    <div className="text-2xl text-gray-500">→</div>
-                    <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 rounded-full border-2 border-yellow-400 flex items-center justify-center">
-                            <span className="text-gray-600 font-bold">💎</span>
-                        </div>
-                        <span className="text-xs mt-2 text-gray-400">Hedef Kristal</span>
-                    </div>
-                </div>
-            </div>
-        )
-    },
-    {
-        title: 'Aynaları Kontrol Et',
-        icon: '🌀',
-        color: '#80DEEA',
-        content: (
-            <div className="space-y-4 text-center">
-                <p>Aynaların üzerine tıklayıp etrafındaki <b>kontrol tekerleğini</b> sürükleyerek açılarını değiştirebilirsin.</p>
-                <div className="flex justify-center my-6">
-                    <div className="relative w-20 h-20 rounded-full border border-gray-600/50 flex items-center justify-center">
-                        {/* Ayna Çizgisi */}
-                        <div className="w-16 h-1 bg-[#80DEEA] rotate-45 rounded-full"></div>
-                        {/* Drag Handle */}
-                        <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-white shadow-[0_0_5px_#fff]"></div>
-                    </div>
-                </div>
-                <p className="text-sm text-gray-400">Not: Ortasında kutu deseni olan aynaları basılı tutarak boş alanlara taşıyabilirsin.</p>
-            </div>
-        )
-    },
-    {
-        title: 'Kırmızı Engel & Yeşil Ayna',
-        icon: '🟩',
-        color: '#39FF14',
-        content: (
-            <div className="space-y-4 text-center">
-                <p>Mavi aynaların kristale bakan kısmında <b>kırmızı bir engel</b> vardır. Yalnızca <b>Neon Yeşil</b> ayna kristale ışık verebilir!</p>
-                <div className="flex justify-center items-center gap-6 py-4">
-                    <div className="flex flex-col items-center">
-                        <div className="relative w-12 h-12 flex items-center justify-center">
-                            <div className="w-12 h-1 bg-[#80DEEA] rotate-45 absolute rounded-full"></div>
-                            <div className="w-12 h-1 bg-[#FF4444] rotate-45 absolute rounded-full translate-x-1 translate-y-1 shadow-[0_0_8px_#FF4444]"></div>
-                        </div>
-                        <span className="text-xs mt-2 text-[#FF4444] font-bold">Tıkanık (Mavi)</span>
-                    </div>
-                    <div className="text-xl text-gray-500">→</div>
-                    <div className="flex flex-col items-center">
-                        <div className="relative w-12 h-12 flex items-center justify-center">
-                            <div className="w-12 h-1.5 bg-[#39FF14] -rotate-45 absolute rounded-full shadow-[0_0_15px_#39FF14]"></div>
-                        </div>
-                        <span className="text-xs mt-2 text-[#39FF14] font-bold">Bitirici (Yeşil)</span>
-                    </div>
-                </div>
-                <p className="text-sm text-gray-300">Işığı daima yeşil aynaya ulaştırmaya çalış.</p>
-            </div>
-        )
-    }
-];
-
 export const HowToPlayModal: React.FC = () => {
+    const { t } = useTranslation();
     const showTutorial = usePuzzleStore(s => s.showTutorial);
     const setShowTutorial = usePuzzleStore(s => s.setShowTutorial);
     const markTutorialAsSeen = usePuzzleStore(s => s.markTutorialAsSeen);
@@ -90,6 +18,92 @@ export const HowToPlayModal: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     if (!showTutorial) return null;
+
+    const slides: Slide[] = [
+        {
+            title: t('tutorial.slide1_title'),
+            icon: '🌟',
+            color: '#FFCC00',
+            content: (
+                <div className="space-y-4 text-center">
+                    <p>
+                        <Trans i18nKey="tutorial.slide1_desc">
+                            Oyunun amacı, <b>Işık Kaynağından</b> çıkan ışığı <b>Kristale</b> ulaştırmaktır.
+                        </Trans>
+                    </p>
+                    <div className="flex justify-center items-center gap-8 py-4">
+                        <div className="flex flex-col items-center">
+                            <div className="w-12 h-12 rounded-full border border-yellow-400 bg-yellow-400/20 shadow-[0_0_15px_#FFCC00] flex items-center justify-center">
+                                <div className="w-4 h-4 rounded-full bg-white shadow-[0_0_10px_#fff]"></div>
+                            </div>
+                            <span className="text-xs mt-2 text-gray-400">{t('tutorial.slide1_light')}</span>
+                        </div>
+                        <div className="text-2xl text-gray-500">→</div>
+                        <div className="flex flex-col items-center">
+                            <div className="w-12 h-12 rounded-full border-2 border-yellow-400 flex items-center justify-center">
+                                <span className="text-gray-600 font-bold">💎</span>
+                            </div>
+                            <span className="text-xs mt-2 text-gray-400">{t('tutorial.slide1_crystal')}</span>
+                        </div>
+                    </div>
+                </div>
+            )
+        },
+        {
+            title: t('tutorial.slide2_title'),
+            icon: '🌀',
+            color: '#80DEEA',
+            content: (
+                <div className="space-y-4 text-center">
+                    <p>
+                        <Trans i18nKey="tutorial.slide2_desc">
+                            Aynaların üzerine tıklayıp etrafındaki <b>kontrol tekerleğini</b> sürükleyerek açılarını değiştirebilirsin.
+                        </Trans>
+                    </p>
+                    <div className="flex justify-center my-6">
+                        <div className="relative w-20 h-20 rounded-full border border-gray-600/50 flex items-center justify-center">
+                            {/* Ayna Çizgisi */}
+                            <div className="w-16 h-1 bg-[#80DEEA] rotate-45 rounded-full"></div>
+                            {/* Drag Handle */}
+                            <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-white shadow-[0_0_5px_#fff]"></div>
+                        </div>
+                    </div>
+                    <p className="text-sm text-gray-400">{t('tutorial.slide2_note')}</p>
+                </div>
+            )
+        },
+        {
+            title: t('tutorial.slide3_title'),
+            icon: '🟩',
+            color: '#39FF14',
+            content: (
+                <div className="space-y-4 text-center">
+                    <p>
+                        <Trans i18nKey="tutorial.slide3_desc">
+                            Mavi aynaların kristale bakan kısmında <b>kırmızı bir engel</b> vardır. Yalnızca <b>Neon Yeşil</b> ayna kristale ışık verebilir!
+                        </Trans>
+                    </p>
+                    <div className="flex justify-center items-center gap-6 py-4">
+                        <div className="flex flex-col items-center">
+                            <div className="relative w-12 h-12 flex items-center justify-center">
+                                <div className="w-12 h-1 bg-[#80DEEA] rotate-45 absolute rounded-full"></div>
+                                <div className="w-12 h-1 bg-[#FF4444] rotate-45 absolute rounded-full translate-x-1 translate-y-1 shadow-[0_0_8px_#FF4444]"></div>
+                            </div>
+                            <span className="text-xs mt-2 text-[#FF4444] font-bold">{t('tutorial.slide3_blocked')}</span>
+                        </div>
+                        <div className="text-xl text-gray-500">→</div>
+                        <div className="flex flex-col items-center">
+                            <div className="relative w-12 h-12 flex items-center justify-center">
+                                <div className="w-12 h-1.5 bg-[#39FF14] -rotate-45 absolute rounded-full shadow-[0_0_15px_#39FF14]"></div>
+                            </div>
+                            <span className="text-xs mt-2 text-[#39FF14] font-bold">{t('tutorial.slide3_finisher')}</span>
+                        </div>
+                    </div>
+                    <p className="text-sm text-gray-300">{t('tutorial.slide3_note')}</p>
+                </div>
+            )
+        }
+    ];
 
     const slide = slides[currentSlide];
     const isLast = currentSlide === slides.length - 1;
@@ -139,7 +153,7 @@ export const HowToPlayModal: React.FC = () => {
                         onClick={() => { setShowTutorial(false); markTutorialAsSeen(); }}
                         className="px-4 py-2 text-gray-400 text-sm hover:text-white"
                     >
-                        {isLast ? '' : 'Geç'}
+                        {isLast ? '' : t('ui.skip')}
                     </button>
 
                     <button
@@ -147,7 +161,7 @@ export const HowToPlayModal: React.FC = () => {
                         className="px-6 py-2 rounded-lg font-bold text-black"
                         style={{ backgroundColor: slide.color, boxShadow: `0 0 15px ${slide.color}60` }}
                     >
-                        {isLast ? 'Hadi Başlayalım!' : 'İleri'}
+                        {isLast ? t('ui.lets_start') : t('ui.next')}
                     </button>
                 </div>
 

@@ -1,5 +1,19 @@
 {
     "translation": {
+        "tutorial": {
+            "slide1_title": "Işık Kaynağı & Kristal",
+            "slide1_desc": "Oyunun amacı, <1>Işık Kaynağından</1> çıkan ışığı <3>Kristale</3> ulaştırmaktır.",
+            "slide1_light": "Işık Kaynağı",
+            "slide1_crystal": "Hedef Kristal",
+            "slide2_title": "Aynaları Kontrol Et",
+            "slide2_desc": "Aynaların üzerine tıklayıp etrafındaki <1>kontrol tekerleğini</1> sürükleyerek açılarını değiştirebilirsin.",
+            "slide2_note": "Not: Ortasında kutu deseni olan aynaları basılı tutarak boş alanlara taşıyabilirsin.",
+            "slide3_title": "Kırmızı Engel & Yeşil Ayna",
+            "slide3_desc": "Mavi aynaların kristale bakan kısmında <1>kırmızı bir engel</1> vardır. Yalnızca <3>Neon Yeşil</3> ayna kristale ışık verebilir!",
+            "slide3_blocked": "Tıkanık (Mavi)",
+            "slide3_finisher": "Bitirici (Yeşil)",
+            "slide3_note": "Işığı daima yeşil aynaya ulaştırmaya çalış."
+        },
         "app": {
             "title": "Crystal Mirror"
         },
@@ -7,13 +21,16 @@
             "forest": "Orman Işığı",
             "glacier": "Buzul Kristali",
             "waterfall": "Şelale Sırrı",
-            "locked": "{{level}}. bölümü tamamla"
+            "locked": "{{level}}. bölümü tamamla",
+            "locked_prev": "ÖNCEKİ DÜNYAYI TAMAMLA"
         },
         "level": {
             "complete": "Bölüm Tamamlandı!",
             "stars_one": "1 Yıldız",
             "stars_other": "{{count}} Yıldız",
             "time": "Süre: {{seconds}}s",
+            "time_label": "SÜRE",
+            "hints_label": "İPUCU",
             "next": "Sonraki Bölüm",
             "retry": "Tekrar Dene"
         },
@@ -21,16 +38,36 @@
             "button": "💡 İpucu Al",
             "watch_ad": "Reklam izleyerek ipucu kazan",
             "loading": "İpucu hazırlanıyor...",
-            "arrow": "Bu aynayı döndür"
+            "arrow": "Bu aynayı döndür",
+            "active": "İpucu aktif! Işıklandırılmış aynayı çevir...",
+            "loading_short": "Yükleniyor",
+            "button_short": "İpucu Al"
         },
         "daily": {
-            "title": "Günlük Bölüm",
-            "played": "Bugün oynadın! Yarın yeni bölüm.",
-            "share": "Sonucu Paylaş"
+            "title": "Günlük Bulmaca",
+            "played": "Bugün oynadın! Yarına yeni bölüm.",
+            "share": "Sonucu Paylaş",
+            "completed": "Görev Tamamlandı!",
+            "completed_desc": "Bugünkü kristal gizemini çözdün. Yeni bir sır için yarın tekrar gel."
         },
         "ui": {
             "continue": "Devam",
-            "back": "Geri"
+            "back": "Geri",
+            "start": "Maceraya Başla",
+            "daily_puzzle": "Günlük Bulmaca",
+            "worlds": "Dünyalar",
+            "levels": "Bölüm",
+            "return_back": "Geri Dön",
+            "share": "Paylaş",
+            "menu": "Menü",
+            "skip": "Geç",
+            "next": "İleri",
+            "lets_start": "Hadi Başlayalım!",
+            "level_title": "Bölüm {{level}}"
+        },
+        "share": {
+            "dialog_title": "Crystal Mirror Başarını Paylaş!",
+            "copied": "Sonuç panoya kopyalandı."
         },
         "settings": {
             "sound": "Ses",

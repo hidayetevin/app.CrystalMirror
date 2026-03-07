@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useProgressStore } from '../../store';
 import { soundService } from '../../../container';
 
@@ -8,12 +9,13 @@ interface Props {
 }
 
 const WORLDS = [
-    { id: 'forest', name: 'Orman Işığı', color: '#ADFF2F', icon: '🌲' },
-    { id: 'glacier', name: 'Buzul Kristali', color: '#80DEEA', icon: '❄️' },
-    { id: 'waterfall', name: 'Şelale Sırrı', color: '#CE93D8', icon: '🌊' }
+    { id: 'forest', color: '#ADFF2F', icon: '🌲' },
+    { id: 'glacier', color: '#80DEEA', icon: '❄️' },
+    { id: 'waterfall', color: '#CE93D8', icon: '🌊' }
 ];
 
 export const WorldSelectScreen: React.FC<Props> = ({ onSelectWorld, onBack }) => {
+    const { t } = useTranslation();
     const { isLevelUnlocked, getWorldProgress, loadAllProgress } = useProgressStore();
 
     useEffect(() => {
@@ -34,9 +36,9 @@ export const WorldSelectScreen: React.FC<Props> = ({ onSelectWorld, onBack }) =>
         <div className="flex flex-col w-full h-screen bg-[#0D0D12] text-white font-[Rajdhani] p-6 overflow-y-auto">
             <div className="flex items-center mb-8 pt-4">
                 <button onClick={onBack} className="p-2 bg-white/10 rounded-full active:bg-white/20">
-                    ← Geri
+                    ← {t('ui.back')}
                 </button>
-                <h1 className="flex-1 text-center text-3xl font-[Cinzel_Decorative]">Dünyalar</h1>
+                <h1 className="flex-1 text-center text-3xl font-[Cinzel_Decorative]">{t('ui.worlds')}</h1>
                 <div className="w-10"></div> {/* Spacer */}
             </div>
 
@@ -51,8 +53,8 @@ export const WorldSelectScreen: React.FC<Props> = ({ onSelectWorld, onBack }) =>
                             key={world.id}
                             onClick={() => handleWorldClick(world.id)}
                             className={`relative overflow-hidden rounded-2xl p-6 border transition-all ${isUnlocked
-                                    ? 'bg-white/5 border-white/20 active:scale-[0.98]'
-                                    : 'bg-black/50 border-white/5 opacity-50'
+                                ? 'bg-white/5 border-white/20 active:scale-[0.98]'
+                                : 'bg-black/50 border-white/5 opacity-50'
                                 }`}
                             style={{ boxShadow: isUnlocked ? `0 10px 30px ${world.color}15` : 'none' }}
                             data-world={world.id}
@@ -60,7 +62,7 @@ export const WorldSelectScreen: React.FC<Props> = ({ onSelectWorld, onBack }) =>
                             {!isUnlocked && (
                                 <div className="absolute inset-0 z-20 flex flex-colItems-center justify-center bg-black/60 backdrop-blur-sm pt-8">
                                     <div className="text-4xl mb-2 text-center">🔒</div>
-                                    <div className="text-sm tracking-widest text-white/70 text-center">ÖNCEKİ DÜNYAYI TAMAMLA</div>
+                                    <div className="text-sm tracking-widest text-white/70 text-center">{t('world.locked_prev')}</div>
                                 </div>
                             )}
 
@@ -69,9 +71,9 @@ export const WorldSelectScreen: React.FC<Props> = ({ onSelectWorld, onBack }) =>
                                     <span className="text-4xl">{world.icon}</span>
                                     <div>
                                         <h2 className="text-2xl font-bold tracking-wide" style={{ color: isUnlocked ? world.color : '#666' }}>
-                                            {world.name}
+                                            {t(`world.${world.id}`)}
                                         </h2>
-                                        <div className="text-sm text-white/50">{progress.completed} / {progress.total} Bölüm</div>
+                                        <div className="text-sm text-white/50">{progress.completed} / {progress.total} {t('ui.levels')}</div>
                                     </div>
                                 </div>
                             </div>

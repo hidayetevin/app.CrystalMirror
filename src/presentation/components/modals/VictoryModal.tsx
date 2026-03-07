@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { usePuzzleStore, useProgressStore } from '../../store';
 import { PuzzleResult } from '../../../application/dto';
 import { starRatingCalculator, saveProgressCase, shareResultCase, adService } from '../../../container';
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export const VictoryModal: React.FC<Props> = ({ onNextLevel, onHome }) => {
+    const { t } = useTranslation();
     const { activePuzzle, elapsedSeconds, hintsUsed, moves } = usePuzzleStore();
     const [stars, setStars] = useState<number>(0);
 
@@ -78,7 +80,7 @@ export const VictoryModal: React.FC<Props> = ({ onNextLevel, onHome }) => {
             <div className="w-11/12 max-w-sm bg-gradient-to-b from-[#1a1a2e] to-black border border-[var(--ui-accent)]/50 rounded-2xl p-6 flex flex-col items-center shadow-[0_0_40px_var(--crystal-glow)] animate-scale-up">
 
                 <h2 className="text-3xl font-[Cinzel_Decorative] tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white to-[var(--crystal-glow)] mb-6">
-                    BAŞARILI
+                    {t('level.complete').toUpperCase()}
                 </h2>
 
                 {/* Yıldızlar (Basit Animasyon) */}
@@ -99,11 +101,11 @@ export const VictoryModal: React.FC<Props> = ({ onNextLevel, onHome }) => {
 
                 <div className="bg-white/5 border border-white/10 rounded-lg p-4 w-full mb-8 flex justify-around text-center">
                     <div>
-                        <div className="text-xs text-white/50 tracking-widest">SÜRE</div>
+                        <div className="text-xs text-white/50 tracking-widest">{t('level.time_label')}</div>
                         <div className="text-xl font-bold">{formatTime(elapsedSeconds)}</div>
                     </div>
                     <div>
-                        <div className="text-xs text-white/50 tracking-widest">İPUCU</div>
+                        <div className="text-xs text-white/50 tracking-widest">{t('level.hints_label')}</div>
                         <div className="text-xl font-bold">{hintsUsed}</div>
                     </div>
                 </div>
@@ -113,7 +115,7 @@ export const VictoryModal: React.FC<Props> = ({ onNextLevel, onHome }) => {
                         onClick={handleNext}
                         className="w-full py-4 bg-[var(--ui-accent)] hover:bg-[var(--ui-accent)]/80 text-[var(--bg-primary)] rounded-lg text-lg uppercase font-bold tracking-widest transition-all shadow-[0_0_15px_var(--ui-accent)]"
                     >
-                        Sonraki Bölüm
+                        {t('level.next')}
                     </button>
 
                     <div className="flex gap-3">
@@ -121,13 +123,13 @@ export const VictoryModal: React.FC<Props> = ({ onNextLevel, onHome }) => {
                             onClick={handleShare}
                             className="flex-1 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-sm uppercase tracking-wider transition-all"
                         >
-                            Paylaş
+                            {t('ui.share')}
                         </button>
                         <button
                             onClick={onHome}
                             className="flex-1 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-sm uppercase tracking-wider transition-all"
                         >
-                            Menü
+                            {t('ui.menu')}
                         </button>
                     </div>
                 </div>
