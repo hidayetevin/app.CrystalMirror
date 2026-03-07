@@ -24,11 +24,11 @@ export const useProgressStore = create<ProgressState>((set, get) => ({
         });
 
         // Kilit Açma Kuralları
-        const forestProgress = [...map.keys()].filter(k => k.startsWith('w1_')).length;
-        const forestTotal = allLevels.filter(p => p.worldId === 'forest').length || 5;
+        const forestProgress = [...map.keys()].filter(k => k.startsWith('forest_')).length;
+        const forestTotal = allLevels.filter(p => p.worldId === 'forest').length || 20;
 
-        const glacierProgress = [...map.keys()].filter(k => k.startsWith('w2_')).length;
-        const glacierTotal = allLevels.filter(p => p.worldId === 'glacier').length || 3;
+        const glacierProgress = [...map.keys()].filter(k => k.startsWith('glacier_')).length;
+        const glacierTotal = allLevels.filter(p => p.worldId === 'glacier').length || 30;
 
         let worlds = ['forest'];
         if (forestProgress >= forestTotal) {
@@ -54,19 +54,18 @@ export const useProgressStore = create<ProgressState>((set, get) => ({
         if (levelNumber === 1) return true;
 
         // Önceki bölüm çözüldü mü?
-        // Dünya ID'sine göre prefix: forest->w1, glacier->w2 vb.
-        const prefix = worldId === 'forest' ? 'w1' : worldId === 'glacier' ? 'w2' : 'w3';
-        const prevId = `${prefix}_l${levelNumber - 1}`;
+        // Generator kodu forest, glacier ve waterfall öneklerini (id) kullanıyor.
+        const prevId = `${worldId}_l${levelNumber - 1}`;
 
         return levelProgress[prevId] !== undefined;
     },
 
     getWorldProgress: (worldId) => {
-        const prefix = worldId === 'forest' ? 'w1' : worldId === 'glacier' ? 'w2' : 'w3';
-        const total = allLevels.filter(p => p.worldId === worldId).length || 5;
+        const total = allLevels.filter(p => p.worldId === worldId).length || 20;
 
         const { levelProgress } = get();
-        const completed = Object.keys(levelProgress).filter(k => k.startsWith(prefix)).length;
+        // Since IDs now start with worldId (e.g. forest_l1)
+        const completed = Object.keys(levelProgress).filter(k => k.startsWith(worldId + '_')).length;
 
         return { completed, total };
     }
