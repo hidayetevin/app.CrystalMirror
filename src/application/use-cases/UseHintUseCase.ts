@@ -29,7 +29,8 @@ export class UseHintUseCase {
         return {
             mirrorId: hint.mirrorId,
             suggestedAngle: hint.suggestedAngle,
-            score: hint.score
+            score: hint.score,
+            mirrorAngles: hint.mirrorAngles,
         };
     }
 }

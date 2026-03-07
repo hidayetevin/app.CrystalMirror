@@ -87,24 +87,39 @@ export const MirrorNode: React.FC<Props> = memo(({
                 stroke={
                     isSelected
                         ? '#FFD700'
-                        : isFinisher
-                            ? '#39FF14'          // Bitirici → Neon Yeşil
-                            : isHinted
-                                ? '#4CAF50'
+                        : isHinted
+                            ? '#FFFFFF'          // İpucu → Parlak Beyaz
+                            : isFinisher
+                                ? '#39FF14'      // Bitirici → Neon Yeşil
                                 : '#80DEEA'      // Normal → Cyan
                 }
-                strokeWidth={isSelected ? 6 : isFinisher ? 5 : 4}
+                strokeWidth={isSelected ? 6 : isHinted ? 6 : isFinisher ? 5 : 4}
                 rotation={drawAngle}
                 shadowColor={
                     isSelected
                         ? '#FFD700'
-                        : isFinisher
-                            ? '#39FF14'
-                            : 'transparent'
+                        : isHinted
+                            ? '#CC44FF'          // İpucu → Mor glow
+                            : isFinisher
+                                ? '#39FF14'
+                                : 'transparent'
                 }
-                shadowBlur={isSelected ? 10 : isFinisher ? 20 : 0}
+                shadowBlur={isSelected ? 10 : isHinted ? 25 : isFinisher ? 20 : 0}
                 lineCap="round"
             />
+            {/* İpucu: ikinci glow katmanı (daha parlak görünsün) */}
+            {isHinted && (
+                <Line
+                    points={[-len / 2, 0, len / 2, 0]}
+                    stroke="#CC44FF"
+                    strokeWidth={2}
+                    rotation={drawAngle}
+                    shadowColor="#CC44FF"
+                    shadowBlur={15}
+                    lineCap="round"
+                    opacity={0.6}
+                />
+            )}
 
             {/* Yeşil Engel Çubuğu — bitirici olmayan aynalarda kristale bakan tarafta */}
             {blockerPoints && (

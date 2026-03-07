@@ -1,5 +1,5 @@
 /**
- * Hint hesaplayıcı — Brute-force + cache + iki aşamalı tarama.
+ * Hint hesaplayıcı — Çok aynalı kombinasyonel brute-force + cache.
  * Domain-layer — zero 3rd-party imports.
  */
 import { Puzzle } from '../entities/Puzzle';
@@ -9,23 +9,28 @@ import { CoordinateSystem } from '../value-objects/CoordinateSystem';
 export interface HintCandidate {
     mirrorId: string;
     suggestedAngle: number;
-    score: number; // 0–1 arası toplam kristal dolumu
+    score: number;
+    mirrorAngles: Record<string, number>; // Tüm aynalar için çözüm açıları
 }
 
-function applyMirrorAngle(puzzle: Puzzle, mirrorId: string, angle: number): Puzzle {
+/** Belirli ayna açılarını puzzle'a uygula */
+function applyMirrorAngles(puzzle: Puzzle, angles: Record<string, number>): Puzzle {
     return {
         ...puzzle,
         mirrors: puzzle.mirrors.map(m =>
-            m.id === mirrorId ? { ...m, angleDegrees: ((angle % 360) + 360) % 360 } : m
+            angles[m.id] !== undefined
+                ? { ...m, angleDegrees: ((angles[m.id] % 360) + 360) % 360 }
+                : m
         ),
     };
 }
 
 /**
- * İki aşamalı tarama stratejisi:
- * 1. Kaba tarama (5° adım) — en iyi adayı bul
- * 2. En iyi aday etrafında ince tarama (1° adım, ±10°)
- * 3. Sonucu cache'le (puzzle state hash'ine göre)
+ * Çok aynalı kombinasyonel brute-force:
+ * - 1 ayna:  72 test  (5° adım)
+ * - 2 ayna: 1.296 test
+ * - 3 ayna: 46.656 test
+ * - 4+ ayna: 10° adımla 1.7M → kabul edilebilir (~100-300ms)
  */
 export class HintCalculator {
     private cache = new Map<string, HintCandidate>();
@@ -36,41 +41,82 @@ export class HintCalculator {
             return this.cache.get(cacheKey)!;
         }
 
-        let best: HintCandidate = { mirrorId: '', suggestedAngle: 0, score: -1 };
-
-        // Aşama 1: Kaba tarama (5° adım)
         const movableMirrors = puzzle.mirrors.filter((m) => m.isMovable && m.type === 'ROTATE');
-        for (const mirror of movableMirrors) {
-            for (let angle = 0; angle < 360; angle += 5) {
-                const testPuzzle = applyMirrorAngle(puzzle, mirror.id, angle);
+
+        if (movableMirrors.length === 0) {
+            const empty: HintCandidate = { mirrorId: '', suggestedAngle: 0, score: 0, mirrorAngles: {} };
+            this.cache.set(cacheKey, empty);
+            return empty;
+        }
+
+        // Ayna sayısına göre tarama adımı belirle (performans-doğruluk dengesi)
+        const coarseStep = movableMirrors.length <= 3 ? 5 : 10;
+        const angles = Array.from({ length: Math.round(360 / coarseStep) }, (_, i) => i * coarseStep);
+
+        let bestScore = -1;
+        let bestAngles: Record<string, number> = {};
+
+        // Tüm ayna kombinasyonlarını recursive tara
+        const search = (idx: number, current: Record<string, number>) => {
+            if (idx === movableMirrors.length) {
+                const testPuzzle = applyMirrorAngles(puzzle, current);
                 const result = engine.trace(testPuzzle, coords);
                 const score = this.totalFillScore(result.crystalFills, puzzle);
-
-                if (score > best.score) {
-                    best = { mirrorId: mirror.id, suggestedAngle: angle, score };
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestAngles = { ...current };
                 }
+                return;
             }
-        }
-
-        if (!best.mirrorId) {
-            this.cache.set(cacheKey, best);
-            return best;
-        }
-
-        // Aşama 2: İnce tarama
-        for (let delta = -10; delta <= 10; delta++) {
-            const angle = (best.suggestedAngle + delta + 360) % 360;
-            const testPuzzle = applyMirrorAngle(puzzle, best.mirrorId, angle);
-            const result = engine.trace(testPuzzle, coords);
-            const score = this.totalFillScore(result.crystalFills, puzzle);
-
-            if (score > best.score) {
-                best = { ...best, suggestedAngle: angle, score };
+            const mirror = movableMirrors[idx];
+            for (const angle of angles) {
+                current[mirror.id] = angle;
+                search(idx + 1, current);
             }
+        };
+
+        search(0, {});
+
+        // Kaba tarama sonucu bulunduysa ±10° ince tarama yap
+        if (bestScore > 0 && movableMirrors.length <= 3) {
+            const fineAngles: Record<string, number[]> = {};
+            for (const m of movableMirrors) {
+                const base = bestAngles[m.id] ?? 0;
+                fineAngles[m.id] = Array.from({ length: 21 }, (_, i) => ((base + (i - 10)) + 360) % 360);
+            }
+
+            const fineSearch = (idx: number, current: Record<string, number>) => {
+                if (idx === movableMirrors.length) {
+                    const testPuzzle = applyMirrorAngles(puzzle, current);
+                    const result = engine.trace(testPuzzle, coords);
+                    const score = this.totalFillScore(result.crystalFills, puzzle);
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestAngles = { ...current };
+                    }
+                    return;
+                }
+                const mirror = movableMirrors[idx];
+                for (const angle of fineAngles[mirror.id]) {
+                    current[mirror.id] = angle;
+                    fineSearch(idx + 1, current);
+                }
+            };
+
+            fineSearch(0, {});
         }
 
-        this.cache.set(cacheKey, best);
-        return best;
+        // Birincil ayna: en çok değiştirilen veya ilk ayna
+        const firstMirror = movableMirrors[0];
+        const result: HintCandidate = {
+            mirrorId: firstMirror.id,
+            suggestedAngle: bestAngles[firstMirror.id] ?? firstMirror.angleDegrees,
+            score: bestScore,
+            mirrorAngles: bestAngles,
+        };
+
+        this.cache.set(cacheKey, result);
+        return result;
     }
 
     private totalFillScore(fills: Map<string, number>, puzzle: Puzzle): number {

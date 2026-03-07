@@ -18,9 +18,10 @@ export interface PuzzleStateDTO {
 }
 
 export interface HintDTO {
-    mirrorId: string;
-    suggestedAngle: number;
-    score: number;
+    mirrorId: string;          // Birincil ipucu aynası (geriye dönük uyumluluk)
+    suggestedAngle: number;    // Birincil ayna açısı
+    score: number;             // 0-1 arası çözüm kalitesi
+    mirrorAngles: Record<string, number>; // Tüm aynalar için çözüm açıları
 }
 
 export interface DailyChallengeDTO {

@@ -84,7 +84,14 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
         try {
             // Container üzerinden Hint hesapla (AdMob Reward dahil)
             const hint = await useHintCase.execute(activePuzzle, coords);
-            set({ hintData: hint, hintsUsed: get().hintsUsed + 1 });
+
+            // Tüm aynalar için doğru açıyı uygula
+            const angles = hint.mirrorAngles;
+            for (const [mirrorId, angle] of Object.entries(angles)) {
+                get().commitMirrorAngle(mirrorId, angle);
+            }
+
+            set({ hintData: null, hintsUsed: get().hintsUsed + 1 });
         } catch (e) {
             console.error('Hint alınamadı (reklam izlenmedi vs)', e);
         } finally {

@@ -23,6 +23,7 @@ export const PuzzleCanvas: React.FC = () => {
     const commitMirrorAngle = usePuzzleStore((s) => s.commitMirrorAngle);
     const committedAngles = usePuzzleStore((s) => s.committedAngles);
     const setSnapMode = usePuzzleStore((s) => s.setSnapMode);
+    const hintData = usePuzzleStore((s) => s.hintData);
 
     // Renders every size tick
     const coords = useCanvasSize(puzzle?.gridSize.cols || 6, puzzle?.gridSize.rows || 8);
@@ -148,6 +149,7 @@ export const PuzzleCanvas: React.FC = () => {
                                     coords={coords}
                                     tempAngle={drawAngle}
                                     isSelected={isSelected}
+                                    isHinted={hintData?.mirrorId === m.id}
                                     crystalPixelPos={crystalPixelPos}
                                     onSelect={() => handleSelectMirror(m.id)}
                                     onDragEnd={(col, row) => handleDragEnd(m.id, col, row)}
