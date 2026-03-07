@@ -43,8 +43,10 @@ export const PuzzleCanvas: React.FC = () => {
     }, []);
 
     const handleWin = useCallback(() => {
-        // usePuzzleStore().onPuzzleSolved cagrilacak
-        usePuzzleStore.getState().onPuzzleSolved(fills);
+        // Elmas animasyonu oynasın (2.2s), sonra tebrik ekranı
+        setTimeout(() => {
+            usePuzzleStore.getState().onPuzzleSolved(fills);
+        }, 2500);
     }, [fills]);
 
     // Hook -> loop basliyor
