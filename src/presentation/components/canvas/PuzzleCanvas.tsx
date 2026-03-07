@@ -7,6 +7,7 @@ import { rotateMirrorCase, slideMirrorCase } from '../../../container';
 import { MirrorNode } from './MirrorNode';
 import { CrystalNode } from './CrystalNode';
 import { LightRayLayer } from './LightRayLayer';
+import { LightSourceNode } from './LightSourceNode';
 import { RotationWheel } from './RotationWheel';
 import { RaySegment } from '../../../domain/physics/RaycastEngine';
 import { CoordinateSystem } from '../../../domain/value-objects/CoordinateSystem';
@@ -126,6 +127,9 @@ export const PuzzleCanvas: React.FC = () => {
 
                 {/* Nesneler */}
                 <Layer>
+                    {/* Işık Kaynağı Başlangıcı */}
+                    <LightSourceNode lightSource={puzzle.lightSource} coords={coords} />
+
                     {/* Kristaller */}
                     {puzzle.crystals.map(c => (
                         <CrystalNode key={c.id} crystal={c} coords={coords} fillLevel={fills.get(c.id) ?? 0} />
