@@ -84,11 +84,25 @@ export const MirrorNode: React.FC<Props> = memo(({
             {/* Görünür ayna çizgisi */}
             <Line
                 points={[-len / 2, 0, len / 2, 0]}
-                stroke={isSelected ? '#FFD700' : isHinted ? '#4CAF50' : '#80DEEA'}
-                strokeWidth={isSelected ? 6 : 4}
+                stroke={
+                    isSelected
+                        ? '#FFD700'
+                        : isFinisher
+                            ? '#39FF14'          // Bitirici → Neon Yeşil
+                            : isHinted
+                                ? '#4CAF50'
+                                : '#80DEEA'      // Normal → Cyan
+                }
+                strokeWidth={isSelected ? 6 : isFinisher ? 5 : 4}
                 rotation={drawAngle}
-                shadowColor={isSelected ? '#FFD700' : 'transparent'}
-                shadowBlur={isSelected ? 10 : 0}
+                shadowColor={
+                    isSelected
+                        ? '#FFD700'
+                        : isFinisher
+                            ? '#39FF14'
+                            : 'transparent'
+                }
+                shadowBlur={isSelected ? 10 : isFinisher ? 20 : 0}
                 lineCap="round"
             />
 
@@ -96,10 +110,10 @@ export const MirrorNode: React.FC<Props> = memo(({
             {blockerPoints && (
                 <Line
                     points={blockerPoints}
-                    stroke="#4CAF50"
+                    stroke="#FF4444"
                     strokeWidth={3}
-                    shadowColor="#4CAF50"
-                    shadowBlur={8}
+                    shadowColor="#FF0000"
+                    shadowBlur={10}
                     lineCap="round"
                     opacity={0.9}
                 />
