@@ -62,6 +62,17 @@ export const PuzzleCanvas: React.FC = () => {
         }
     });
 
+    // Isabet gerceklestiginde tekerlegi (Rotation Wheel) otomatik kapat
+    useEffect(() => {
+        if (!wheelState || !puzzle) return;
+        const isHit = puzzle.crystals.some(c => c.isTarget && (fills.get(c.id) ?? 0) >= 1);
+        if (isHit) {
+            const currentAngle = ephemeralAngles[wheelState.mirrorId] ?? wheelState.angle;
+            commitMirrorAngle(wheelState.mirrorId, currentAngle);
+            setWheelState(null);
+        }
+    }, [fills, puzzle, wheelState, ephemeralAngles, commitMirrorAngle]);
+
     if (!puzzle || !coords) return null;
 
     const stageWidth = coords.offsetX * 2 + coords.cellSize * puzzle.gridSize.cols;

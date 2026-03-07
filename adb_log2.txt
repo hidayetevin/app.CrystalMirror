@@ -1,0 +1,471 @@
+--------- beginning of main
+03-07 19:07:27.351  2000  4994 I Ads     : Initialized AdMob in container 25.08.34 (260800-739221510)
+03-07 19:19:11.377  6891  7022 I Ads     : Parental control value is stale. Refreshing.
+03-07 19:19:11.404  6891  7022 I Ads     : Initialized AdMob in container 26.08.34 (260800-{{cl}})
+03-07 19:19:11.830  6891  7066 I Ads     : Successfully received play store parental controls the result.
+03-07 19:44:26.624  8718  8718 D Capacitor: Starting BridgeActivity
+03-07 19:44:26.721  8718  8718 D Capacitor: Registering plugin instance: CapacitorCookies
+03-07 19:44:26.733  8718  8718 D Capacitor: Registering plugin instance: WebView
+03-07 19:44:26.735  8718  8718 D Capacitor: Registering plugin instance: CapacitorHttp
+03-07 19:44:26.738  8718  8718 D Capacitor: Registering plugin instance: SystemBars
+03-07 19:44:26.745  8718  8718 D Capacitor: Registering plugin instance: AdMob
+03-07 19:44:26.763  8718  8718 D Capacitor: Registering plugin instance: Haptics
+03-07 19:44:26.767  8718  8718 D Capacitor: Registering plugin instance: Preferences
+03-07 19:44:26.771  8718  8718 D Capacitor: Registering plugin instance: Share
+03-07 19:44:26.803  8718  8718 W Capacitor: Unable to read file at path public/plugins
+03-07 19:44:26.816  8718  8718 D Capacitor: Loading app at https://localhost
+03-07 19:44:26.931  8718  8718 D Capacitor: App started
+03-07 19:44:26.937  8718  8718 D Capacitor: App resumed
+03-07 19:44:27.020  8718  8775 D Capacitor: Handling local request: https://localhost/
+03-07 19:44:27.566  8718  8778 D Capacitor: Handling local request: https://localhost/assets/index-BoJJgaYy.js
+03-07 19:44:27.570  8718  8776 D Capacitor: Handling local request: https://localhost/assets/canvas-De0WrOPb.js
+03-07 19:44:27.576  8718  8784 D Capacitor: Handling local request: https://localhost/assets/vendor-BmKmgUdC.js
+03-07 19:44:27.602  8718  8775 D Capacitor: Handling local request: https://localhost/assets/index-CJabaG8b.css
+03-07 19:44:28.558  8718  8774 D Capacitor: Handling local request: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:28.559  8718  8774 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:28.560  8718  8776 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:28.561  8718  8774 D Capacitor: Handling local request: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:28.561  8718  8778 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:28.562  8718  8774 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:28.562  8718  8778 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.562  8718  8778 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.563  8718  8778 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:28.563  8718  8776 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:28.563  8718  8776 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:28.564  8718  8775 D Capacitor: Handling local request: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:28.565  8718  8774 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.565  8718  8774 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:28.566  8718  8775 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:28.566  8718  8778 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:28.566  8718  8778 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:28.567  8718  8778 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.567  8718  8778 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.567  8718  8778 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:28.567  8718  8778 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:28.567  8718  8775 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:28.567  8718  8775 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:28.570  8718  8788 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.570  8718  8788 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.571  8718  8788 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:28.571  8718  8788 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:28.571  8718  8776 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:28.577  8718  8774 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:28.579  8718  8775 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:28.579  8718  8775 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:28.579  8718  8775 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.581  8718  8774 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:28.587  8718  8774 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.588  8718  8774 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:28.719  8718  8774 D Capacitor: Handling local request: https://localhost/favicon.ico
+03-07 19:44:31.051  8718  8718 V Capacitor: callback: 43647159, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 19:44:36.086  8718  8718 V Capacitor: callback: 43647160, pluginId: AdMob, methodName: showBanner, methodData: {"adId":"ca-app-pub-3940256099942544\/6300978111","adSize":"ADAPTIVE_BANNER","position":"BOTTOM_CENTER","margin":0,"isTesting":true}
+03-07 19:44:39.809  8886  8886 D Capacitor: Starting BridgeActivity
+03-07 19:44:39.854  8886  8886 D Capacitor: Registering plugin instance: CapacitorCookies
+03-07 19:44:39.860  8886  8886 D Capacitor: Registering plugin instance: WebView
+03-07 19:44:39.861  8886  8886 D Capacitor: Registering plugin instance: CapacitorHttp
+03-07 19:44:39.863  8886  8886 D Capacitor: Registering plugin instance: SystemBars
+03-07 19:44:39.868  8886  8886 D Capacitor: Registering plugin instance: AdMob
+03-07 19:44:39.878  8886  8886 D Capacitor: Registering plugin instance: Haptics
+03-07 19:44:39.880  8886  8886 D Capacitor: Registering plugin instance: Preferences
+03-07 19:44:39.883  8886  8886 D Capacitor: Registering plugin instance: Share
+03-07 19:44:39.905  8886  8886 W Capacitor: Unable to read file at path public/plugins
+03-07 19:44:39.911  8886  8886 D Capacitor: Loading app at https://localhost
+03-07 19:44:39.975  8886  8886 D Capacitor: App started
+03-07 19:44:39.982  8886  8886 D Capacitor: App resumed
+03-07 19:44:40.010  8886  8926 D Capacitor: Handling local request: https://localhost/
+03-07 19:44:40.465  8886  8926 D Capacitor: Handling local request: https://localhost/assets/canvas-De0WrOPb.js
+03-07 19:44:40.471  8886  8923 D Capacitor: Handling local request: https://localhost/assets/index-BoJJgaYy.js
+03-07 19:44:40.472  8886  8933 D Capacitor: Handling local request: https://localhost/assets/index-CJabaG8b.css
+03-07 19:44:40.477  8886  8922 D Capacitor: Handling local request: https://localhost/assets/vendor-BmKmgUdC.js
+03-07 19:44:41.015  8886  8922 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:41.017  8886  8926 D Capacitor: Handling local request: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:41.018  8886  8924 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.020  8886  8922 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:41.021  8886  8922 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:41.021  8886  8922 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:41.022  8886  8923 D Capacitor: Handling local request: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:41.022  8886  8933 D Capacitor: Handling local request: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:41.023  8886  8933 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:41.024  8886  8922 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:41.024  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:41.025  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:41.025  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:41.025  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:41.026  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:41.026  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:41.026  8886  8922 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:41.026  8886  8922 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:41.028  8886  8945 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.028  8886  8924 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.028  8886  8945 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.028  8886  8924 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:41.029  8886  8924 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:41.029  8886  8926 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:41.033  8886  8922 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:41.034  8886  8922 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:41.037  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.037  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.037  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:41.039  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.039  8886  8923 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.040  8886  8926 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.040  8886  8926 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:41.053  8886  8945 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:41.053  8886  8945 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:41.104  8886  8922 D Capacitor: Handling local request: https://localhost/favicon.ico
+03-07 19:44:42.766  8886  8886 V Capacitor: callback: 50175679, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 19:44:44.167  8886  8886 V Capacitor: callback: 50175680, pluginId: AdMob, methodName: showBanner, methodData: {"adId":"ca-app-pub-3940256099942544\/6300978111","adSize":"ADAPTIVE_BANNER","position":"BOTTOM_CENTER","margin":0,"isTesting":true}
+03-07 19:44:44.690  8886  8993 I Ads     : This request is sent from a test device.
+03-07 19:44:45.616  8886  9053 W Ads     : Invoke Firebase method getInstance error.
+03-07 19:44:45.616  8886  9053 W Ads     : The Google Mobile Ads SDK will not integrate with Firebase. Admob/Firebase integration requires the latest Firebase SDK jar, but Firebase SDK is either missing or out of date
+03-07 19:44:51.515  9067  9067 D Capacitor: Starting BridgeActivity
+03-07 19:44:51.584  9067  9067 D Capacitor: Registering plugin instance: CapacitorCookies
+03-07 19:44:51.593  9067  9067 D Capacitor: Registering plugin instance: WebView
+03-07 19:44:51.594  9067  9067 D Capacitor: Registering plugin instance: CapacitorHttp
+03-07 19:44:51.596  9067  9067 D Capacitor: Registering plugin instance: SystemBars
+03-07 19:44:51.601  9067  9067 D Capacitor: Registering plugin instance: AdMob
+03-07 19:44:51.616  9067  9067 D Capacitor: Registering plugin instance: Haptics
+03-07 19:44:51.619  9067  9067 D Capacitor: Registering plugin instance: Preferences
+03-07 19:44:51.622  9067  9067 D Capacitor: Registering plugin instance: Share
+03-07 19:44:51.651  9067  9067 W Capacitor: Unable to read file at path public/plugins
+03-07 19:44:51.658  9067  9067 D Capacitor: Loading app at https://localhost
+03-07 19:44:51.725  9067  9067 D Capacitor: App started
+03-07 19:44:51.728  9067  9067 D Capacitor: App resumed
+03-07 19:44:51.774  9067  9110 D Capacitor: Handling local request: https://localhost/
+03-07 19:44:51.894  9067  9105 D Capacitor: Handling local request: https://localhost/assets/index-BoJJgaYy.js
+03-07 19:44:51.894  9067  9110 D Capacitor: Handling local request: https://localhost/assets/canvas-De0WrOPb.js
+03-07 19:44:51.894  9067  9099 D Capacitor: Handling local request: https://localhost/assets/vendor-BmKmgUdC.js
+03-07 19:44:51.899  9067  9098 D Capacitor: Handling local request: https://localhost/assets/index-CJabaG8b.css
+03-07 19:44:52.488  9067  9099 D Capacitor: Handling local request: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:52.488  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:52.489  9067  9095 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:52.489  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:52.490  9067  9095 D Capacitor: Handling local request: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:52.490  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:52.490  9067  9098 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.491  9067  9098 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.491  9067  9098 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:52.491  9067  9098 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:52.491  9067  9105 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.492  9067  9105 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.505  9067  9099 D Capacitor: Handling local request: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:52.505  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:52.518  9067  9114 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:52.521  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:52.521  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:52.522  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:52.522  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.522  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:52.523  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.523  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:52.524  9067  9095 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:44:52.526  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:52.526  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:44:52.527  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:52.530  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:44:52.531  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:52.531  9067  9114 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.544  9067  9114 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.544  9067  9099 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:44:52.545  9067  9110 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:52.545  9067  9098 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.546  9067  9110 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:44:52.549  9067  9098 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:44:52.661  9067  9095 D Capacitor: Handling local request: https://localhost/favicon.ico
+03-07 19:44:54.496  9067  9067 V Capacitor: callback: 83968064, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 19:45:04.959  9067  9067 V Capacitor: callback: 83968065, pluginId: Preferences, methodName: get, methodData: {"key":"daily_2026-3-7"}
+03-07 19:49:50.126  9401  9401 D Capacitor: Starting BridgeActivity
+03-07 19:49:50.183  9401  9401 D Capacitor: Registering plugin instance: CapacitorCookies
+03-07 19:49:50.189  9401  9401 D Capacitor: Registering plugin instance: WebView
+03-07 19:49:50.192  9401  9401 D Capacitor: Registering plugin instance: CapacitorHttp
+03-07 19:49:50.194  9401  9401 D Capacitor: Registering plugin instance: SystemBars
+03-07 19:49:50.201  9401  9401 D Capacitor: Registering plugin instance: AdMob
+03-07 19:49:50.216  9401  9401 D Capacitor: Registering plugin instance: Haptics
+03-07 19:49:50.218  9401  9401 D Capacitor: Registering plugin instance: Preferences
+03-07 19:49:50.221  9401  9401 D Capacitor: Registering plugin instance: Share
+03-07 19:49:50.249  9401  9401 W Capacitor: Unable to read file at path public/plugins
+03-07 19:49:50.256  9401  9401 D Capacitor: Loading app at https://localhost
+03-07 19:49:50.323  9401  9401 D Capacitor: App started
+03-07 19:49:50.327  9401  9401 D Capacitor: App resumed
+03-07 19:49:50.369  9401  9435 D Capacitor: Handling local request: https://localhost/
+03-07 19:49:50.642  9401  9437 D Capacitor: Handling local request: https://localhost/assets/canvas-De0WrOPb.js
+03-07 19:49:50.642  9401  9451 D Capacitor: Handling local request: https://localhost/assets/index-C-xEkdzH.js
+03-07 19:49:50.643  9401  9443 D Capacitor: Handling local request: https://localhost/assets/vendor-BmKmgUdC.js
+03-07 19:49:50.651  9401  9435 D Capacitor: Handling local request: https://localhost/assets/index-CJabaG8b.css
+03-07 19:49:51.298  9401  9434 D Capacitor: Handling local request: https://localhost/assets/sounds/ambient.mp3
+03-07 19:49:51.302  9401  9434 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:49:51.308  9401  9443 D Capacitor: Handling local request: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:49:51.317  9401  9443 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:49:51.321  9401  9456 D Capacitor: Handling local request: https://localhost/assets/sounds/victory.mp3
+03-07 19:49:51.322  9401  9437 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:49:51.322  9401  9435 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:49:51.324  9401  9451 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.325  9401  9451 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.325  9401  9451 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:49:51.325  9401  9443 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.326  9401  9435 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:49:51.329  9401  9435 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:49:51.330  9401  9435 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:49:51.330  9401  9443 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.336  9401  9456 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:49:51.336  9401  9434 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:49:51.336  9401  9437 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:49:51.341  9401  9451 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.341  9401  9456 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:49:51.342  9401  9434 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:49:51.344  9401  9435 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:49:51.345  9401  9451 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:49:51.345  9401  9435 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:49:51.345  9401  9451 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:49:51.345  9401  9435 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:49:51.345  9401  9456 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.345  9401  9456 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.348  9401  9437 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:49:51.349  9401  9437 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:49:51.349  9401  9437 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:49:51.349  9401  9437 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:49:51.350  9401  9434 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.355  9401  9434 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.357  9401  9434 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:49:51.421  9401  9434 D Capacitor: Handling local request: https://localhost/favicon.ico
+03-07 19:49:53.284  9401  9401 V Capacitor: callback: 112702414, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 19:49:55.484  9401  9401 V Capacitor: callback: 112702415, pluginId: AdMob, methodName: initialize, methodData: {}
+03-07 19:49:56.014  9401  9401 V Capacitor: callback: 112702416, pluginId: AdMob, methodName: showBanner, methodData: {"adId":"ca-app-pub-3940256099942544\/6300978111","adSize":"ADAPTIVE_BANNER","position":"BOTTOM_CENTER","margin":0,"isTesting":true}
+03-07 19:49:56.133  9401  9530 I Ads     : This request is sent from a test device.
+03-07 19:49:56.869  9401  9401 I Ads     : JS: The jsLoaded GMSG has been sent (https://googleads.g.doubleclick.net/mads/static/sdk/native/sdk-core-v40.html:1028)
+03-07 19:49:57.013  9401  9516 W Ads     : Invoke Firebase method getInstance error.
+03-07 19:49:57.015  9401  9516 W Ads     : The Google Mobile Ads SDK will not integrate with Firebase. Admob/Firebase integration requires the latest Firebase SDK jar, but Firebase SDK is either missing or out of date
+03-07 19:49:57.091  9401  9581 W Ads     : Not retrying to fetch app settings
+03-07 19:49:59.587  6891  6891 I Ads     : JS: The jsLoaded GMSG has been sent (https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/production/sdk-core-v40-impl.js?n=true&lv=sdk_20190107_RC02:1021)
+03-07 19:49:59.701  6891  9630 I Ads     : SDK version: afma-sdk-a-v260480999.254715000.1
+03-07 19:49:59.702  6891  9630 I Ads     : HTTP timeout: 60000 milliseconds.
+03-07 19:50:01.115  9401  9401 I Ads     : JS: The jsLoaded GMSG has been sent (https://googleads.g.doubleclick.net/mads/static/sdk/native/sdk-core-v40.html:1028)
+03-07 19:50:03.287  9401  9401 V Capacitor: callback: 112702417, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 19:50:03.567  9401  9401 V Capacitor: callback: 112702418, pluginId: Preferences, methodName: set, methodData: {"key":"level_forest_l1","value":"{\"stars\":3,\"timeSeconds\":7,\"solvedAt\":\"2026-03-07T19:50:03.322Z\"}"}
+03-07 19:50:03.662  9401  9401 V Capacitor: callback: 112702419, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 19:50:03.720  9401  9401 V Capacitor: callback: 112702420, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 19:50:10.433  9401  9401 V Capacitor: callback: 112702421, pluginId: AdMob, methodName: hideBanner, methodData: {}
+03-07 19:50:11.601  9401  9401 V Capacitor: callback: 112702422, pluginId: AdMob, methodName: showBanner, methodData: {"adId":"ca-app-pub-3940256099942544\/6300978111","adSize":"ADAPTIVE_BANNER","position":"BOTTOM_CENTER","margin":0,"isTesting":true}
+03-07 19:50:11.602  9401  9530 I Ads     : This request is sent from a test device.
+03-07 19:50:11.702  6891  9694 I Ads     : SDK version: afma-sdk-a-v260480999.254715000.1
+03-07 19:50:11.702  6891  9694 I Ads     : HTTP timeout: 60000 milliseconds.
+03-07 19:50:17.483  9401  9401 V Capacitor: callback: 112702423, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l2"}
+03-07 19:50:17.600  9401  9401 V Capacitor: callback: 112702424, pluginId: Preferences, methodName: set, methodData: {"key":"level_forest_l2","value":"{\"stars\":3,\"timeSeconds\":5,\"solvedAt\":\"2026-03-07T19:50:17.514Z\"}"}
+03-07 19:50:17.799  9401  9401 V Capacitor: callback: 112702425, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 19:50:17.890  9401  9401 V Capacitor: callback: 112702426, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 19:50:17.977  9401  9401 V Capacitor: callback: 112702427, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l2"}
+03-07 19:50:24.610  9401  9401 V Capacitor: callback: 112702428, pluginId: AdMob, methodName: hideBanner, methodData: {}
+03-07 19:50:26.392  9401  9401 V Capacitor: callback: 112702429, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 19:50:26.394  9401  9401 V Capacitor: callback: 112702430, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 19:50:26.397  9401  9401 V Capacitor: callback: 112702431, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l2"}
+03-07 19:55:01.490  9869  9869 D Capacitor: Starting BridgeActivity
+03-07 19:55:01.543  9869  9869 D Capacitor: Registering plugin instance: CapacitorCookies
+03-07 19:55:01.548  9869  9869 D Capacitor: Registering plugin instance: WebView
+03-07 19:55:01.550  9869  9869 D Capacitor: Registering plugin instance: CapacitorHttp
+03-07 19:55:01.553  9869  9869 D Capacitor: Registering plugin instance: SystemBars
+03-07 19:55:01.558  9869  9869 D Capacitor: Registering plugin instance: AdMob
+03-07 19:55:01.569  9869  9869 D Capacitor: Registering plugin instance: Haptics
+03-07 19:55:01.571  9869  9869 D Capacitor: Registering plugin instance: Preferences
+03-07 19:55:01.573  9869  9869 D Capacitor: Registering plugin instance: Share
+03-07 19:55:01.610  9869  9869 W Capacitor: Unable to read file at path public/plugins
+03-07 19:55:01.617  9869  9869 D Capacitor: Loading app at https://localhost
+03-07 19:55:01.687  9869  9869 D Capacitor: App started
+03-07 19:55:01.690  9869  9869 D Capacitor: App resumed
+03-07 19:55:01.723  9869  9900 D Capacitor: Handling local request: https://localhost/
+03-07 19:55:01.874  9869  9899 D Capacitor: Handling local request: https://localhost/assets/index-C-xEkdzH.js
+03-07 19:55:01.880  9869  9900 D Capacitor: Handling local request: https://localhost/assets/canvas-De0WrOPb.js
+03-07 19:55:01.894  9869  9908 D Capacitor: Handling local request: https://localhost/assets/index-CJabaG8b.css
+03-07 19:55:01.917  9869  9901 D Capacitor: Handling local request: https://localhost/assets/vendor-BmKmgUdC.js
+03-07 19:55:02.512  9869  9908 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:55:02.512  9869  9900 D Capacitor: Handling local request: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:55:02.513  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:55:02.513  9869  9899 D Capacitor: Handling local request: https://localhost/assets/sounds/ambient.mp3
+03-07 19:55:02.514  9869  9900 D Capacitor: Handling local request: https://localhost/assets/sounds/victory.mp3
+03-07 19:55:02.514  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:55:02.515  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:55:02.515  9869  9908 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:55:02.528  9869  9901 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:55:02.528  9869  9901 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:55:02.529  9869  9908 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:55:02.529  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:55:02.536  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:55:02.537  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:55:02.538  9869  9899 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.539  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:55:02.539  9869  9901 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:55:02.539  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:55:02.539  9869  9900 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:55:02.540  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.541  9869  9908 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:55:02.541  9869  9913 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.541  9869  9908 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:55:02.542  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:55:02.542  9869  9901 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:55:02.545  9869  9913 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.555  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.555  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:55:02.558  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.558  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.558  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.575  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.575  9869  9899 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:55:02.581  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:55:02.582  9869  9900 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:55:02.669  9869  9899 D Capacitor: Handling local request: https://localhost/favicon.ico
+03-07 19:59:13.770 10192 10192 D Capacitor: Starting BridgeActivity
+03-07 19:59:13.818 10192 10192 D Capacitor: Registering plugin instance: CapacitorCookies
+03-07 19:59:13.823 10192 10192 D Capacitor: Registering plugin instance: WebView
+03-07 19:59:13.825 10192 10192 D Capacitor: Registering plugin instance: CapacitorHttp
+03-07 19:59:13.826 10192 10192 D Capacitor: Registering plugin instance: SystemBars
+03-07 19:59:13.830 10192 10192 D Capacitor: Registering plugin instance: AdMob
+03-07 19:59:13.840 10192 10192 D Capacitor: Registering plugin instance: Haptics
+03-07 19:59:13.843 10192 10192 D Capacitor: Registering plugin instance: Preferences
+03-07 19:59:13.845 10192 10192 D Capacitor: Registering plugin instance: Share
+03-07 19:59:13.848 10192 10192 D Capacitor: Registering plugin instance: StatusBar
+03-07 19:59:13.878 10192 10192 W Capacitor: Unable to read file at path public/plugins
+03-07 19:59:13.885 10192 10192 D Capacitor: Loading app at https://localhost
+03-07 19:59:13.946 10192 10192 D Capacitor: App started
+03-07 19:59:13.950 10192 10192 D Capacitor: App resumed
+03-07 19:59:13.994 10192 10230 D Capacitor: Handling local request: https://localhost/
+03-07 19:59:14.157 10192 10230 D Capacitor: Handling local request: https://localhost/assets/index-Cns1Tfm5.js
+03-07 19:59:14.158 10192 10244 D Capacitor: Handling local request: https://localhost/assets/canvas-De0WrOPb.js
+03-07 19:59:14.164 10192 10231 D Capacitor: Handling local request: https://localhost/assets/vendor-BmKmgUdC.js
+03-07 19:59:14.194 10192 10281 D Capacitor: Handling local request: https://localhost/assets/index-CJabaG8b.css
+03-07 19:59:14.683 10192 10222 D Capacitor: Handling local request: https://localhost/assets/sounds/ambient.mp3
+03-07 19:59:14.683 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:59:14.685 10192 10222 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:59:14.690 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:59:14.691 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:59:14.692 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:59:14.695 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:59:14.695 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 19:59:14.700 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:59:14.701 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 19:59:14.706 10192 10221 D Capacitor: Handling local request: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:59:14.706 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:59:14.723 10192 10221 D Capacitor: Handling local request: https://localhost/assets/sounds/victory.mp3
+03-07 19:59:14.726 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:59:14.727 10192 10221 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.727 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.735 10192 10221 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:59:14.737 10192 10240 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.738 10192 10240 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.739 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:59:14.740 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:59:14.740 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.743 10192 10230 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:59:14.743 10192 10230 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 19:59:14.744 10192 10240 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:59:14.747 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:59:14.754 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 19:59:14.754 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.755 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.772 10192 10221 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:59:14.779 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.782 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:59:14.782 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 19:59:14.782 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.783 10192 10222 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 19:59:14.850 10192 10192 V Capacitor: callback: 51176239, pluginId: StatusBar, methodName: hide, methodData: {}
+03-07 19:59:15.011 10192 10221 D Capacitor: Handling local request: https://localhost/favicon.ico
+03-07 19:59:20.545 10192 10192 V Capacitor: callback: 51176240, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 19:59:20.551 10192 10192 V Capacitor: callback: 51176241, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 19:59:20.553 10192 10192 V Capacitor: callback: 51176242, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l2"}
+03-07 20:06:39.400 10668 10668 D Capacitor: Starting BridgeActivity
+03-07 20:06:39.448 10668 10668 D Capacitor: Registering plugin instance: CapacitorCookies
+03-07 20:06:39.453 10668 10668 D Capacitor: Registering plugin instance: WebView
+03-07 20:06:39.455 10668 10668 D Capacitor: Registering plugin instance: CapacitorHttp
+03-07 20:06:39.457 10668 10668 D Capacitor: Registering plugin instance: SystemBars
+03-07 20:06:39.461 10668 10668 D Capacitor: Registering plugin instance: AdMob
+03-07 20:06:39.472 10668 10668 D Capacitor: Registering plugin instance: Haptics
+03-07 20:06:39.475 10668 10668 D Capacitor: Registering plugin instance: Preferences
+03-07 20:06:39.477 10668 10668 D Capacitor: Registering plugin instance: Share
+03-07 20:06:39.480 10668 10668 D Capacitor: Registering plugin instance: StatusBar
+03-07 20:06:39.512 10668 10668 W Capacitor: Unable to read file at path public/plugins
+03-07 20:06:39.528 10668 10668 D Capacitor: Loading app at https://localhost
+03-07 20:06:39.602 10668 10668 D Capacitor: App started
+03-07 20:06:39.603 10668 10668 D Capacitor: App resumed
+03-07 20:06:39.629 10668 10703 D Capacitor: Handling local request: https://localhost/
+03-07 20:06:39.845 10668 10701 D Capacitor: Handling local request: https://localhost/assets/index-CgxIS_iv.js
+03-07 20:06:39.846 10668 10703 D Capacitor: Handling local request: https://localhost/assets/canvas-De0WrOPb.js
+03-07 20:06:39.848 10668 10700 D Capacitor: Handling local request: https://localhost/assets/vendor-BmKmgUdC.js
+03-07 20:06:39.850 10668 10706 D Capacitor: Handling local request: https://localhost/assets/index-CJabaG8b.css
+03-07 20:06:40.502 10668 10706 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 20:06:40.506 10668 10718 D Capacitor: Handling local request: https://localhost/assets/sounds/ambient.mp3
+03-07 20:06:40.506 10668 10718 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 20:06:40.507 10668 10718 D Capacitor: Handling local request: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 20:06:40.510 10668 10706 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 20:06:40.510 10668 10706 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.510 10668 10700 D Capacitor: Handling local request: https://localhost/assets/sounds/victory.mp3
+03-07 20:06:40.511 10668 10703 D Capacitor: Handling local request: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 20:06:40.520 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 20:06:40.520 10668 10718 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 20:06:40.521 10668 10718 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 20:06:40.521 10668 10720 D Capacitor: Handling local request: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.521 10668 10720 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.525 10668 10706 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.526 10668 10700 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 20:06:40.528 10668 10668 V Capacitor: callback: 59657387, pluginId: StatusBar, methodName: hide, methodData: {}
+03-07 20:06:40.532 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 20:06:40.537 10668 10701 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 20:06:40.537 10668 10701 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 20:06:40.538 10668 10701 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/ambient.mp3
+03-07 20:06:40.539 10668 10700 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.540 10668 10700 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.540 10668 10700 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 20:06:40.546 10668 10706 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 20:06:40.556 10668 10700 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 20:06:40.557 10668 10700 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-hit.mp3
+03-07 20:06:40.567 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 20:06:40.567 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/mirror-slide.mp3
+03-07 20:06:40.568 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.568 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.569 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.569 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/hint.mp3
+03-07 20:06:40.570 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 20:06:40.570 10668 10703 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/victory.mp3
+03-07 20:06:40.578 10668 10701 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 20:06:40.578 10668 10701 E Capacitor: Unable to open asset URL: https://localhost/assets/sounds/crystal-fill.mp3
+03-07 20:06:40.724 10668 10700 D Capacitor: Handling local request: https://localhost/favicon.ico
+03-07 20:06:42.722 10668 10668 V Capacitor: callback: 59657388, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 20:06:42.730 10668 10668 V Capacitor: callback: 59657389, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 20:06:42.733 10668 10668 V Capacitor: callback: 59657390, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l2"}
+03-07 20:06:45.460 10668 10668 V Capacitor: callback: 59657391, pluginId: AdMob, methodName: initialize, methodData: {}
+03-07 20:06:46.109 10668 10668 V Capacitor: callback: 59657392, pluginId: AdMob, methodName: showBanner, methodData: {"adId":"ca-app-pub-4190858087915294\/6696699735","adSize":"ADAPTIVE_BANNER","position":"BOTTOM_CENTER","margin":0,"isTesting":false}
+03-07 20:06:46.369 10668 10802 I Ads     : This request is sent from a test device.
+03-07 20:06:46.723 10668 10668 I Ads     : JS: The jsLoaded GMSG has been sent (https://googleads.g.doubleclick.net/mads/static/sdk/native/sdk-core-v40.html:1028)
+03-07 20:06:46.927 10668 10794 W Ads     : Invoke Firebase method getInstance error.
+03-07 20:06:46.927 10668 10794 W Ads     : The Google Mobile Ads SDK will not integrate with Firebase. Admob/Firebase integration requires the latest Firebase SDK jar, but Firebase SDK is either missing or out of date
+03-07 20:06:46.962 10668 10787 W Ads     : Not retrying to fetch app settings
+03-07 20:06:47.227  6891  9628 I Ads     : SDK version: afma-sdk-a-v260480999.254715000.1
+03-07 20:06:47.227  6891  9628 I Ads     : HTTP timeout: 60000 milliseconds.
+03-07 20:06:47.410  6891  9628 W Ads     : Received error HTTP response code: 400
+03-07 20:06:47.549 10668 10668 I Ads     : Ad failed to load : 3
+03-07 20:06:48.150 10668 10668 V Capacitor: callback: 59657393, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l3"}
+03-07 20:06:48.311 10668 10668 V Capacitor: callback: 59657394, pluginId: Preferences, methodName: set, methodData: {"key":"level_forest_l3","value":"{\"stars\":3,\"timeSeconds\":2,\"solvedAt\":\"2026-03-07T20:06:48.154Z\"}"}
+03-07 20:06:48.672 10668 10668 V Capacitor: callback: 59657395, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 20:06:48.912 10668 10668 V Capacitor: callback: 59657396, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l3"}
+03-07 20:06:49.186 10668 10668 V Capacitor: callback: 59657397, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 20:06:49.410 10668 10668 V Capacitor: callback: 59657398, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l2"}
+03-07 20:06:51.046 10668 10668 V Capacitor: callback: 59657399, pluginId: AdMob, methodName: hideBanner, methodData: {}
+03-07 20:06:51.047 10668 10737 D Capacitor: Sending plugin error: {"save":false,"callbackId":"59657399","pluginId":"AdMob","methodName":"hideBanner","success":false,"error":{"message":"You tried to hide a banner that was never shown"}}
+03-07 20:06:52.505 10668 10668 V Capacitor: callback: 59657400, pluginId: AdMob, methodName: showBanner, methodData: {"adId":"ca-app-pub-4190858087915294\/6696699735","adSize":"ADAPTIVE_BANNER","position":"BOTTOM_CENTER","margin":0,"isTesting":false}
+03-07 20:06:52.517 10668 10802 I Ads     : This request is sent from a test device.
+03-07 20:06:52.601  6891  9628 I Ads     : SDK version: afma-sdk-a-v260480999.254715000.1
+03-07 20:06:52.602  6891  9628 I Ads     : HTTP timeout: 60000 milliseconds.
+03-07 20:06:52.685  6891  9628 W Ads     : Received error HTTP response code: 400
+03-07 20:06:52.790 10668 10668 I Ads     : Ad failed to load : 3
+03-07 20:07:10.309 10668 10668 V Capacitor: callback: 59657401, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l4"}
+03-07 20:07:10.551 10668 10668 V Capacitor: callback: 59657402, pluginId: Preferences, methodName: set, methodData: {"key":"level_forest_l4","value":"{\"stars\":3,\"timeSeconds\":17,\"solvedAt\":\"2026-03-07T20:07:10.547Z\"}"}
+03-07 20:07:10.982 10668 10668 V Capacitor: callback: 59657403, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 20:07:11.585 10668 10668 V Capacitor: callback: 59657404, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l3"}
+03-07 20:07:11.955 10668 10668 V Capacitor: callback: 59657405, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l4"}
+03-07 20:07:12.348 10668 10668 V Capacitor: callback: 59657406, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 20:07:12.707 10668 10668 V Capacitor: callback: 59657407, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l2"}
+03-07 20:07:31.645 10668 10668 V Capacitor: callback: 59657408, pluginId: AdMob, methodName: hideBanner, methodData: {}
+03-07 20:07:31.645 10668 10737 D Capacitor: Sending plugin error: {"save":false,"callbackId":"59657408","pluginId":"AdMob","methodName":"hideBanner","success":false,"error":{"message":"You tried to hide a banner that was never shown"}}
+03-07 20:07:34.870 10668 10668 V Capacitor: callback: 59657409, pluginId: Preferences, methodName: keys, methodData: {}
+03-07 20:07:34.873 10668 10668 V Capacitor: callback: 59657410, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l3"}
+03-07 20:07:34.876 10668 10668 V Capacitor: callback: 59657411, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l4"}
+03-07 20:07:34.878 10668 10668 V Capacitor: callback: 59657412, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l1"}
+03-07 20:07:34.879 10668 10668 V Capacitor: callback: 59657413, pluginId: Preferences, methodName: get, methodData: {"key":"level_forest_l2"}
