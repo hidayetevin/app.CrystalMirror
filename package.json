@@ -17,6 +17,7 @@
     "@capacitor/haptics": "^8.0.1",
     "@capacitor/preferences": "^8.0.1",
     "@capacitor/share": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.1",
     "howler": "^2.2.4",
     "i18next": "^25.8.14",
     "konva": "^10.2.0",
