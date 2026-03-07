@@ -14,10 +14,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 5
+                "col": 4,
+                "row": 6
             },
-            "direction": new Vector2D(1, 0),
+            "direction": new Vector2D(0, -1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -25,12 +25,12 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 2,
-                    "row": 5
+                    "col": 4,
+                    "row": 4
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -42,7 +42,7 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "isTarget": true,
                 "position": {
                     "col": 2,
-                    "row": 2
+                    "row": 4
                 }
             }
         ]
@@ -59,8 +59,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 5
+                "col": 2,
+                "row": 0
             },
             "direction": new Vector2D(1, 0),
             "color": "WHITE",
@@ -72,10 +72,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 0,
                 "position": {
-                    "col": 2,
-                    "row": 5
+                    "col": 3,
+                    "row": 0
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -86,8 +86,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 4
+                    "col": 3,
+                    "row": 2
                 }
             }
         ]
@@ -104,10 +104,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 4,
-                "row": 0
+                "col": 3,
+                "row": 4
             },
-            "direction": new Vector2D(-1, 0),
+            "direction": new Vector2D(1, 0),
             "color": "WHITE",
             "intensity": 1
         },
@@ -115,12 +115,12 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 0,
-                    "row": 0
+                    "col": 4,
+                    "row": 4
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -131,8 +131,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 0,
-                    "row": 3
+                    "col": 4,
+                    "row": 0
                 }
             }
         ]
@@ -149,8 +149,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 4,
-                "row": 2
+                "col": 1,
+                "row": 1
             },
             "direction": new Vector2D(0, 1),
             "color": "WHITE",
@@ -162,10 +162,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 0,
                 "position": {
-                    "col": 4,
-                    "row": 4
+                    "col": 1,
+                    "row": 5
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -176,8 +176,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 1,
-                    "row": 4
+                    "col": 2,
+                    "row": 5
                 }
             }
         ]
@@ -194,10 +194,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 5
+                "col": 0,
+                "row": 3
             },
-            "direction": new Vector2D(0, -1),
+            "direction": new Vector2D(0, 1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -207,20 +207,21 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 0
+                    "col": 0,
+                    "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 1,
-                    "row": 0
+                    "col": 2,
+                    "row": 4
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -231,8 +232,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 1,
-                    "row": 5
+                    "col": 2,
+                    "row": 3
                 }
             }
         ]
@@ -249,10 +250,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 1
+                "col": 2,
+                "row": 0
             },
-            "direction": new Vector2D(-1, 0),
+            "direction": new Vector2D(0, 1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -262,20 +263,21 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 1,
-                    "row": 1
+                    "col": 2,
+                    "row": 2
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 1,
+                    "col": 3,
                     "row": 2
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -286,8 +288,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 2
+                    "col": 3,
+                    "row": 5
                 }
             }
         ]
@@ -305,9 +307,9 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "lightSource": {
             "position": {
                 "col": 4,
-                "row": 6
+                "row": 3
             },
-            "direction": new Vector2D(0, -1),
+            "direction": new Vector2D(-1, 0),
             "color": "WHITE",
             "intensity": 1
         },
@@ -315,12 +317,13 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 0,
                 "position": {
-                    "col": 4,
-                    "row": 2
+                    "col": 2,
+                    "row": 3
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
@@ -328,9 +331,9 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "angleDegrees": 90,
                 "position": {
                     "col": 2,
-                    "row": 2
+                    "row": 0
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -341,8 +344,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 4
+                    "col": 0,
+                    "row": 0
                 }
             }
         ]
@@ -359,10 +362,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 2,
+                "col": 0,
                 "row": 0
             },
-            "direction": new Vector2D(-1, 0),
+            "direction": new Vector2D(0, 1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -370,22 +373,23 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
                     "col": 0,
-                    "row": 0
+                    "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 0,
-                    "row": 4
+                    "col": 1,
+                    "row": 5
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -396,8 +400,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 4
+                    "col": 1,
+                    "row": 2
                 }
             }
         ]
@@ -414,8 +418,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 1,
-                "row": 5
+                "col": 3,
+                "row": 0
             },
             "direction": new Vector2D(0, 1),
             "color": "WHITE",
@@ -425,22 +429,23 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 0,
                 "position": {
-                    "col": 1,
-                    "row": 6
+                    "col": 3,
+                    "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 6
+                    "col": 0,
+                    "row": 4
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -451,8 +456,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 0
+                    "col": 0,
+                    "row": 3
                 }
             }
         ]
@@ -469,10 +474,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 4,
-                "row": 2
+                "col": 2,
+                "row": 5
             },
-            "direction": new Vector2D(0, 1),
+            "direction": new Vector2D(0, -1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -480,22 +485,23 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 4,
-                    "row": 4
+                    "col": 2,
+                    "row": 3
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 4
+                    "col": 4,
+                    "row": 3
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -506,8 +512,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 3
+                    "col": 4,
+                    "row": 4
                 }
             }
         ]
@@ -524,10 +530,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 6
+                "col": 1,
+                "row": 4
             },
-            "direction": new Vector2D(0, -1),
+            "direction": new Vector2D(0, 1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -535,22 +541,23 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 5
+                    "col": 1,
+                    "row": 6
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 0,
                 "position": {
-                    "col": 2,
-                    "row": 5
+                    "col": 4,
+                    "row": 6
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -561,8 +568,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 3
+                    "col": 4,
+                    "row": 1
                 }
             }
         ]
@@ -579,10 +586,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
+                "col": 4,
                 "row": 5
             },
-            "direction": new Vector2D(0, -1),
+            "direction": new Vector2D(-1, 0),
             "color": "WHITE",
             "intensity": 1
         },
@@ -592,20 +599,21 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 3
+                    "col": 2,
+                    "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 0,
-                    "row": 3
+                    "col": 2,
+                    "row": 2
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -617,7 +625,7 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "isTarget": true,
                 "position": {
                     "col": 0,
-                    "row": 6
+                    "row": 2
                 }
             }
         ]
@@ -634,10 +642,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 1
+                "col": 4,
+                "row": 0
             },
-            "direction": new Vector2D(0, 1),
+            "direction": new Vector2D(-1, 0),
             "color": "WHITE",
             "intensity": 1
         },
@@ -645,32 +653,34 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 4
+                    "col": 0,
+                    "row": 0
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 0,
                 "position": {
                     "col": 0,
-                    "row": 4
+                    "row": 6
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_2",
                 "type": "ROTATE",
                 "angleDegrees": 0,
                 "position": {
-                    "col": 0,
-                    "row": 0
+                    "col": 3,
+                    "row": 6
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -682,7 +692,7 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "isTarget": true,
                 "position": {
                     "col": 3,
-                    "row": 0
+                    "row": 4
                 }
             }
         ]
@@ -699,10 +709,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 2
+                "col": 3,
+                "row": 1
             },
-            "direction": new Vector2D(1, 0),
+            "direction": new Vector2D(0, 1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -710,32 +720,34 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 4,
-                    "row": 2
+                    "col": 3,
+                    "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 4,
-                    "row": 4
+                    "col": 1,
+                    "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_2",
                 "type": "ROTATE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 2,
-                    "row": 4
+                    "col": 1,
+                    "row": 2
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -746,8 +758,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 3
+                    "col": 3,
+                    "row": 2
                 }
             }
         ]
@@ -764,10 +776,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 1
+                "col": 1,
+                "row": 6
             },
-            "direction": new Vector2D(0, 1),
+            "direction": new Vector2D(1, 0),
             "color": "WHITE",
             "intensity": 1
         },
@@ -775,22 +787,24 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
                     "col": 3,
-                    "row": 4
+                    "row": 6
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 0,
-                    "row": 4
+                    "col": 3,
+                    "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_2",
@@ -798,9 +812,9 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "angleDegrees": 0,
                 "position": {
                     "col": 0,
-                    "row": 3
+                    "row": 1
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -811,8 +825,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 4,
-                    "row": 3
+                    "col": 0,
+                    "row": 2
                 }
             }
         ]
@@ -821,146 +835,6 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "id": "forest_l16",
         "worldId": "forest",
         "levelNumber": 16,
-        "gridSize": {
-            "cols": 5,
-            "rows": 7
-        },
-        "mechanic": "ROTATE",
-        "timeLimit": null,
-        "lightSource": {
-            "position": {
-                "col": 1,
-                "row": 4
-            },
-            "direction": new Vector2D(1, 0),
-            "color": "WHITE",
-            "intensity": 1
-        },
-        "mirrors": [
-            {
-                "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 0,
-                "position": {
-                    "col": 4,
-                    "row": 4
-                },
-                "isMovable": true
-            },
-            {
-                "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 45,
-                "position": {
-                    "col": 4,
-                    "row": 0
-                },
-                "isMovable": true
-            },
-            {
-                "id": "m_2",
-                "type": "ROTATE",
-                "angleDegrees": 90,
-                "position": {
-                    "col": 1,
-                    "row": 0
-                },
-                "isMovable": true,
-                "isFinisher": true
-            }
-        ],
-        "crystals": [
-            {
-                "id": "c_target",
-                "color": "WHITE",
-                "fillLevel": 0,
-                "isTarget": true,
-                "position": {
-                    "col": 1,
-                    "row": 5
-                }
-            }
-        ]
-    },
-    {
-        "id": "forest_l17",
-        "worldId": "forest",
-        "levelNumber": 17,
-        "gridSize": {
-            "cols": 5,
-            "rows": 7
-        },
-        "mechanic": "ROTATE",
-        "timeLimit": null,
-        "lightSource": {
-            "position": {
-                "col": 0,
-                "row": 4
-            },
-            "direction": new Vector2D(1, 0),
-            "color": "WHITE",
-            "intensity": 1
-        },
-        "mirrors": [
-            {
-                "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 135,
-                "position": {
-                    "col": 4,
-                    "row": 4
-                },
-                "isMovable": true
-            },
-            {
-                "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 0,
-                "position": {
-                    "col": 4,
-                    "row": 2
-                },
-                "isMovable": true
-            },
-            {
-                "id": "m_2",
-                "type": "ROTATE",
-                "angleDegrees": 0,
-                "position": {
-                    "col": 2,
-                    "row": 2
-                },
-                "isMovable": true
-            },
-            {
-                "id": "m_3",
-                "type": "ROTATE",
-                "angleDegrees": 0,
-                "position": {
-                    "col": 2,
-                    "row": 4
-                },
-                "isMovable": true,
-                "isFinisher": true
-            }
-        ],
-        "crystals": [
-            {
-                "id": "c_target",
-                "color": "WHITE",
-                "fillLevel": 0,
-                "isTarget": true,
-                "position": {
-                    "col": 3,
-                    "row": 4
-                }
-            }
-        ]
-    },
-    {
-        "id": "forest_l18",
-        "worldId": "forest",
-        "levelNumber": 18,
         "gridSize": {
             "cols": 5,
             "rows": 7
@@ -983,39 +857,31 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "angleDegrees": 90,
                 "position": {
                     "col": 1,
-                    "row": 5
+                    "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
                 "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 5
+                    "col": 2,
+                    "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_2",
                 "type": "ROTATE",
-                "angleDegrees": 90,
-                "position": {
-                    "col": 3,
-                    "row": 6
-                },
-                "isMovable": true
-            },
-            {
-                "id": "m_3",
-                "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 0,
                 "position": {
                     "col": 2,
-                    "row": 6
+                    "row": 0
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -1026,8 +892,164 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
+                    "col": 1,
+                    "row": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": "forest_l17",
+        "worldId": "forest",
+        "levelNumber": 17,
+        "gridSize": {
+            "cols": 5,
+            "rows": 7
+        },
+        "mechanic": "ROTATE",
+        "timeLimit": null,
+        "lightSource": {
+            "position": {
+                "col": 1,
+                "row": 6
+            },
+            "direction": new Vector2D(0, -1),
+            "color": "WHITE",
+            "intensity": 1
+        },
+        "mirrors": [
+            {
+                "id": "m_0",
+                "type": "ROTATE",
+                "angleDegrees": 90,
+                "position": {
+                    "col": 1,
+                    "row": 5
+                },
+                "isMovable": true,
+                "isFinisher": false
+            },
+            {
+                "id": "m_1",
+                "type": "ROTATE",
+                "angleDegrees": 45,
+                "position": {
+                    "col": 4,
+                    "row": 5
+                },
+                "isMovable": true,
+                "isFinisher": false
+            },
+            {
+                "id": "m_2",
+                "type": "ROTATE",
+                "angleDegrees": 0,
+                "position": {
+                    "col": 4,
+                    "row": 2
+                },
+                "isMovable": true,
+                "isFinisher": false
+            },
+            {
+                "id": "m_3",
+                "type": "ROTATE",
+                "angleDegrees": 90,
+                "position": {
+                    "col": 0,
+                    "row": 2
+                },
+                "isMovable": true,
+                "isFinisher": true
+            }
+        ],
+        "crystals": [
+            {
+                "id": "c_target",
+                "color": "WHITE",
+                "fillLevel": 0,
+                "isTarget": true,
+                "position": {
+                    "col": 0,
+                    "row": 3
+                }
+            }
+        ]
+    },
+    {
+        "id": "forest_l18",
+        "worldId": "forest",
+        "levelNumber": 18,
+        "gridSize": {
+            "cols": 5,
+            "rows": 7
+        },
+        "mechanic": "ROTATE",
+        "timeLimit": null,
+        "lightSource": {
+            "position": {
+                "col": 2,
+                "row": 0
+            },
+            "direction": new Vector2D(0, 1),
+            "color": "WHITE",
+            "intensity": 1
+        },
+        "mirrors": [
+            {
+                "id": "m_0",
+                "type": "ROTATE",
+                "angleDegrees": 90,
+                "position": {
                     "col": 2,
-                    "row": 1
+                    "row": 4
+                },
+                "isMovable": true,
+                "isFinisher": false
+            },
+            {
+                "id": "m_1",
+                "type": "ROTATE",
+                "angleDegrees": 0,
+                "position": {
+                    "col": 3,
+                    "row": 4
+                },
+                "isMovable": true,
+                "isFinisher": false
+            },
+            {
+                "id": "m_2",
+                "type": "ROTATE",
+                "angleDegrees": 0,
+                "position": {
+                    "col": 3,
+                    "row": 6
+                },
+                "isMovable": true,
+                "isFinisher": false
+            },
+            {
+                "id": "m_3",
+                "type": "ROTATE",
+                "angleDegrees": 90,
+                "position": {
+                    "col": 0,
+                    "row": 6
+                },
+                "isMovable": true,
+                "isFinisher": true
+            }
+        ],
+        "crystals": [
+            {
+                "id": "c_target",
+                "color": "WHITE",
+                "fillLevel": 0,
+                "isTarget": true,
+                "position": {
+                    "col": 0,
+                    "row": 3
                 }
             }
         ]
@@ -1044,10 +1066,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 5
+                "col": 1,
+                "row": 3
             },
-            "direction": new Vector2D(0, -1),
+            "direction": new Vector2D(0, 1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -1055,42 +1077,45 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 0,
                 "position": {
-                    "col": 0,
-                    "row": 0
+                    "col": 1,
+                    "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 2,
-                    "row": 0
+                    "col": 3,
+                    "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_2",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 2,
-                    "row": 1
+                    "col": 3,
+                    "row": 2
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_3",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 45,
                 "position": {
                     "col": 0,
-                    "row": 1
+                    "row": 2
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -1119,10 +1144,10 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 1,
-                "row": 2
+                "col": 4,
+                "row": 1
             },
-            "direction": new Vector2D(0, 1),
+            "direction": new Vector2D(-1, 0),
             "color": "WHITE",
             "intensity": 1
         },
@@ -1132,40 +1157,43 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 1,
-                    "row": 3
+                    "col": 2,
+                    "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 4,
-                    "row": 3
+                    "col": 2,
+                    "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_2",
                 "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 4,
-                    "row": 1
+                    "col": 0,
+                    "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": false
             },
             {
                 "id": "m_3",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 45,
                 "position": {
                     "col": 0,
-                    "row": 1
+                    "row": 0
                 },
-                "isMovable": true,
+                "isMovable": true,
                 "isFinisher": true
             }
         ],
@@ -1176,8 +1204,8 @@ export const WORLD_ONE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 0,
-                    "row": 3
+                    "col": 1,
+                    "row": 0
                 }
             }
         ]

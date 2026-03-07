@@ -131,13 +131,13 @@ function generateSolvableLevel(options: LevelGenOptions): Puzzle {
             // Eger ray Horizontal geliyosa (x=1) ve dikey cikiyosa (y=1) -> 45 derece ayna işi çözer.
             let angle = 0;
             if (currentDir.x === 1) {
-                angle = newDir.y === 1 ? 135 : 45;
-            } else if (currentDir.x === -1) {
                 angle = newDir.y === 1 ? 45 : 135;
+            } else if (currentDir.x === -1) {
+                angle = newDir.y === 1 ? 135 : 45;
             } else if (currentDir.y === 1) {
-                angle = newDir.x === 1 ? 135 : 45;
-            } else if (currentDir.y === -1) {
                 angle = newDir.x === 1 ? 45 : 135;
+            } else if (currentDir.y === -1) {
+                angle = newDir.x === 1 ? 135 : 45;
             }
 
             // ROTATE mi SLIDE mı?
@@ -168,7 +168,8 @@ function generateSolvableLevel(options: LevelGenOptions): Puzzle {
                 type: mType,
                 angleDegrees: initialAngle,
                 position: initialPosition,
-                isMovable: true
+                isMovable: true,
+                isFinisher: i === options.numMirrors - 1
             });
 
             // (gizli çözüm listesi)
