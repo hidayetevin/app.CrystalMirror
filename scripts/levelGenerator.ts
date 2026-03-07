@@ -102,19 +102,34 @@ function generateSolvableLevel(options: LevelGenOptions): Puzzle {
         for (let i = 0; i < options.numMirrors; i++) {
             // İleri yönde rastgele bir mesafe git
             const dist = randInt(1, Math.max(options.cols, options.rows) - 1);
-            const targetCell = {
-                col: currentPos.col + currentDir.x * dist,
-                row: currentPos.row + currentDir.y * dist
-            };
 
-            // Grid dışına çıktıysa iptal
-            if (!coords.isValidCell(targetCell)) {
-                pathValid = false;
-                break;
+            let segmentValid = true;
+            let pathCells: GridPosition[] = [];
+            let targetCell = { col: currentPos.col, row: currentPos.row };
+
+            for (let step = 1; step <= dist; step++) {
+                const stepCell = {
+                    col: currentPos.col + currentDir.x * step,
+                    row: currentPos.row + currentDir.y * step
+                };
+
+                // Grid dışına çıktıysa iptal
+                if (!coords.isValidCell(stepCell)) {
+                    segmentValid = false;
+                    break;
+                }
+
+                // Eğer orası doluysa iptal (yol boyunca hiçbir cismin içinden geçmemeli)
+                if (occupied.some(c => isSameCell(c, stepCell))) {
+                    segmentValid = false;
+                    break;
+                }
+
+                pathCells.push(stepCell);
+                targetCell = stepCell;
             }
 
-            // Eğer orası doluysa iptal
-            if (occupied.some(c => isSameCell(c, targetCell))) {
+            if (!segmentValid) {
                 pathValid = false;
                 break;
             }
@@ -175,8 +190,10 @@ function generateSolvableLevel(options: LevelGenOptions): Puzzle {
             // (gizli çözüm listesi)
             // Biz bu mantıkta çözümün `targetCell` ve `angle` da yattığını biliyoruz.
 
-            occupied.push(targetCell);
-            if (initialPosition !== targetCell) occupied.push(initialPosition);
+            occupied.push(...pathCells);
+            if (initialPosition !== targetCell && !occupied.some(c => isSameCell(c, initialPosition))) {
+                occupied.push(initialPosition);
+            }
 
             // Sonraki iterasyona
             currentPos = cloneCell(targetCell);
@@ -187,13 +204,24 @@ function generateSolvableLevel(options: LevelGenOptions): Puzzle {
 
         // Son olarak hedef kristali koy
         const distToEnd = randInt(1, Math.max(options.cols, options.rows) - 1);
-        const crystalCell = {
-            col: currentPos.col + currentDir.x * distToEnd,
-            row: currentPos.row + currentDir.y * distToEnd
-        };
 
-        if (!coords.isValidCell(crystalCell)) continue;
-        if (occupied.some(c => isSameCell(c, crystalCell))) continue;
+        let validEnd = true;
+        let crystalCell = { col: currentPos.col, row: currentPos.row };
+
+        for (let step = 1; step <= distToEnd; step++) {
+            const stepCell = {
+                col: currentPos.col + currentDir.x * step,
+                row: currentPos.row + currentDir.y * step
+            };
+
+            if (!coords.isValidCell(stepCell) || occupied.some(c => isSameCell(c, stepCell))) {
+                validEnd = false;
+                break;
+            }
+            crystalCell = stepCell;
+        }
+
+        if (!validEnd) continue;
 
         crystals.push({
             id: 'c_target',

@@ -14,21 +14,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 4,
-                "row": 8
+                "col": 2,
+                "row": 7
             },
-            "direction": new Vector2D(-1, 0),
-            "color": "YELLOW",
+            "direction": new Vector2D(0, -1),
+            "color": "BLUE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "SLIDE",
-                "angleDegrees": 45,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
                     "col": 2,
-                    "row": 8
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -37,12 +37,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "YELLOW",
+                "color": "BLUE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 1,
-                    "row": 4
+                    "col": 4,
+                    "row": 5
                 }
             }
         ]
@@ -60,20 +60,20 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "lightSource": {
             "position": {
                 "col": 4,
-                "row": 8
+                "row": 6
             },
-            "direction": new Vector2D(0, -1),
-            "color": "BLUE",
+            "direction": new Vector2D(-1, 0),
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
-                    "col": 4,
-                    "row": 5
+                    "col": 0,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -82,12 +82,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "BLUE",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 6,
-                    "row": 4
+                    "col": 0,
+                    "row": 5
                 }
             }
         ]
@@ -105,20 +105,20 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "lightSource": {
             "position": {
                 "col": 2,
-                "row": 4
+                "row": 5
             },
-            "direction": new Vector2D(1, 0),
+            "direction": new Vector2D(-1, 0),
             "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 45,
+                "type": "SLIDE",
+                "angleDegrees": 135,
                 "position": {
-                    "col": 5,
-                    "row": 4
+                    "col": 0,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -131,8 +131,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 5,
-                    "row": 3
+                    "col": 0,
+                    "row": 8
                 }
             }
         ]
@@ -149,21 +149,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 6,
-                "row": 4
+                "col": 0,
+                "row": 3
             },
             "direction": new Vector2D(0, -1),
-            "color": "WHITE",
+            "color": "YELLOW",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 6,
-                    "row": 1
+                    "col": 0,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -172,12 +172,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "YELLOW",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 4,
-                    "row": 0
+                    "col": 1,
+                    "row": 1
                 }
             }
         ]
@@ -194,10 +194,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 1,
-                "row": 6
+                "col": 6,
+                "row": 8
             },
-            "direction": new Vector2D(-1, 0),
+            "direction": new Vector2D(0, -1),
             "color": "YELLOW",
             "intensity": 1
         },
@@ -205,10 +205,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 0,
-                    "row": 6
+                    "col": 6,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -221,8 +221,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 0,
-                    "row": 2
+                    "col": 4,
+                    "row": 5
                 }
             }
         ]
@@ -239,21 +239,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 6
+                "col": 4,
+                "row": 8
             },
-            "direction": new Vector2D(1, 0),
-            "color": "BLUE",
+            "direction": new Vector2D(0, -1),
+            "color": "YELLOW",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 135,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 5,
-                    "row": 6
+                    "col": 4,
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -262,12 +262,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "BLUE",
+                "color": "YELLOW",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 5,
-                    "row": 8
+                    "col": 2,
+                    "row": 7
                 }
             }
         ]
@@ -284,20 +284,20 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 3
+                "col": 4,
+                "row": 0
             },
-            "direction": new Vector2D(0, -1),
-            "color": "RED",
+            "direction": new Vector2D(1, 0),
+            "color": "WHITE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 135,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 3,
+                    "col": 6,
                     "row": 0
                 },
                 "isMovable": true,
@@ -307,12 +307,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "RED",
+                "color": "WHITE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 1,
-                    "row": 0
+                    "col": 6,
+                    "row": 6
                 }
             }
         ]
@@ -329,21 +329,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 1,
-                "row": 3
+                "col": 4,
+                "row": 0
             },
             "direction": new Vector2D(1, 0),
-            "color": "RED",
+            "color": "YELLOW",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
                     "col": 5,
-                    "row": 3
+                    "row": 0
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -352,12 +352,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "RED",
+                "color": "YELLOW",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 4,
-                    "row": 2
+                    "col": 5,
+                    "row": 3
                 }
             }
         ]
@@ -374,11 +374,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 5
+                "col": 6,
+                "row": 2
             },
-            "direction": new Vector2D(0, -1),
-            "color": "RED",
+            "direction": new Vector2D(0, 1),
+            "color": "YELLOW",
             "intensity": 1
         },
         "mirrors": [
@@ -387,8 +387,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 0,
                 "position": {
-                    "col": 0,
-                    "row": 1
+                    "col": 6,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -398,8 +398,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 3,
-                    "row": 1
+                    "col": 5,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -408,12 +408,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "RED",
+                "color": "YELLOW",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 8
+                    "col": 5,
+                    "row": 1
                 }
             }
         ]
@@ -431,10 +431,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "lightSource": {
             "position": {
                 "col": 6,
-                "row": 3
+                "row": 1
             },
             "direction": new Vector2D(0, 1),
-            "color": "WHITE",
+            "color": "YELLOW",
             "intensity": 1
         },
         "mirrors": [
@@ -444,7 +444,7 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "angleDegrees": 135,
                 "position": {
                     "col": 6,
-                    "row": 8
+                    "row": 3
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -452,10 +452,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 5,
-                    "row": 8
+                    "col": 3,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -464,12 +464,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "YELLOW",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 5,
-                    "row": 5
+                    "col": 4,
+                    "row": 3
                 }
             }
         ]
@@ -486,21 +486,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 4,
-                "row": 4
+                "col": 5,
+                "row": 8
             },
-            "direction": new Vector2D(0, -1),
-            "color": "WHITE",
+            "direction": new Vector2D(-1, 0),
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 4,
-                    "row": 3
+                    "col": 0,
+                    "row": 8
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -508,10 +508,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 5,
-                    "row": 3
+                    "col": 0,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -520,12 +520,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 5,
-                    "row": 4
+                    "col": 2,
+                    "row": 6
                 }
             }
         ]
@@ -543,31 +543,31 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "lightSource": {
             "position": {
                 "col": 3,
-                "row": 0
+                "row": 8
             },
-            "direction": new Vector2D(-1, 0),
+            "direction": new Vector2D(0, -1),
             "color": "YELLOW",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
-                    "col": 1,
-                    "row": 0
+                    "col": 3,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "SLIDE",
-                "angleDegrees": 45,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
-                    "col": 2,
-                    "row": 7
+                    "col": 4,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -580,8 +580,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 6,
-                    "row": 8
+                    "col": 4,
+                    "row": 7
                 }
             }
         ]
@@ -598,10 +598,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 5,
-                "row": 1
+                "col": 4,
+                "row": 5
             },
-            "direction": new Vector2D(1, 0),
+            "direction": new Vector2D(0, -1),
             "color": "YELLOW",
             "intensity": 1
         },
@@ -609,21 +609,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 6,
-                    "row": 1
+                    "col": 4,
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
-                    "col": 6,
-                    "row": 6
+                    "col": 3,
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -636,7 +636,7 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 5,
+                    "col": 3,
                     "row": 5
                 }
             }
@@ -654,10 +654,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 5,
-                "row": 4
+                "col": 0,
+                "row": 1
             },
-            "direction": new Vector2D(0, -1),
+            "direction": new Vector2D(0, 1),
             "color": "YELLOW",
             "intensity": 1
         },
@@ -665,21 +665,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 5,
-                    "row": 2
+                    "col": 0,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 90,
                 "position": {
-                    "col": 0,
-                    "row": 2
+                    "col": 4,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -692,8 +692,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 1,
-                    "row": 3
+                    "col": 4,
+                    "row": 8
                 }
             }
         ]
@@ -710,21 +710,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 6,
-                "row": 7
+                "col": 3,
+                "row": 2
             },
-            "direction": new Vector2D(-1, 0),
-            "color": "YELLOW",
+            "direction": new Vector2D(0, 1),
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "SLIDE",
-                "angleDegrees": 45,
+                "type": "ROTATE",
+                "angleDegrees": 90,
                 "position": {
-                    "col": 1,
-                    "row": 7
+                    "col": 3,
+                    "row": 8
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -734,8 +734,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 0,
-                    "row": 5
+                    "col": 4,
+                    "row": 8
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -744,12 +744,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "YELLOW",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 4
+                    "col": 4,
+                    "row": 7
                 }
             }
         ]
@@ -766,8 +766,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 5,
-                "row": 8
+                "col": 4,
+                "row": 2
             },
             "direction": new Vector2D(0, -1),
             "color": "BLUE",
@@ -776,11 +776,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 135,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 5,
-                    "row": 5
+                    "col": 4,
+                    "row": 1
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -788,10 +788,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 1,
-                    "row": 5
+                    "col": 0,
+                    "row": 1
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -805,7 +805,7 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "isTarget": true,
                 "position": {
                     "col": 0,
-                    "row": 0
+                    "row": 4
                 }
             }
         ]
@@ -823,17 +823,17 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "lightSource": {
             "position": {
                 "col": 2,
-                "row": 6
+                "row": 3
             },
             "direction": new Vector2D(0, -1),
-            "color": "RED",
+            "color": "YELLOW",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
                     "col": 2,
                     "row": 0
@@ -846,7 +846,7 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 4,
+                    "col": 5,
                     "row": 0
                 },
                 "isMovable": true,
@@ -856,12 +856,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "RED",
+                "color": "YELLOW",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 5
+                    "col": 4,
+                    "row": 4
                 }
             }
         ]
@@ -878,32 +878,32 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 5,
-                "row": 3
+                "col": 0,
+                "row": 7
             },
-            "direction": new Vector2D(0, -1),
-            "color": "WHITE",
+            "direction": new Vector2D(1, 0),
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 5,
-                    "row": 2
+                    "col": 3,
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 1
+                    "col": 2,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -912,11 +912,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 4,
+                    "col": 5,
                     "row": 5
                 }
             }
@@ -934,8 +934,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 4,
-                "row": 6
+                "col": 0,
+                "row": 4
             },
             "direction": new Vector2D(1, 0),
             "color": "BLUE",
@@ -947,8 +947,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 5,
-                    "row": 6
+                    "col": 6,
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -958,8 +958,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 5,
-                    "row": 7
+                    "col": 6,
+                    "row": 8
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -972,8 +972,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 7
+                    "col": 1,
+                    "row": 8
                 }
             }
         ]
@@ -990,11 +990,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 5,
-                "row": 7
+                "col": 2,
+                "row": 2
             },
-            "direction": new Vector2D(0, -1),
-            "color": "WHITE",
+            "direction": new Vector2D(0, 1),
+            "color": "BLUE",
             "intensity": 1
         },
         "mirrors": [
@@ -1003,19 +1003,19 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 5,
-                    "row": 1
+                    "col": 2,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 90,
+                "type": "SLIDE",
+                "angleDegrees": 135,
                 "position": {
-                    "col": 2,
-                    "row": 0
+                    "col": 3,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1024,12 +1024,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "BLUE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 2
+                    "col": 4,
+                    "row": 3
                 }
             }
         ]
@@ -1046,32 +1046,32 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 6,
-                "row": 6
+                "col": 4,
+                "row": 2
             },
-            "direction": new Vector2D(0, 1),
-            "color": "WHITE",
+            "direction": new Vector2D(0, -1),
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
-                    "col": 6,
-                    "row": 8
+                    "col": 4,
+                    "row": 0
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 0,
+                "type": "SLIDE",
+                "angleDegrees": 135,
                 "position": {
                     "col": 3,
-                    "row": 7
+                    "row": 0
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1080,12 +1080,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 5
+                    "col": 2,
+                    "row": 2
                 }
             }
         ]
@@ -1102,11 +1102,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 1,
-                "row": 5
+                "col": 6,
+                "row": 0
             },
-            "direction": new Vector2D(0, -1),
-            "color": "WHITE",
+            "direction": new Vector2D(0, 1),
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
@@ -1115,19 +1115,19 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 1,
-                    "row": 1
+                    "col": 6,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
+                "type": "SLIDE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 2,
-                    "row": 0
+                    "col": 4,
+                    "row": 1
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1136,12 +1136,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 2
+                    "col": 3,
+                    "row": 6
                 }
             }
         ]
@@ -1158,32 +1158,32 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 2,
-                "row": 8
+                "col": 0,
+                "row": 5
             },
-            "direction": new Vector2D(1, 0),
-            "color": "RED",
+            "direction": new Vector2D(0, 1),
+            "color": "YELLOW",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 90,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 6,
-                    "row": 8
+                    "col": 0,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 0,
+                "type": "SLIDE",
+                "angleDegrees": 135,
                 "position": {
-                    "col": 6,
-                    "row": 3
+                    "col": 3,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1192,12 +1192,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "RED",
+                "color": "YELLOW",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 1,
-                    "row": 3
+                    "col": 2,
+                    "row": 0
                 }
             }
         ]
@@ -1214,31 +1214,31 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 6,
-                "row": 0
+                "col": 3,
+                "row": 6
             },
-            "direction": new Vector2D(0, 1),
-            "color": "RED",
+            "direction": new Vector2D(0, -1),
+            "color": "WHITE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "SLIDE",
-                "angleDegrees": 135,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 6,
-                    "row": 5
+                    "col": 3,
+                    "row": 3
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 0,
+                "type": "SLIDE",
+                "angleDegrees": 135,
                 "position": {
-                    "col": 4,
+                    "col": 2,
                     "row": 4
                 },
                 "isMovable": true,
@@ -1248,12 +1248,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "RED",
+                "color": "WHITE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 4,
-                    "row": 1
+                    "col": 1,
+                    "row": 5
                 }
             }
         ]
@@ -1270,21 +1270,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 0
+                "col": 6,
+                "row": 4
             },
-            "direction": new Vector2D(0, 1),
-            "color": "BLUE",
+            "direction": new Vector2D(0, -1),
+            "color": "WHITE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 3,
-                    "row": 6
+                    "col": 6,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1292,20 +1292,20 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 90,
                 "position": {
-                    "col": 1,
-                    "row": 6
+                    "col": 3,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_2",
-                "type": "ROTATE",
-                "angleDegrees": 0,
+                "type": "SLIDE",
+                "angleDegrees": 135,
                 "position": {
-                    "col": 1,
+                    "col": 3,
                     "row": 3
                 },
                 "isMovable": true,
@@ -1315,11 +1315,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "BLUE",
+                "color": "WHITE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 0,
+                    "col": 1,
                     "row": 3
                 }
             }
@@ -1337,10 +1337,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
+                "col": 5,
                 "row": 6
             },
-            "direction": new Vector2D(0, -1),
+            "direction": new Vector2D(-1, 0),
             "color": "YELLOW",
             "intensity": 1
         },
@@ -1351,18 +1351,18 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "angleDegrees": 90,
                 "position": {
                     "col": 3,
-                    "row": 3
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
+                "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 1,
-                    "row": 3
+                    "col": 3,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1370,10 +1370,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_2",
                 "type": "SLIDE",
-                "angleDegrees": 135,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 1,
-                    "row": 5
+                    "col": 2,
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1386,8 +1386,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 0,
-                    "row": 4
+                    "col": 1,
+                    "row": 3
                 }
             }
         ]
@@ -1404,7 +1404,7 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
+                "col": 1,
                 "row": 2
             },
             "direction": new Vector2D(0, 1),
@@ -1417,8 +1417,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 0,
                 "position": {
-                    "col": 0,
-                    "row": 8
+                    "col": 1,
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1428,19 +1428,19 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 1,
-                    "row": 8
+                    "col": 0,
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_2",
-                "type": "ROTATE",
+                "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 2,
-                    "row": 7
+                    "col": 0,
+                    "row": 8
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1453,7 +1453,7 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 6,
+                    "col": 4,
                     "row": 7
                 }
             }
@@ -1471,21 +1471,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 1,
-                "row": 0
+                "col": 2,
+                "row": 6
             },
-            "direction": new Vector2D(-1, 0),
-            "color": "WHITE",
+            "direction": new Vector2D(1, 0),
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 0,
-                    "row": 0
+                    "col": 5,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1495,8 +1495,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 0,
-                    "row": 8
+                    "col": 5,
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1504,10 +1504,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_2",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 3,
-                    "row": 7
+                    "col": 1,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1516,12 +1516,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 2
+                    "col": 1,
+                    "row": 1
                 }
             }
         ]
@@ -1538,20 +1538,20 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 1,
-                "row": 1
+                "col": 4,
+                "row": 4
             },
-            "direction": new Vector2D(1, 0),
-            "color": "RED",
+            "direction": new Vector2D(0, -1),
+            "color": "WHITE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 0,
                 "position": {
-                    "col": 6,
+                    "col": 4,
                     "row": 1
                 },
                 "isMovable": true,
@@ -1559,22 +1559,22 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             },
             {
                 "id": "m_1",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 90,
                 "position": {
-                    "col": 6,
-                    "row": 6
+                    "col": 2,
+                    "row": 1
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_2",
-                "type": "SLIDE",
+                "type": "ROTATE",
                 "angleDegrees": 45,
                 "position": {
                     "col": 2,
-                    "row": 5
+                    "row": 0
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1583,12 +1583,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "RED",
+                "color": "WHITE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 1,
-                    "row": 4
+                    "col": 5,
+                    "row": 0
                 }
             }
         ]
@@ -1605,11 +1605,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 5,
-                "row": 0
+                "col": 2,
+                "row": 3
             },
             "direction": new Vector2D(0, 1),
-            "color": "WHITE",
+            "color": "BLUE",
             "intensity": 1
         },
         "mirrors": [
@@ -1618,30 +1618,30 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 5,
-                    "row": 1
+                    "col": 2,
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 90,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 3,
-                    "row": 1
+                    "col": 1,
+                    "row": 8
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_2",
-                "type": "SLIDE",
+                "type": "ROTATE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 3,
-                    "row": 6
+                    "col": 1,
+                    "row": 0
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1650,12 +1650,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "BLUE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
                     "col": 0,
-                    "row": 7
+                    "row": 0
                 }
             }
         ]
@@ -1672,21 +1672,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 4,
-                "row": 5
+                "col": 6,
+                "row": 8
             },
-            "direction": new Vector2D(0, -1),
-            "color": "YELLOW",
+            "direction": new Vector2D(-1, 0),
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 0,
                 "position": {
-                    "col": 4,
-                    "row": 4
+                    "col": 0,
+                    "row": 8
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1696,19 +1696,19 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 2,
-                    "row": 4
+                    "col": 0,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_2",
-                "type": "ROTATE",
-                "angleDegrees": 90,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
                     "col": 3,
-                    "row": 7
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1717,11 +1717,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "YELLOW",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 6,
+                    "col": 2,
                     "row": 7
                 }
             }
@@ -1739,32 +1739,32 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 8
+                "col": 5,
+                "row": 3
             },
             "direction": new Vector2D(0, -1),
-            "color": "WHITE",
+            "color": "BLUE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 3,
-                    "row": 7
+                    "col": 5,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
-                    "col": 4,
-                    "row": 7
+                    "col": 0,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1772,10 +1772,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_2",
                 "type": "SLIDE",
-                "angleDegrees": 135,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 5,
-                    "row": 6
+                    "col": 0,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1784,12 +1784,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "BLUE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 6,
-                    "row": 5
+                    "col": 3,
+                    "row": 4
                 }
             }
         ]
@@ -1806,21 +1806,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 8
+                "col": 1,
+                "row": 3
             },
             "direction": new Vector2D(0, -1),
-            "color": "BLUE",
+            "color": "RED",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 0,
-                    "row": 5
+                    "col": 1,
+                    "row": 0
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1828,21 +1828,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "SLIDE",
-                "angleDegrees": 135,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 1,
-                    "row": 6
+                    "col": 4,
+                    "row": 0
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_2",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 90,
                 "position": {
-                    "col": 1,
-                    "row": 1
+                    "col": 5,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1852,8 +1852,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 0,
                 "position": {
-                    "col": 3,
-                    "row": 0
+                    "col": 4,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1862,12 +1862,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "BLUE",
+                "color": "RED",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 4
+                    "col": 4,
+                    "row": 1
                 }
             }
         ]
@@ -1888,28 +1888,28 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "row": 1
             },
             "direction": new Vector2D(0, 1),
-            "color": "YELLOW",
+            "color": "BLUE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 45,
                 "position": {
                     "col": 3,
-                    "row": 3
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 135,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 1,
-                    "row": 3
+                    "col": 2,
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1920,7 +1920,7 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "angleDegrees": 90,
                 "position": {
                     "col": 1,
-                    "row": 1
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1930,8 +1930,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 2,
-                    "row": 1
+                    "col": 0,
+                    "row": 4
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -1940,12 +1940,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "YELLOW",
+                "color": "BLUE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 5
+                    "col": 0,
+                    "row": 0
                 }
             }
         ]
@@ -1962,11 +1962,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 3,
-                "row": 0
+                "col": 4,
+                "row": 3
             },
-            "direction": new Vector2D(1, 0),
-            "color": "YELLOW",
+            "direction": new Vector2D(-1, 0),
+            "color": "BLUE",
             "intensity": 1
         },
         "mirrors": [
@@ -1975,8 +1975,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 4,
-                    "row": 0
+                    "col": 1,
+                    "row": 3
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -1984,9 +1984,9 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 4,
+                    "col": 0,
                     "row": 1
                 },
                 "isMovable": true,
@@ -1995,10 +1995,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_2",
                 "type": "ROTATE",
-                "angleDegrees": 135,
+                "angleDegrees": 0,
                 "position": {
-                    "col": 5,
-                    "row": 1
+                    "col": 3,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2008,8 +2008,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 135,
                 "position": {
-                    "col": 5,
-                    "row": 6
+                    "col": 3,
+                    "row": 1
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -2018,12 +2018,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "YELLOW",
+                "color": "BLUE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 0,
-                    "row": 5
+                    "col": 4,
+                    "row": 0
                 }
             }
         ]
@@ -2040,20 +2040,20 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 5
+                "col": 5,
+                "row": 4
             },
             "direction": new Vector2D(0, 1),
-            "color": "WHITE",
+            "color": "BLUE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 90,
+                "type": "SLIDE",
+                "angleDegrees": 135,
                 "position": {
-                    "col": 0,
+                    "col": 5,
                     "row": 6
                 },
                 "isMovable": true,
@@ -2062,21 +2062,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 6,
-                    "row": 6
+                    "col": 3,
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_2",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 6,
-                    "row": 8
+                    "col": 3,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2086,8 +2086,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "SLIDE",
                 "angleDegrees": 45,
                 "position": {
-                    "col": 1,
-                    "row": 7
+                    "col": 5,
+                    "row": 2
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -2096,12 +2096,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "WHITE",
+                "color": "BLUE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 2,
-                    "row": 2
+                    "col": 4,
+                    "row": 3
                 }
             }
         ]
@@ -2119,9 +2119,9 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "lightSource": {
             "position": {
                 "col": 1,
-                "row": 2
+                "row": 0
             },
-            "direction": new Vector2D(0, -1),
+            "direction": new Vector2D(0, 1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -2129,7 +2129,7 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 0,
                 "position": {
                     "col": 1,
                     "row": 1
@@ -2139,10 +2139,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             },
             {
                 "id": "m_1",
-                "type": "SLIDE",
-                "angleDegrees": 45,
+                "type": "ROTATE",
+                "angleDegrees": 135,
                 "position": {
-                    "col": 4,
+                    "col": 2,
                     "row": 1
                 },
                 "isMovable": true,
@@ -2150,11 +2150,11 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             },
             {
                 "id": "m_2",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 0,
                 "position": {
-                    "col": 5,
-                    "row": 3
+                    "col": 2,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2162,10 +2162,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_3",
                 "type": "SLIDE",
-                "angleDegrees": 135,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 0,
-                    "row": 2
+                    "col": 5,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -2178,8 +2178,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 0,
-                    "row": 3
+                    "col": 6,
+                    "row": 8
                 }
             }
         ]
@@ -2196,10 +2196,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 2,
-                "row": 0
+                "col": 5,
+                "row": 8
             },
-            "direction": new Vector2D(0, 1),
+            "direction": new Vector2D(0, -1),
             "color": "YELLOW",
             "intensity": 1
         },
@@ -2207,21 +2207,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 2,
-                    "row": 5
+                    "col": 5,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_1",
-                "type": "ROTATE",
-                "angleDegrees": 90,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
                     "col": 4,
-                    "row": 5
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2229,10 +2229,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_2",
                 "type": "ROTATE",
-                "angleDegrees": 90,
+                "angleDegrees": 0,
                 "position": {
                     "col": 4,
-                    "row": 2
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2240,10 +2240,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_3",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 6,
-                    "row": 2
+                    "col": 5,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -2256,8 +2256,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 6,
-                    "row": 3
+                    "col": 5,
+                    "row": 4
                 }
             }
         ]
@@ -2274,10 +2274,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 0,
-                "row": 3
+                "col": 5,
+                "row": 1
             },
-            "direction": new Vector2D(1, 0),
+            "direction": new Vector2D(0, 1),
             "color": "WHITE",
             "intensity": 1
         },
@@ -2285,10 +2285,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_0",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 4,
-                    "row": 3
+                    "col": 5,
+                    "row": 5
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2296,10 +2296,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
-                    "col": 3,
-                    "row": 5
+                    "col": 1,
+                    "row": 6
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2309,8 +2309,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "type": "ROTATE",
                 "angleDegrees": 90,
                 "position": {
-                    "col": 5,
-                    "row": 6
+                    "col": 0,
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2318,10 +2318,10 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_3",
                 "type": "SLIDE",
-                "angleDegrees": 45,
+                "angleDegrees": 135,
                 "position": {
                     "col": 5,
-                    "row": 0
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": true
@@ -2334,8 +2334,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 4,
-                    "row": 1
+                    "col": 6,
+                    "row": 3
                 }
             }
         ]
@@ -2352,21 +2352,21 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "timeLimit": null,
         "lightSource": {
             "position": {
-                "col": 4,
-                "row": 0
+                "col": 2,
+                "row": 2
             },
             "direction": new Vector2D(0, 1),
-            "color": "YELLOW",
+            "color": "WHITE",
             "intensity": 1
         },
         "mirrors": [
             {
                 "id": "m_0",
-                "type": "ROTATE",
-                "angleDegrees": 0,
+                "type": "SLIDE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 4,
-                    "row": 2
+                    "col": 2,
+                    "row": 8
                 },
                 "isMovable": true,
                 "isFinisher": false
@@ -2374,20 +2374,20 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_1",
                 "type": "ROTATE",
-                "angleDegrees": 0,
+                "angleDegrees": 45,
                 "position": {
-                    "col": 5,
-                    "row": 2
+                    "col": 3,
+                    "row": 7
                 },
                 "isMovable": true,
                 "isFinisher": false
             },
             {
                 "id": "m_2",
-                "type": "SLIDE",
-                "angleDegrees": 135,
+                "type": "ROTATE",
+                "angleDegrees": 45,
                 "position": {
-                    "col": 5,
+                    "col": 3,
                     "row": 3
                 },
                 "isMovable": true,
@@ -2396,9 +2396,9 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
             {
                 "id": "m_3",
                 "type": "ROTATE",
-                "angleDegrees": 45,
+                "angleDegrees": 0,
                 "position": {
-                    "col": 3,
+                    "col": 5,
                     "row": 3
                 },
                 "isMovable": true,
@@ -2408,12 +2408,12 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
         "crystals": [
             {
                 "id": "c_target",
-                "color": "YELLOW",
+                "color": "WHITE",
                 "fillLevel": 0,
                 "isTarget": true,
                 "position": {
-                    "col": 3,
-                    "row": 5
+                    "col": 5,
+                    "row": 4
                 }
             }
         ]
