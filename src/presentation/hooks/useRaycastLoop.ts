@@ -31,16 +31,15 @@ export function useRaycastLoop({
     const hasWonRef = useRef(false);
     const lockRef = useRef(false);
 
-    // Store'daki "committed" açılar geldiğinde temp stateleri eşitle
+    // Store'daki "committed" açılar geldiğinde bekle ve coords olunca temp stateleri eşitle
     useEffect(() => {
-        if (storePuzzle && status === 'PLAYING') {
+        if (storePuzzle && status === 'PLAYING' && coords) {
             ephemeralAngles.current = { ...committedAngles };
             hasWonRef.current = false;
             lockRef.current = false;
             isDirtyRef.current = true;
         }
-    }, [storePuzzle?.id, status, committedAngles, isDirtyRef]);
-
+    }, [storePuzzle?.id, status, committedAngles, isDirtyRef, coords]);
     // Ana çizim döngüsü (60fps hedefli, ama sadece isDirty true iken izler)
     useEffect(() => {
         let rafId: number;
