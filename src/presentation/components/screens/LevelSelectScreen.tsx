@@ -1,5 +1,4 @@
-import React from 'react';
-import { useProgressStore } from '../../store';
+import { useProgressStore, usePuzzleStore } from '../../store';
 import { allLevels, soundService } from '../../../container';
 import { Puzzle } from '../../../domain/entities/Puzzle';
 
@@ -37,7 +36,12 @@ export const LevelSelectScreen: React.FC<Props> = ({ worldId, onSelectLevel, onB
                 <h1 className="flex-1 text-center text-2xl font-[Cinzel_Decorative] drop-shadow-[0_0_10px_var(--crystal-glow)]">
                     {worldName}
                 </h1>
-                <div className="w-10"></div>
+                <button
+                    onClick={() => usePuzzleStore.getState().setShowTutorial(true)}
+                    className="w-10 h-10 rounded-full bg-blue-500/20 text-blue-300 font-bold border border-blue-500 flex items-center justify-center hover:bg-blue-500/40 hover:scale-105 active:scale-95 transition-all shadow-[0_0_10px_rgba(59,130,246,0.3)]"
+                >
+                    ?
+                </button>
             </div>
 
             <div className="relative z-10 grid grid-cols-4 sm:grid-cols-5 gap-4 p-6">
@@ -51,8 +55,8 @@ export const LevelSelectScreen: React.FC<Props> = ({ worldId, onSelectLevel, onB
                             key={puzzle.id}
                             onClick={() => handleLevelClick(puzzle)}
                             className={`aspect-square rounded-xl flex flex-col items-center justify-center border transition-all ${unlocked
-                                    ? 'bg-white/10 border-white/30 cursor-pointer active:scale-95 shadow-[inset_0_0_15px_rgba(255,255,255,0.05)]'
-                                    : 'bg-black/40 border-white/5 opacity-50 cursor-not-allowed'
+                                ? 'bg-white/10 border-white/30 cursor-pointer active:scale-95 shadow-[inset_0_0_15px_rgba(255,255,255,0.05)]'
+                                : 'bg-black/40 border-white/5 opacity-50 cursor-not-allowed'
                                 }`}
                         >
                             {unlocked ? (

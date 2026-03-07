@@ -22,6 +22,8 @@ export interface PuzzleState {
     isHintLoading: boolean;
     hintData: HintDTO | null;
     snapMode: SnapMode;
+    showTutorial: boolean;
+    hasSeenTutorial: boolean;
 
     loadPuzzle: (puzzle: Puzzle) => void;
     commitMirrorAngle: (mirrorId: string, angle: number) => void;
@@ -30,6 +32,8 @@ export interface PuzzleState {
     tick: () => void;
     resetPuzzle: () => void;
     setSnapMode: (mode: SnapMode) => void;
+    setShowTutorial: (show: boolean) => void;
+    markTutorialAsSeen: () => void;
 }
 
 export const usePuzzleStore = create<PuzzleState>((set, get) => ({
@@ -42,6 +46,8 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
     isHintLoading: false,
     hintData: null,
     snapMode: 'GUIDED',
+    showTutorial: false,
+    hasSeenTutorial: localStorage.getItem('tutorialSeen') === 'true',
 
     loadPuzzle: (puzzle) => {
         const committed: Record<string, number> = {};
@@ -115,5 +121,14 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
 
     setSnapMode: (mode) => {
         set({ snapMode: mode });
+    },
+
+    setShowTutorial: (show) => {
+        set({ showTutorial: show });
+    },
+
+    markTutorialAsSeen: () => {
+        localStorage.setItem('tutorialSeen', 'true');
+        set({ hasSeenTutorial: true });
     },
 }));

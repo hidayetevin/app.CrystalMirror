@@ -4,12 +4,22 @@ import { WorldSelectScreen } from './components/screens/WorldSelectScreen';
 import { LevelSelectScreen } from './components/screens/LevelSelectScreen';
 import { GameScreen } from './components/screens/GameScreen';
 import { DailyChallengeScreen } from './components/screens/DailyChallengeScreen';
+import { HowToPlayModal } from './components/ui/HowToPlayModal';
 import { usePuzzleStore } from './store';
 
 export const App: React.FC = () => {
     const [screen, setScreen] = useState<'splash' | 'world' | 'level' | 'game' | 'daily'>('splash');
     const [selectedWorld, setSelectedWorld] = useState<string>('forest');
     const loadPuzzle = usePuzzleStore(s => s.loadPuzzle);
+    const hasSeenTutorial = usePuzzleStore(s => s.hasSeenTutorial);
+    const setShowTutorial = usePuzzleStore(s => s.setShowTutorial);
+
+    React.useEffect(() => {
+        // Otomatik tutorial gösterme mantığı (sadece oyun başladığında - splash ekranı geçildikten sonra - 1 kez göster)
+        if (!hasSeenTutorial && screen === 'world') {
+            setShowTutorial(true);
+        }
+    }, [hasSeenTutorial, screen, setShowTutorial]);
 
     return (
         <div className="w-full h-screen overflow-hidden text-white bg-black select-none touch-none">
@@ -43,6 +53,8 @@ export const App: React.FC = () => {
 
             {screen === 'game' && <GameScreen onBack={() => setScreen('level')} />}
             {screen === 'daily' && <DailyChallengeScreen onBack={() => setScreen('splash')} />}
+
+            <HowToPlayModal />
         </div>
     );
 };
