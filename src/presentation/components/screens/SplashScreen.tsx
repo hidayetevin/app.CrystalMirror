@@ -9,22 +9,34 @@ interface Props {
 export const SplashScreen: React.FC<Props> = ({ onStartClick, onDailyClick }) => {
     const { t, i18n } = useTranslation();
 
-    const toggleLanguage = () => {
-        const newLang = i18n.language === 'en' ? 'tr' : 'en';
-        i18n.changeLanguage(newLang);
-        localStorage.setItem('appLang', newLang);
-    };
-
     return (
         <div className="flex flex-col items-center justify-center w-full h-screen bg-black text-white relative" data-world="forest">
-            {/* Dil Seçici (Sağ Üst Köşe) */}
-            <div className="absolute top-6 right-6 z-50">
+            {/* Dil Seçici (Sağ Üst Köşe) - TR | EN */}
+            <div className="absolute top-6 right-6 z-50 bg-black/40 border border-white/20 rounded-full backdrop-blur-md px-4 py-2 flex items-center gap-3 font-bold text-sm shadow-[0_0_15px_rgba(255,255,255,0.1)] font-[Rajdhani] tracking-widest">
                 <button
-                    onClick={toggleLanguage}
-                    className="flex items-center gap-2 px-3 py-1.5 bg-black/40 hover:bg-black/60 border border-white/20 rounded-full backdrop-blur-md transition-all active:scale-95 shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                    onClick={() => {
+                        i18n.changeLanguage('tr');
+                        localStorage.setItem('appLang', 'tr');
+                    }}
+                    className={`transition-all duration-300 ${i18n.language === 'tr'
+                        ? 'text-white drop-shadow-[0_0_8px_var(--crystal-glow)] scale-110'
+                        : 'text-white/40 hover:text-white/70 shadow-none'
+                        }`}
                 >
-                    <span className="text-sm font-bold opacity-75">{i18n.language.toUpperCase()}</span>
-                    <span className="text-lg">🌍</span>
+                    TR
+                </button>
+                <span className="text-white/20 select-none">|</span>
+                <button
+                    onClick={() => {
+                        i18n.changeLanguage('en');
+                        localStorage.setItem('appLang', 'en');
+                    }}
+                    className={`transition-all duration-300 ${i18n.language === 'en'
+                        ? 'text-white drop-shadow-[0_0_8px_var(--crystal-glow)] scale-110'
+                        : 'text-white/40 hover:text-white/70 shadow-none'
+                        }`}
+                >
+                    EN
                 </button>
             </div>
 
