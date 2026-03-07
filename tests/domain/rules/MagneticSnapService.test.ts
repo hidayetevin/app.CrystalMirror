@@ -23,7 +23,7 @@ describe('MagneticSnapService', () => {
             lightSource: { position: { col: 0, row: 2 }, direction: new Vector2D(1, 0), color: 'WHITE', intensity: 1 },
             mirrors: [
                 // Ayna isiginin ustunde (2,2)
-                { id: 'm1', angleDegrees: 0, type: 'ROTATE', isMovable: true, position: { col: 2, row: 2 } }
+                { id: 'm1', angleDegrees: 0, type: 'ROTATE', isMovable: true, isFinisher: true, position: { col: 2, row: 2 } }
             ],
             crystals: [
                 // Tam altta kristal (2,4)

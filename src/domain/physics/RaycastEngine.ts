@@ -135,6 +135,15 @@ export class RaycastEngine {
             const normal = getMirrorNormal(mirror, direction);
             const reflectedDir = direction.reflect(normal).normalize();
 
+            // Bitirici olmayan ayna: yansıyan ışın hedefe gidiyorsa engelle
+            if (!mirror.isFinisher) {
+                const targetCrystal = puzzle.crystals.find((c) => c.isTarget);
+                if (targetCrystal) {
+                    const crystalHit = rayCrystalIntersection(hit.point, reflectedDir, targetCrystal, coords);
+                    if (crystalHit) return; // Engeli aşıp kristale gitmesine izin verme
+                }
+            }
+
             this.traceRecursive(
                 puzzle,
                 coords,

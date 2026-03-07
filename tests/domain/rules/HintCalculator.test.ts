@@ -30,7 +30,7 @@ describe('HintCalculator', () => {
                 intensity: 1.0
             },
             mirrors: [
-                { id: 'm1', type: 'ROTATE', isMovable: true, angleDegrees: 0, position: { col: 2, row: 2 } }
+                { id: 'm1', type: 'ROTATE', isMovable: true, isFinisher: true, angleDegrees: 0, position: { col: 2, row: 2 } }
             ],
             crystals: [
                 { id: 'c1', color: 'WHITE', isTarget: true, fillLevel: 0, position: { col: 2, row: 4 } } // Altta

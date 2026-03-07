@@ -30,7 +30,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 3,
                     "row": 3
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -74,7 +75,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 0,
                     "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -118,7 +120,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 2,
                     "row": 0
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -162,7 +165,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 6,
                     "row": 6
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -206,7 +210,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 4,
                     "row": 0
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -250,7 +255,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 2,
                     "row": 7
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -294,7 +300,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 5,
                     "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -338,7 +345,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 1,
                     "row": 2
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -392,7 +400,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 0,
                     "row": 6
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -446,7 +455,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 5,
                     "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -500,7 +510,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 1,
                     "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -554,7 +565,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 4,
                     "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -608,7 +620,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 0,
                     "row": 6
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -662,7 +675,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 1,
                     "row": 2
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -716,7 +730,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 4,
                     "row": 2
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -770,7 +785,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 0,
                     "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -824,7 +840,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 2,
                     "row": 0
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -878,7 +895,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 5,
                     "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -932,7 +950,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 0,
                     "row": 7
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -986,7 +1005,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 3,
                     "row": 8
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1040,7 +1060,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 5,
                     "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1094,7 +1115,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 1,
                     "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1148,7 +1170,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 3,
                     "row": 6
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1202,7 +1225,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 3,
                     "row": 7
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1266,7 +1290,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 5,
                     "row": 8
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1330,7 +1355,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 2,
                     "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1394,7 +1420,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 3,
                     "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1458,7 +1485,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 4,
                     "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1522,7 +1550,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 4,
                     "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1586,7 +1615,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 4,
                     "row": 2
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1650,7 +1680,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 3,
                     "row": 0
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1714,7 +1745,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 0,
                     "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1788,7 +1820,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 2,
                     "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1862,7 +1895,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 6,
                     "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -1936,7 +1970,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 4,
                     "row": 0
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -2010,7 +2045,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 0,
                     "row": 0
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -2084,7 +2120,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 6,
                     "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -2158,7 +2195,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 2,
                     "row": 5
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -2232,7 +2270,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 5,
                     "row": 1
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [
@@ -2306,7 +2345,8 @@ export const WORLD_THREE_LEVELS: Puzzle[] = [
                     "col": 5,
                     "row": 4
                 },
-                "isMovable": true
+                "isMovable": true,
+                "isFinisher": true
             }
         ],
         "crystals": [

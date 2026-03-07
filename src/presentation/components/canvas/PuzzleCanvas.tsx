@@ -129,27 +129,32 @@ export const PuzzleCanvas: React.FC = () => {
                     ))}
 
                     {/* Aynalar */}
-                    {puzzle.mirrors.map(m => {
-                        const isSelected = wheelState?.mirrorId === m.id;
-                        let drawAngle = m.angleDegrees;
-                        if (isSelected && ephemeralAngles[m.id] !== undefined) {
-                            drawAngle = ephemeralAngles[m.id];
-                        } else if (committedAngles[m.id] !== undefined) {
-                            drawAngle = committedAngles[m.id];
-                        }
+                    {(() => {
+                        const targetCrystal = puzzle.crystals.find(c => c.isTarget);
+                        const crystalPixelPos = targetCrystal ? coords.gridToPixel(targetCrystal.position) : undefined;
+                        return puzzle.mirrors.map(m => {
+                            const isSelected = wheelState?.mirrorId === m.id;
+                            let drawAngle = m.angleDegrees;
+                            if (isSelected && ephemeralAngles[m.id] !== undefined) {
+                                drawAngle = ephemeralAngles[m.id];
+                            } else if (committedAngles[m.id] !== undefined) {
+                                drawAngle = committedAngles[m.id];
+                            }
 
-                        return (
-                            <MirrorNode
-                                key={m.id}
-                                mirror={m}
-                                coords={coords}
-                                tempAngle={drawAngle}
-                                isSelected={isSelected}
-                                onSelect={() => handleSelectMirror(m.id)}
-                                onDragEnd={(col, row) => handleDragEnd(m.id, col, row)}
-                            />
-                        );
-                    })}
+                            return (
+                                <MirrorNode
+                                    key={m.id}
+                                    mirror={m}
+                                    coords={coords}
+                                    tempAngle={drawAngle}
+                                    isSelected={isSelected}
+                                    crystalPixelPos={crystalPixelPos}
+                                    onSelect={() => handleSelectMirror(m.id)}
+                                    onDragEnd={(col, row) => handleDragEnd(m.id, col, row)}
+                                />
+                            );
+                        });
+                    })()}
                 </Layer>
             </Stage>
 

@@ -8,8 +8,9 @@ export type MirrorType = 'ROTATE' | 'SLIDE';
 
 export interface Mirror {
     readonly id: string;
-    position: GridCell;       // Izgara koordinatı (mutable: kaydırılabilir)
-    angleDegrees: number;     // 0-360 (mutable: döndürülebilir)
+    position: GridCell;           // Izgara koordinatı (mutable: kaydırılabilir)
+    angleDegrees: number;         // 0-360 (mutable: döndürülebilir)
     readonly type: MirrorType;
     readonly isMovable: boolean;
+    readonly isFinisher?: boolean; // true = kristale ışık ulaştırabilir; false/undefined = engellidir
 }
