@@ -20,11 +20,11 @@ export class AdMobService implements IAdService {
     async showBanner(): Promise<void> {
         await this.initialize();
         const options: BannerAdOptions = {
-            adId: import.meta.env.VITE_ADMOB_BANNER_ID || 'ca-app-pub-3940256099942544/6300978111',
+            adId: import.meta.env.VITE_ADMOB_BANNER_ID || 'ca-app-pub-4190858087915294/6696699735',
             adSize: BannerAdSize.ADAPTIVE_BANNER,
             position: BannerAdPosition.BOTTOM_CENTER,
             margin: 0,
-            isTesting: true // Canlı yayında false olmalı
+            isTesting: false
         };
 
         try {
@@ -46,9 +46,9 @@ export class AdMobService implements IAdService {
 
     async showInterstitial(): Promise<void> {
         await this.initialize();
-        const adId = import.meta.env.VITE_ADMOB_INTERSTITIAL_ID || 'ca-app-pub-3940256099942544/1033173712';
+        const adId = import.meta.env.VITE_ADMOB_INTERSTITIAL_ID || 'ca-app-pub-4190858087915294/1994562033';
         try {
-            await AdMob.prepareInterstitial({ adId, isTesting: true });
+            await AdMob.prepareInterstitial({ adId, isTesting: false });
             await AdMob.showInterstitial();
         } catch (e) {
             console.error('AdMob interstitial error', e);
@@ -57,11 +57,11 @@ export class AdMobService implements IAdService {
 
     async showRewarded(): Promise<RewardResult> {
         await this.initialize();
-        const adId = import.meta.env.VITE_ADMOB_REWARDED_ID || 'ca-app-pub-3940256099942544/5224354917';
+        const adId = import.meta.env.VITE_ADMOB_REWARDED_ID || 'ca-app-pub-4190858087915294/3259688034';
 
         return new Promise(async (resolve) => {
             try {
-                await AdMob.prepareRewardVideoAd({ adId, isTesting: true });
+                await AdMob.prepareRewardVideoAd({ adId, isTesting: false });
 
                 const onRewarded = await AdMob.addListener(RewardAdPluginEvents.Rewarded, (rewardItem) => {
                     resolve({ earned: true, amount: rewardItem.amount, type: rewardItem.type });
