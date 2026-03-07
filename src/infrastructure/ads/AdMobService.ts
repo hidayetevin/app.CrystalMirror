@@ -18,6 +18,7 @@ export class AdMobService implements IAdService {
     }
 
     async showBanner(): Promise<void> {
+        await this.initialize();
         const options: BannerAdOptions = {
             adId: import.meta.env.VITE_ADMOB_BANNER_ID || 'ca-app-pub-3940256099942544/6300978111',
             adSize: BannerAdSize.ADAPTIVE_BANNER,
@@ -34,6 +35,7 @@ export class AdMobService implements IAdService {
     }
 
     async hideBanner(): Promise<void> {
+        if (!this.isInitialized) return;
         try {
             await AdMob.hideBanner();
             // Remove da yapılabilir ancak hide daha pürüzsüz geçiş sunar
@@ -43,6 +45,7 @@ export class AdMobService implements IAdService {
     }
 
     async showInterstitial(): Promise<void> {
+        await this.initialize();
         const adId = import.meta.env.VITE_ADMOB_INTERSTITIAL_ID || 'ca-app-pub-3940256099942544/1033173712';
         try {
             await AdMob.prepareInterstitial({ adId, isTesting: true });
@@ -53,6 +56,7 @@ export class AdMobService implements IAdService {
     }
 
     async showRewarded(): Promise<RewardResult> {
+        await this.initialize();
         const adId = import.meta.env.VITE_ADMOB_REWARDED_ID || 'ca-app-pub-3940256099942544/5224354917';
 
         return new Promise(async (resolve) => {
