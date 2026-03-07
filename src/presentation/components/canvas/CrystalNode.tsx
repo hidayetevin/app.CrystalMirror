@@ -10,13 +10,14 @@ interface Props {
     fillLevel: number; // 0.0 - 1.0
 }
 
-/** Elmas (⬧) için köşe noktaları üret — `scale` parametresiyle büyür */
+/** Elmas (💎) için köşe noktaları üret — `scale` parametresiyle büyür */
 function diamondPoints(r: number): number[] {
     return [
-        0, -r,        // üst
-        r * 0.6, 0,   // sağ
-        0, r,         // alt
-        -r * 0.6, 0,  // sol
+        -r * 0.4, -r * 0.5,  // Üst sol köşe (flat top)
+        r * 0.4, -r * 0.5,  // Üst sağ köşe
+        r * 0.9, -r * 0.1,  // Sağ geniş kısım
+        0, r * 0.8,  // Alt uç
+        -r * 0.9, -r * 0.1,  // Sol geniş kısım
     ];
 }
 
