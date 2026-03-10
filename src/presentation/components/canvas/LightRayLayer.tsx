@@ -79,7 +79,7 @@ export const LightRayLayer: React.FC<Props> = React.memo(({ segments, worldId })
         return list;
     }, [segments, abOffset, laserSkin]); // Sadece veriler değişirse React Konva Tree'yi sıfırdan kurar
 
-    return <Layer>{drawArray}</Layer>;
+    return <Layer listening={false}>{drawArray}</Layer>;
 });
 
 LightRayLayer.displayName = 'LightRayLayer';

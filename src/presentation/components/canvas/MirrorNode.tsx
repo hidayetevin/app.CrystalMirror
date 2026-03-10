@@ -11,8 +11,8 @@ interface Props {
     isSelected?: boolean;
     isHinted?: boolean;
     crystalPixelPos?: Vector2D; // Hedef kristal piksel konumu (engel çizimi için)
-    onSelect?: () => void;
-    onDragEnd?: (col: number, row: number) => void;
+    onSelect?: (id: string) => void;
+    onDragEnd?: (id: string, col: number, row: number) => void;
     tempAngle?: number; // Sürükleme (rotation wheel) anında sadece o kare için açı
 }
 
@@ -66,13 +66,13 @@ export const MirrorNode: React.FC<Props> = memo(({
             x={pixelPos.x}
             y={pixelPos.y}
             draggable={isSlide && mirror.isMovable}
-            onMouseDown={onSelect}
-            onTouchStart={onSelect}
+            onMouseDown={() => onSelect?.(mirror.id)}
+            onTouchStart={() => onSelect?.(mirror.id)}
             onDragEnd={(e) => {
                 if (!isSlide || !onDragEnd) return;
                 const px = new Vector2D(e.target.x(), e.target.y());
                 const cell = coords.pixelToGrid(px);
-                onDragEnd(cell.col, cell.row);
+                onDragEnd(mirror.id, cell.col, cell.row);
                 e.target.position({ x: coords.gridToPixel(cell).x, y: coords.gridToPixel(cell).y });
             }}
             dragBoundFunc={(pos) => pos}

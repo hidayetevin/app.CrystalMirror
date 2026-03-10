@@ -73,18 +73,26 @@ export const PuzzleCanvas: React.FC = () => {
         }
     }, [fills, puzzle, wheelState, ephemeralAngles, commitMirrorAngle]);
 
-    if (!puzzle || !coords) return null;
-
-    const stageWidth = coords.offsetX * 2 + coords.cellSize * puzzle.gridSize.cols;
-    const stageHeight = coords.offsetY * 2 + coords.cellSize * puzzle.gridSize.rows;
-
-    const handleSelectMirror = (mirrorId: string) => {
-        if (status !== 'PLAYING') return;
+    const handleSelectMirror = useCallback((mirrorId: string) => {
+        if (status !== 'PLAYING' || !puzzle) return;
         const mirror = puzzle.mirrors.find(m => m.id === mirrorId);
         if (mirror && mirror.type === 'ROTATE' && mirror.isMovable) {
             setWheelState({ mirrorId, angle: ephemeralAngles[mirrorId] ?? mirror.angleDegrees });
         }
-    };
+    }, [status, puzzle, ephemeralAngles]);
+
+    const handleDragEnd = useCallback((mirrorId: string, col: number, row: number) => {
+        if (status !== 'PLAYING' || !puzzle || !coords) return;
+        const updated = slideMirrorCase.execute(puzzle, mirrorId, { col, row }, coords);
+        if (updated.puzzle !== puzzle) {
+            usePuzzleStore.getState().loadPuzzle(updated.puzzle);
+        }
+    }, [status, puzzle, coords]);
+
+    if (!puzzle || !coords) return null;
+
+    const stageWidth = coords.offsetX * 2 + coords.cellSize * puzzle.gridSize.cols;
+    const stageHeight = coords.offsetY * 2 + coords.cellSize * puzzle.gridSize.rows;
 
     const handleWheelRotate = (rawDegrees: number) => {
         if (!wheelState) return;
@@ -103,25 +111,13 @@ export const PuzzleCanvas: React.FC = () => {
         setWheelState(null); // kapat
     };
 
-    const handleDragEnd = (mirrorId: string, col: number, row: number) => {
-        if (status !== 'PLAYING') return;
-        // Store uzerinden SlideMirrorUseCase tetikle. 
-        // Konva nesne snap islemine useCase icinde collision tespiti de eklenmis oldu
-        // (Not: Store commit karsilikli tasarlanmadi, UseCase store icine gomme veya burada setPuzzle gerekebilir. 
-        // Mimari sadeligi adina: puzzleStore.setPuzzle yazilmamis! Bu metin guncellemesinde bunu Store'a loadPuzzle gibi yansitiriz.)
-        const updated = slideMirrorCase.execute(puzzle, mirrorId, { col, row }, coords);
-        if (updated.puzzle !== puzzle) {
-            usePuzzleStore.getState().loadPuzzle(updated.puzzle);
-        }
-    };
-
     return (
         <div style={{ position: 'relative', width: stageWidth, height: stageHeight, margin: '0 auto' }}>
 
             {/* Konva Katmanı */}
             <Stage width={stageWidth} height={stageHeight}>
                 {/* Background / Grid Layer */}
-                <Layer>
+                <Layer listening={false}>
                     {/* Arkaplan */}
                     <Rect x={0} y={0} width={stageWidth} height={stageHeight} fill="var(--bg-primary)" />
                     {/* Ortalanmış Grid Göstergesi (Opsiyonel Çizgiler) */}
@@ -168,8 +164,8 @@ export const PuzzleCanvas: React.FC = () => {
                                     isSelected={isSelected}
                                     isHinted={hintData?.mirrorId === m.id}
                                     crystalPixelPos={crystalPixelPos}
-                                    onSelect={() => handleSelectMirror(m.id)}
-                                    onDragEnd={(col, row) => handleDragEnd(m.id, col, row)}
+                                    onSelect={handleSelectMirror}
+                                    onDragEnd={handleDragEnd}
                                 />
                             );
                         });

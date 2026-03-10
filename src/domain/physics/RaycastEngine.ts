@@ -6,7 +6,7 @@ import { CoordinateSystem } from '../value-objects/CoordinateSystem';
 import { RayColor, colorPassesFilter, splitByPrism } from '../value-objects/Color';
 import { Vector2D } from '../value-objects/Vector2D';
 import { Puzzle } from '../entities/Puzzle';
-import { getMirrorSegment, getMirrorNormal } from './MirrorGeometry';
+import { getMirrorSegment, getMirrorNormal, LineSegment } from './MirrorGeometry';
 import { raySegmentIntersection, rayCrystalIntersection } from './CollisionDetector';
 
 export interface RaySegment {
@@ -39,6 +39,12 @@ export class RaycastEngine {
         const startOrigin = coords.gridToPixel(puzzle.lightSource.position);
         const startDir = puzzle.lightSource.direction.normalize();
 
+        // Performans: Math.cos ve Math.sin hesaplamalarını her yansımada tekrar yapmamak için segmentleri önbelleğe al
+        const mirrorSegments = new Map<string, LineSegment>();
+        for (const mirror of puzzle.mirrors) {
+            mirrorSegments.set(mirror.id, getMirrorSegment(mirror, coords));
+        }
+
         this.traceRecursive(
             puzzle,
             coords,
@@ -49,7 +55,8 @@ export class RaycastEngine {
             crystalFills,
             0,
             0,
-            0
+            0,
+            mirrorSegments
         );
 
         return { segments, crystalFills };
@@ -65,13 +72,14 @@ export class RaycastEngine {
         crystalFills: Map<string, number>,
         bounces: number,
         totalDistance: number,
-        splitDepth: number
+        splitDepth: number,
+        mirrorSegments: Map<string, LineSegment>
     ): void {
         if (bounces >= this.MAX_BOUNCES || totalDistance >= this.MAX_TOTAL_DISTANCE) {
             return;
         }
 
-        const hit = this.findNearestHit(origin, direction, puzzle, coords);
+        const hit = this.findNearestHit(origin, direction, puzzle, coords, mirrorSegments);
 
         if (!hit) {
             // Çarpışma yoksa canvas sınırlarına kadar uzat
@@ -120,7 +128,8 @@ export class RaycastEngine {
                             crystalFills,
                             bounces + 1,
                             newTotalDist,
-                            splitDepth + 1
+                            splitDepth + 1,
+                            mirrorSegments
                         );
                     }
                 }
@@ -154,7 +163,8 @@ export class RaycastEngine {
                 crystalFills,
                 bounces + 1,
                 newTotalDist,
-                splitDepth
+                splitDepth,
+                mirrorSegments
             );
         }
     }
@@ -163,12 +173,15 @@ export class RaycastEngine {
         origin: Vector2D,
         direction: Vector2D,
         puzzle: Puzzle,
-        coords: CoordinateSystem
+        coords: CoordinateSystem,
+        mirrorSegments: Map<string, LineSegment>
     ): { point: Vector2D; objectId: string; type: 'MIRROR' | 'CRYSTAL'; t: number } | null {
         let nearest: { point: Vector2D; t: number; objectId: string; type: 'MIRROR' | 'CRYSTAL' } | null = null;
 
         for (const mirror of puzzle.mirrors) {
-            const segment = getMirrorSegment(mirror, coords);
+            const segment = mirrorSegments.get(mirror.id);
+            if (!segment) continue;
+
             const hit = raySegmentIntersection(origin, direction, segment);
             if (hit && (!nearest || hit.t < nearest.t)) {
                 nearest = { ...hit, objectId: mirror.id, type: 'MIRROR' };
