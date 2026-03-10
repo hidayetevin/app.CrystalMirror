@@ -1,12 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { usePuzzleStore } from '../../store';
+import { usePuzzleStore, useEconomyStore } from '../../store';
 import { useCanvasSize } from '../../hooks/useCanvasSize';
 
 export const HintButton: React.FC = () => {
     const { t } = useTranslation();
     const { requestHint, isHintLoading, hintData, activePuzzle } = usePuzzleStore();
     const coords = useCanvasSize(activePuzzle?.gridSize.cols || 6, activePuzzle?.gridSize.rows || 8);
+    const coins = useEconomyStore(s => s.coins);
 
     if (hintData) {
         // Ipucu zaten alinmissa (ok, hintCalculator sonucu alinmissa) butonu gizle veya aktif goster
@@ -32,7 +33,9 @@ export const HintButton: React.FC = () => {
             ) : (
                 <span className="text-lg mr-1">💡</span>
             )}
-            <span className="hidden sm:inline">{isHintLoading ? t('hint.loading_short') : t('hint.button_short')}</span>
+            <span className="hidden sm:inline">
+                {isHintLoading ? t('hint.loading_short') : coins >= 15 ? '💎 15' : '📺 AD'}
+            </span>
         </button>
     );
 };

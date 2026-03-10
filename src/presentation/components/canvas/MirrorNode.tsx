@@ -3,6 +3,7 @@ import { Group, Line } from 'react-konva';
 import { CoordinateSystem } from '../../../domain/value-objects/CoordinateSystem';
 import { Mirror } from '../../../domain/entities/Mirror';
 import { Vector2D } from '../../../domain/value-objects/Vector2D';
+import { useEconomyStore } from '../../store';
 
 interface Props {
     mirror: Mirror;
@@ -22,6 +23,9 @@ export const MirrorNode: React.FC<Props> = memo(({
     const drawAngle = tempAngle !== undefined ? tempAngle : mirror.angleDegrees;
     const isSlide = mirror.type === 'SLIDE';
     const isFinisher = mirror.isFinisher === true;
+
+    // Alınan skin
+    const mirrorSkin = useEconomyStore(s => s.equippedItems.mirrorSkin);
 
     const len = coords.cellSize * 0.9;
     const halfLen = coords.cellSize * 0.45;
@@ -91,9 +95,11 @@ export const MirrorNode: React.FC<Props> = memo(({
                             ? '#FFFFFF'          // İpucu → Parlak Beyaz
                             : isFinisher
                                 ? '#39FF14'      // Bitirici → Neon Yeşil
-                                : '#80DEEA'      // Normal → Cyan
+                                : mirrorSkin === 'neon_mirror' ? '#FF2A85'
+                                    : mirrorSkin === 'dark_mirror' ? '#0D0D12'
+                                        : '#80DEEA'      // Normal → Cyan
                 }
-                strokeWidth={isSelected ? 6 : isHinted ? 6 : isFinisher ? 5 : 4}
+                strokeWidth={isSelected ? 6 : isHinted ? 6 : isFinisher ? 5 : mirrorSkin === 'dark_mirror' ? 6 : 4}
                 rotation={drawAngle}
                 shadowColor={
                     isSelected
@@ -102,9 +108,11 @@ export const MirrorNode: React.FC<Props> = memo(({
                             ? '#CC44FF'          // İpucu → Mor glow
                             : isFinisher
                                 ? '#39FF14'
-                                : 'transparent'
+                                : mirrorSkin === 'neon_mirror' ? '#FF2A85'
+                                    : mirrorSkin === 'dark_mirror' ? '#9C27B0'
+                                        : 'transparent'
                 }
-                shadowBlur={isSelected ? 10 : isHinted ? 25 : isFinisher ? 20 : 0}
+                shadowBlur={isSelected ? 10 : isHinted ? 25 : isFinisher ? 20 : mirrorSkin !== 'default_mirror' ? 15 : 0}
                 lineCap="round"
             />
             {/* İpucu: ikinci glow katmanı (daha parlak görünsün) */}

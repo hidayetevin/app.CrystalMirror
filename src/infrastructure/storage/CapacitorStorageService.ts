@@ -2,7 +2,7 @@
  * Capacitor Preferences ile yerel veri saklama.
  */
 import { Preferences } from '@capacitor/preferences';
-import { IStorageService, LevelProgress, DailyRecord } from '../../domain/ports/IStorageService';
+import { IStorageService, LevelProgress, DailyRecord, EconomyData } from '../../domain/ports/IStorageService';
 
 export class CapacitorStorageService implements IStorageService {
     async saveLevelProgress(levelId: string, stars: number, timeSeconds: number): Promise<void> {
@@ -50,6 +50,14 @@ export class CapacitorStorageService implements IStorageService {
 
     async saveDailyChallenge(dateKey: string, record: DailyRecord): Promise<void> {
         await this.set(`daily_${dateKey}`, record);
+    }
+
+    async getEconomyData(): Promise<EconomyData | null> {
+        return this.get<EconomyData>('user_economy');
+    }
+
+    async saveEconomyData(data: EconomyData): Promise<void> {
+        await this.set('user_economy', data);
     }
 
     private async get<T>(key: string): Promise<T | null> {

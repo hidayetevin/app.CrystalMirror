@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useProgressStore } from '../../store';
+import { useProgressStore, useEconomyStore } from '../../store';
 import { soundService } from '../../../container';
 
 interface Props {
@@ -17,6 +17,7 @@ const WORLDS = [
 export const WorldSelectScreen: React.FC<Props> = ({ onSelectWorld, onBack }) => {
     const { t } = useTranslation();
     const { isLevelUnlocked, getWorldProgress, loadAllProgress } = useProgressStore();
+    const coins = useEconomyStore(s => s.coins);
 
     useEffect(() => {
         loadAllProgress();
@@ -39,7 +40,10 @@ export const WorldSelectScreen: React.FC<Props> = ({ onSelectWorld, onBack }) =>
                     ← {t('ui.back')}
                 </button>
                 <h1 className="flex-1 text-center text-3xl font-[Cinzel_Decorative]">{t('ui.worlds')}</h1>
-                <div className="w-10"></div> {/* Spacer */}
+                <div className="flex items-center justify-center gap-2 bg-white/10 px-3 py-1.5 rounded-full border border-[#FFD700]/30 shadow-[0_0_10px_rgba(255,215,0,0.15)]">
+                    <span className="text-[#FFD700] drop-shadow-[0_0_5px_#FFD700] text-lg font-bold">💎</span>
+                    <span className="text-[#FFD700] font-bold font-mono tracking-wider">{coins}</span>
+                </div>
             </div>
 
             <div className="flex flex-col gap-6">

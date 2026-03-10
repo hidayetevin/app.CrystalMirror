@@ -3,7 +3,8 @@ import { Puzzle } from '../../domain/entities/Puzzle';
 import { PuzzleStatus } from '../../domain/value-objects/PuzzleStatus';
 import { SnapMode } from '../../domain/rules/MagneticSnapService';
 import { HintDTO } from '../../application/dto';
-import { useHintCase } from '../../container';
+import { useHintCase, adService } from '../../container';
+import { useEconomyStore } from './economyStore';
 import { CoordinateSystem } from '../../domain/value-objects/CoordinateSystem';
 
 export interface MoveRecord {
@@ -88,7 +89,18 @@ export const usePuzzleStore = create<PuzzleState>((set, get) => ({
 
         set({ isHintLoading: true });
         try {
-            // Container üzerinden Hint hesapla (AdMob Reward dahil)
+            // First try to spend coins (e.g. 15 coins for a hint)
+            const paidWithCoins = await useEconomyStore.getState().deductCoins(15);
+
+            // If the user didn't have enough coins, fall back to offering a rewarded Ad
+            if (!paidWithCoins) {
+                const reward = await adService.showRewarded();
+                if (!reward.earned) {
+                    return; // User canceled ad or ad failed to load
+                }
+            }
+
+            // Container üzerinden Hint hesapla
             const hint = await useHintCase.execute(activePuzzle, coords);
 
             // Tüm aynalar için doğru açıyı uygula

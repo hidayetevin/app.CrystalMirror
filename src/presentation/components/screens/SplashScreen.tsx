@@ -3,10 +3,11 @@ import { useTranslation } from 'react-i18next';
 
 interface Props {
     onStartClick: () => void;
+    onShopClick: () => void;
     onDailyClick: () => void;
 }
 
-export const SplashScreen: React.FC<Props> = ({ onStartClick, onDailyClick }) => {
+export const SplashScreen: React.FC<Props> = ({ onStartClick, onShopClick, onDailyClick }) => {
     const { t, i18n } = useTranslation();
 
     return (
@@ -71,6 +72,12 @@ export const SplashScreen: React.FC<Props> = ({ onStartClick, onDailyClick }) =>
                         className="w-full py-4 bg-[var(--ui-accent)]/20 hover:bg-[var(--ui-accent)]/30 border border-[var(--ui-accent)]/50 text-[var(--crystal-glow)] rounded-lg text-xl uppercase tracking-widest backdrop-blur-sm transition-all shadow-[0_4px_15px_rgba(0,0,0,0.5)] active:scale-95"
                     >
                         {t('ui.daily_puzzle')}
+                    </button>
+                    <button
+                        onClick={onShopClick}
+                        className="w-full py-4 mt-2 border border-[#FFD700]/50 text-[#FFD700] rounded-lg text-xl uppercase tracking-widest backdrop-blur-sm transition-all shadow-[0_4px_15px_rgba(255,215,0,0.2)] active:scale-95 bg-black/40"
+                    >
+                        {t('ui.shop', 'SHOP')}
                     </button>
                 </div>
             </div>

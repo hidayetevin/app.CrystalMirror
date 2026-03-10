@@ -16,6 +16,15 @@ export interface DailyRecord {
     hintsUsed: number;
 }
 
+export interface EconomyData {
+    coins: number;
+    ownedItems: string[];
+    equippedItems: {
+        mirrorSkin: string;
+        laserColor: string;
+    };
+}
+
 export interface IStorageService {
     /** Sadece daha iyi skoru kaydeder */
     saveLevelProgress(levelId: string, stars: number, timeSeconds: number): Promise<void>;
@@ -24,4 +33,7 @@ export interface IStorageService {
 
     getDailyChallenge(dateKey: string): Promise<DailyRecord | null>;
     saveDailyChallenge(dateKey: string, record: DailyRecord): Promise<void>;
+
+    getEconomyData(): Promise<EconomyData | null>;
+    saveEconomyData(data: EconomyData): Promise<void>;
 }

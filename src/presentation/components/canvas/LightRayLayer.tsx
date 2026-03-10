@@ -1,7 +1,8 @@
 import React, { useRef, useMemo, useEffect, useState } from 'react';
-import { Layer, Line, Group, Rect } from 'react-konva';
+import { Layer, Line } from 'react-konva';
 import { RaySegment } from '../../../domain/physics/RaycastEngine';
-import { ChromaticAberration, AberrationLine } from './ChromaticAberration';
+import { ChromaticAberration } from './ChromaticAberration';
+import { useEconomyStore } from '../../store';
 
 interface Props {
     segments: RaySegment[];
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export const LightRayLayer: React.FC<Props> = React.memo(({ segments, worldId }) => {
+    const laserSkin = useEconomyStore(s => s.equippedItems.laserColor);
     // Dünyaya göre offset ayarı (CSS değişkenlerini simüle et, çünkü Konva canvas içinde)
     const abOffset = worldId === 'glacier' ? 2 : worldId === 'waterfall' ? 1.5 : 1;
 
@@ -53,24 +55,29 @@ export const LightRayLayer: React.FC<Props> = React.memo(({ segments, worldId })
                 });
             }
 
+            // Dinamik Skin Stili
+            const isPower = laserSkin === 'power_beam';
+            const isPulse = laserSkin === 'pulse_ray';
+
             // Ana Işın (Center)
             list.push(
                 <Line
                     key={key}
                     points={points}
                     stroke={color}
-                    strokeWidth={applyAberration ? 2.5 : 3.5}
+                    strokeWidth={applyAberration && !isPower ? 2.5 : isPower ? 5.5 : 3.5}
                     shadowColor={color}
-                    shadowBlur={applyAberration ? 12 : 20}
-                    shadowOpacity={0.8}
+                    shadowBlur={applyAberration && !isPower ? 12 : isPower ? 30 : 20}
+                    shadowOpacity={isPower ? 1 : 0.8}
                     lineCap="round"
+                    dash={isPulse ? [15, 15] : undefined}
                     opacity={0.92}
                 />
             );
         });
 
         return list;
-    }, [segments, abOffset]); // Sadece veriler değişirse React Konva Tree'yi sıfırdan kurar
+    }, [segments, abOffset, laserSkin]); // Sadece veriler değişirse React Konva Tree'yi sıfırdan kurar
 
     return <Layer>{drawArray}</Layer>;
 });
