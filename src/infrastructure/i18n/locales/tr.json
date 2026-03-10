@@ -63,11 +63,31 @@
             "skip": "Geç",
             "next": "İleri",
             "lets_start": "Hadi Başlayalım!",
-            "level_title": "Bölüm {{level}}"
+            "level_title": "Bölüm {{level}}",
+            "shop": "MARKET"
         },
         "share": {
             "dialog_title": "Crystal Mirror Başarını Paylaş!",
             "copied": "Sonuç panoya kopyalandı."
+        },
+        "shop": {
+            "title": "MARKET",
+            "mirror_skins": "Ayna Görünümleri",
+            "laser_skins": "Lazer Görünümleri",
+            "equip": "Kullan",
+            "equipped": "Kullanımda",
+            "skins": {
+                "default_mirror": "Klasik Cam",
+                "neon_mirror": "Neon Sınır",
+                "dark_mirror": "Karanlık Madde",
+                "default_laser": "Klasik Çekirdek",
+                "power_beam": "Güç Işını",
+                "pulse_ray": "Atımlı Işın"
+            }
+        },
+        "economy": {
+            "coins": "Altın",
+            "balance": "Bakiye"
         },
         "settings": {
             "sound": "Ses",

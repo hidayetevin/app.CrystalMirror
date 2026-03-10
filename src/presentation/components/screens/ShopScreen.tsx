@@ -53,7 +53,7 @@ export const ShopScreen: React.FC<Props> = ({ onBack }) => {
 
     return (
         <div className="flex flex-col w-full h-screen bg-[#0D0D12] text-white font-[Rajdhani] select-none">
-            <Header onBack={onBack} title={t('ui.shop', 'SHOP')} />
+            <Header onBack={onBack} title={t('shop.title')} />
 
             <div className="flex-1 overflow-y-auto p-6 pb-20">
                 {/* Coin Display & Ad Button */}
@@ -61,7 +61,7 @@ export const ShopScreen: React.FC<Props> = ({ onBack }) => {
                     <div className="flex items-center gap-3">
                         <span className="text-4xl drop-shadow-[0_0_10px_#FFD700]">💎</span>
                         <div>
-                            <div className="text-xs text-white/50 tracking-widest uppercase">{t('economy.balance', 'Balance')}</div>
+                            <div className="text-xs text-white/50 tracking-widest uppercase">{t('economy.balance')}</div>
                             <div className="text-3xl font-bold font-mono text-[#FFD700]">{coins}</div>
                         </div>
                     </div>
@@ -71,12 +71,12 @@ export const ShopScreen: React.FC<Props> = ({ onBack }) => {
                         className="px-4 py-3 bg-[#4CAF50]/20 hover:bg-[#4CAF50]/40 border border-[#4CAF50]/50 text-[#4CAF50] rounded-xl font-bold flex items-center gap-2 transition-all active:scale-95"
                     >
                         <span>📺</span>
-                        <span>+50 {t('economy.coins', 'Coins').toUpperCase()}</span>
+                        <span>+50 {t('economy.coins').toUpperCase()}</span>
                     </button>
                 </div>
 
                 {/* Mirror Skins */}
-                <h2 className="text-xl font-[Cinzel_Decorative] text-[var(--crystal-glow)] mb-4">{t('shop.mirror_skins', 'Mirror Skins')}</h2>
+                <h2 className="text-xl font-[Cinzel_Decorative] text-[var(--crystal-glow)] mb-4">{t('shop.mirror_skins')}</h2>
                 <div className="space-y-3 mb-8">
                     {MIRROR_SKINS.map(skin => {
                         const isOwned = ownedItems.includes(skin.id);
@@ -87,7 +87,7 @@ export const ShopScreen: React.FC<Props> = ({ onBack }) => {
                             <div key={skin.id} className={`flex items-center justify-between p-4 rounded-xl border transition-all ${isEquipped ? 'bg-white/10 border-white/40' : 'bg-black/50 border-white/5'}`}>
                                 <div className="flex items-center gap-4">
                                     <div className="text-3xl">{skin.icon}</div>
-                                    <div className="text-lg font-bold tracking-wide">{skin.label}</div>
+                                    <div className="text-lg font-bold tracking-wide">{t(`shop.skins.${skin.id}`)}</div>
                                 </div>
                                 <button
                                     onClick={() => handlePurchaseOrEquipMirror(skin.id, skin.cost)}
@@ -98,7 +98,7 @@ export const ShopScreen: React.FC<Props> = ({ onBack }) => {
                                                 'bg-white/5 text-white/30 cursor-not-allowed'
                                         }`}
                                 >
-                                    {isEquipped ? t('shop.equipped', 'Equipped') : isOwned ? t('shop.equip', 'Equip') : `💎 ${skin.cost}`}
+                                    {isEquipped ? t('shop.equipped') : isOwned ? t('shop.equip') : `💎 ${skin.cost}`}
                                 </button>
                             </div>
                         )
@@ -106,7 +106,7 @@ export const ShopScreen: React.FC<Props> = ({ onBack }) => {
                 </div>
 
                 {/* Laser Skins */}
-                <h2 className="text-xl font-[Cinzel_Decorative] text-[var(--crystal-glow)] mb-4">{t('shop.laser_skins', 'Laser Skins')}</h2>
+                <h2 className="text-xl font-[Cinzel_Decorative] text-[var(--crystal-glow)] mb-4">{t('shop.laser_skins')}</h2>
                 <div className="space-y-3">
                     {LASER_SKINS.map(laser => {
                         const isOwned = ownedItems.includes(laser.id);
@@ -117,7 +117,7 @@ export const ShopScreen: React.FC<Props> = ({ onBack }) => {
                             <div key={laser.id} className={`flex items-center justify-between p-4 rounded-xl border transition-all ${isEquipped ? 'bg-white/10 border-white/40' : 'bg-black/50 border-white/5'}`}>
                                 <div className="flex items-center gap-4">
                                     <div className="w-8 h-8 rounded-full shadow-[0_0_15px_currentColor]" style={{ backgroundColor: laser.color, color: laser.color }}></div>
-                                    <div className="text-lg font-bold tracking-wide">{laser.label}</div>
+                                    <div className="text-lg font-bold tracking-wide">{t(`shop.skins.${laser.id}`)}</div>
                                 </div>
                                 <button
                                     onClick={() => handlePurchaseOrEquipLaser(laser.id, laser.cost)}
@@ -128,7 +128,7 @@ export const ShopScreen: React.FC<Props> = ({ onBack }) => {
                                                 'bg-white/5 text-white/30 cursor-not-allowed'
                                         }`}
                                 >
-                                    {isEquipped ? t('shop.equipped', 'Equipped') : isOwned ? t('shop.equip', 'Equip') : `💎 ${laser.cost}`}
+                                    {isEquipped ? t('shop.equipped') : isOwned ? t('shop.equip') : `💎 ${laser.cost}`}
                                 </button>
                             </div>
                         )

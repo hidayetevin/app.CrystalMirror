@@ -63,11 +63,31 @@
       "skip": "Skip",
       "next": "Next",
       "lets_start": "Let's Start!",
-      "level_title": "Level {{level}}"
+      "level_title": "Level {{level}}",
+      "shop": "SHOP"
     },
     "share": {
       "dialog_title": "Share your Crystal Mirror Success!",
       "copied": "Result copied to clipboard."
+    },
+    "shop": {
+      "title": "SHOP",
+      "mirror_skins": "Mirror Skins",
+      "laser_skins": "Laser Skins",
+      "equip": "Equip",
+      "equipped": "Equipped",
+      "skins": {
+        "default_mirror": "Classic Glass",
+        "neon_mirror": "Neon Edge",
+        "dark_mirror": "Dark Matter",
+        "default_laser": "Classic Core",
+        "power_beam": "Power Beam",
+        "pulse_ray": "Pulse Ray"
+      }
+    },
+    "economy": {
+      "coins": "Coins",
+      "balance": "Balance"
     },
     "settings": {
       "sound": "Sound",

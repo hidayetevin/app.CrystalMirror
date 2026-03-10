@@ -77,7 +77,7 @@ export const SplashScreen: React.FC<Props> = ({ onStartClick, onShopClick, onDai
                         onClick={onShopClick}
                         className="w-full py-4 mt-2 border border-[#FFD700]/50 text-[#FFD700] rounded-lg text-xl uppercase tracking-widest backdrop-blur-sm transition-all shadow-[0_4px_15px_rgba(255,215,0,0.2)] active:scale-95 bg-black/40"
                     >
-                        {t('ui.shop', 'SHOP')}
+                        {t('shop.title')}
                     </button>
                 </div>
             </div>
