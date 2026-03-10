@@ -6,12 +6,14 @@ import { IAdService, RewardResult } from '../../domain/ports/IAdService';
 
 export class AdMobService implements IAdService {
     private isInitialized = false;
+    private isInterstitialReady = false;
 
     async initialize(): Promise<void> {
         if (this.isInitialized) return;
         try {
             await AdMob.initialize({});
             this.isInitialized = true;
+            this.preloadInterstitial(); // Havuz mantığıyla arka planda çek
         } catch (e) {
             console.error('AdMob init failed', e);
         }
@@ -47,11 +49,45 @@ export class AdMobService implements IAdService {
     async showInterstitial(): Promise<void> {
         await this.initialize();
         const adId = import.meta.env.VITE_ADMOB_INTERSTITIAL_ID || 'ca-app-pub-4190858087915294/1994562033';
+
+        return new Promise(async (resolve) => {
+            // Eğer reklam gelmezse/hazırlanmazsa, oyuncuyu en fazla 2.5 saniye beklet
+            const timeoutId = setTimeout(() => {
+                console.warn('AdMob interstitial timeout hit.');
+                resolve();
+                if (!this.isInterstitialReady) this.preloadInterstitial();
+            }, 2500);
+
+            try {
+                if (!this.isInterstitialReady) {
+                    await AdMob.prepareInterstitial({ adId, isTesting: false });
+                }
+
+                await AdMob.showInterstitial();
+                clearTimeout(timeoutId);
+                this.isInterstitialReady = false;
+                resolve();
+
+                // Havuzu doldurmak için hemen ardından yenisini talep et
+                this.preloadInterstitial();
+            } catch (e) {
+                console.error('AdMob interstitial error', e);
+                clearTimeout(timeoutId);
+                this.isInterstitialReady = false;
+                resolve();
+                this.preloadInterstitial(); // Geri düşme senaryosunda yenisini dene
+            }
+        });
+    }
+
+    private async preloadInterstitial() {
+        if (!this.isInitialized || this.isInterstitialReady) return;
         try {
+            const adId = import.meta.env.VITE_ADMOB_INTERSTITIAL_ID || 'ca-app-pub-4190858087915294/1994562033';
             await AdMob.prepareInterstitial({ adId, isTesting: false });
-            await AdMob.showInterstitial();
+            this.isInterstitialReady = true;
         } catch (e) {
-            console.error('AdMob interstitial error', e);
+            console.warn('AdMob auto preload failed', e);
         }
     }
 

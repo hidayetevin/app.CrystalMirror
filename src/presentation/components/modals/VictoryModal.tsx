@@ -14,6 +14,7 @@ export const VictoryModal: React.FC<Props> = ({ onNextLevel, onHome }) => {
     const { activePuzzle, elapsedSeconds, hintsUsed, moves } = usePuzzleStore();
     const [stars, setStars] = useState<number>(0);
     const [earnedCoins, setEarnedCoins] = useState<number | null>(null);
+    const [isProcessing, setIsProcessing] = useState<boolean>(false);
 
     useEffect(() => {
         if (!activePuzzle) return;
@@ -51,26 +52,34 @@ export const VictoryModal: React.FC<Props> = ({ onNextLevel, onHome }) => {
     }, [activePuzzle, elapsedSeconds, hintsUsed, moves]);
 
     const handleShare = () => {
-        if (activePuzzle) {
-            shareResultCase.execute({
-                puzzleId: activePuzzle.id,
-                levelNumber: activePuzzle.levelNumber,
-                stars: stars as any,
-                timeSeconds: elapsedSeconds,
-                totalMoves: moves.length,
-                hintsUsed,
-                moves
-            });
-        }
+        if (isProcessing || !activePuzzle) return;
+        shareResultCase.execute({
+            puzzleId: activePuzzle.id,
+            levelNumber: activePuzzle.levelNumber,
+            stars: stars as any,
+            timeSeconds: elapsedSeconds,
+            totalMoves: moves.length,
+            hintsUsed,
+            moves
+        });
     };
 
     const handleNext = () => {
+        if (isProcessing) return;
+        setIsProcessing(true);
+
         // Interstitial Rasyosu - her bolum bitisinde 1/3 ihtimalle reklam (Ornek Kullanim)
         if (Math.random() < 0.33) {
             adService.showInterstitial().finally(onNextLevel);
         } else {
             onNextLevel();
         }
+    };
+
+    const handleHome = () => {
+        if (isProcessing) return;
+        setIsProcessing(true);
+        onHome();
     };
 
     // Zaman Formatla (01:25)
@@ -124,21 +133,24 @@ export const VictoryModal: React.FC<Props> = ({ onNextLevel, onHome }) => {
                 <div className="flex flex-col w-full gap-3">
                     <button
                         onClick={handleNext}
-                        className="w-full py-4 bg-[var(--ui-accent)] hover:bg-[var(--ui-accent)]/80 text-[var(--bg-primary)] rounded-lg text-lg uppercase font-bold tracking-widest transition-all shadow-[0_0_15px_var(--ui-accent)]"
+                        disabled={isProcessing}
+                        className={`w-full py-4 rounded-lg text-lg uppercase font-bold tracking-widest transition-all ${isProcessing ? 'bg-gray-600 text-gray-400 cursor-not-allowed shadow-none' : 'bg-[var(--ui-accent)] hover:bg-[var(--ui-accent)]/80 text-[var(--bg-primary)] shadow-[0_0_15px_var(--ui-accent)]'}`}
                     >
-                        {t('level.next')}
+                        {isProcessing ? '...' : t('level.next')}
                     </button>
 
                     <div className="flex gap-3">
                         <button
                             onClick={handleShare}
-                            className="flex-1 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-sm uppercase tracking-wider transition-all"
+                            disabled={isProcessing}
+                            className={`flex-1 py-3 border rounded-lg text-sm uppercase tracking-wider transition-all ${isProcessing ? 'bg-white/5 border-white/5 text-white/30 cursor-not-allowed' : 'bg-white/10 hover:bg-white/20 border-white/20'}`}
                         >
                             {t('ui.share')}
                         </button>
                         <button
-                            onClick={onHome}
-                            className="flex-1 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-sm uppercase tracking-wider transition-all"
+                            onClick={handleHome}
+                            disabled={isProcessing}
+                            className={`flex-1 py-3 border rounded-lg text-sm uppercase tracking-wider transition-all ${isProcessing ? 'bg-white/5 border-white/5 text-white/30 cursor-not-allowed' : 'bg-white/10 hover:bg-white/20 border-white/20'}`}
                         >
                             {t('ui.menu')}
                         </button>
