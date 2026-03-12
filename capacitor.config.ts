@@ -1,10 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-    appId: 'com.yourcompany.crystalmirror',
+    appId: 'com.evnlabs.crystalmirror',
     appName: 'Crystal Mirror',
     webDir: 'dist',
-    bundledWebRuntime: false,
     plugins: {
         SplashScreen: {
             launchShowDuration: 2000,
@@ -17,7 +16,8 @@ const config: CapacitorConfig = {
             splashImmersive: true,
         },
         AdMob: {
-            // Configuration for AdMob in Capacitor
+            // Publisher App ID
+            appId: "ca-app-pub-4190858087915294~3199832496"
         }
     }
 };
