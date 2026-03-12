@@ -73,9 +73,6 @@
 
 .snap-toggle-btn {
     position: absolute;
-    bottom: -30px;
-    left: 50%;
-    margin-left: -15px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -87,6 +84,16 @@
     justify-content: center;
     cursor: pointer;
     z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.snap-toggle-btn.active {
+    opacity: 1;
+}
+
+.snap-toggle-btn.closing {
+    opacity: 0;
 }
 
 /* Titreşim efekti sınıfı (Haptic'in CSS karşılığı) */

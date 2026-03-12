@@ -197,12 +197,9 @@ const WheelOverlay: React.FC<any> = ({ mirrorId, ephemeralAngle, coords, puzzle,
 
     const pixelPos = coords.gridToPixel(mirror.position);
 
-    // Spawn kurali: Ust/Alt bosluk kontrolu
-    const canvasHeight = coords.offsetY * 2 + coords.cellSize * puzzle.gridSize.rows;
-    const spawnBelow = pixelPos.y < canvasHeight / 2;
-    const wheelY = spawnBelow
-        ? pixelPos.y + coords.cellSize * 1.8
-        : pixelPos.y - coords.cellSize * 1.8;
+    // Yeni joystick stili ile wheel artık aynanın tam üstüne konumlanıyor.
+    // Kullanıcı ekranın her yerinden çevirebileceği için parmağıyla aynayı kapatmaz.
+    const wheelY = pixelPos.y;
     const wheelX = pixelPos.x;
 
     return (

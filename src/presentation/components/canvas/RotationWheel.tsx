@@ -52,33 +52,55 @@ export const RotationWheel: React.FC<Props> = ({
     };
 
     return (
-        <div
-            ref={wheelRef}
-            className={`rotation-wheel ${isActive ? 'active' : 'closing'}`}
-            style={{
-                left: x,
-                top: y,
-                transform: `translate(-50%, -50%) rotate(${currentAngle}deg)`,
-            }}
-            onPointerMove={handlePointerMove}
-            onPointerUp={onMouseUp}
-            onPointerCancel={onMouseUp}
-            onPointerLeave={onMouseUp}
-        >
-            <div className="wheel-center">
-                <span className="wheel-angle-label" style={{ transform: `rotate(${-currentAngle}deg)` }}>
-                    {currentAngle}°
-                </span>
-            </div>
-            <div className="wheel-arrow"></div>
+        <>
+            {/* Görünmez, tüm ekranı kaplayan dokunmatik algılama alanı */}
+            <div
+                className="rotation-drag-area"
+                style={{
+                    position: 'fixed',
+                    inset: 0,
+                    zIndex: 999, // Arkaplandan üstte, butonlardan altta
+                    touchAction: 'none'
+                }}
+                onPointerMove={handlePointerMove}
+                onPointerUp={onMouseUp}
+                onPointerCancel={onMouseUp}
+                onPointerLeave={onMouseUp}
+            />
 
+            {/* Sadece Görsel Tekerlek (pointerEvents kapalı ki alttaki drag alanı çalışsın) */}
+            <div
+                ref={wheelRef}
+                className={`rotation-wheel ${isActive ? 'active' : 'closing'}`}
+                style={{
+                    left: x,
+                    top: y,
+                    transform: `translate(-50%, -50%) rotate(${currentAngle}deg)`,
+                    pointerEvents: 'none'
+                }}
+            >
+                <div className="wheel-center">
+                    <span className="wheel-angle-label" style={{ transform: `rotate(${-currentAngle}deg)` }}>
+                        {currentAngle}°
+                    </span>
+                </div>
+                <div className="wheel-arrow"></div>
+            </div>
+
+            {/* Kilit Butonu (wheel dışına alındı ve tam koordinatta) */}
             <button
-                className="snap-toggle-btn"
-                style={{ transform: `rotate(${-currentAngle}deg)` }}
+                className={`snap-toggle-btn ${isActive ? 'active' : 'closing'}`}
+                style={{
+                    left: x,
+                    top: y + 90, // Aynanın hemen altı
+                    transform: 'translate(-50%, 0)', // Merkeze hizala, 
+                    pointerEvents: 'auto',
+                    zIndex: 1001
+                }}
                 onPointerDown={(e) => { e.stopPropagation(); onToggleSnap(); }}
             >
                 {isFreeMode ? '🔓' : '🔒'}
             </button>
-        </div>
+        </>
     );
 };
