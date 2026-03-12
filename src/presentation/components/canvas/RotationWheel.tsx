@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import './RotationWheel.css'; // Stil dosyasını bağlayacağız.
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import './RotationWheel.css';
 
 interface Props {
     x: number;
@@ -11,14 +11,16 @@ interface Props {
     onToggleSnap: () => void;
 }
 
-/** 
+/**
  * Konva DOM'u dışında tamamen CSS ve HTML eventleri.
- * Mobil dokunmatik hassasiyeti ve Wheel çevrimi için optimum çözüm.
+ * Mobil dokunmatik hassasiyeti için:
+ * - setPointerCapture: parmak elemandan çıksa da takip devam eder
+ * - x/y prop'larından merkez hesaplanır (DOM bağımsız, güvenilir)
  */
 export const RotationWheel: React.FC<Props> = ({
     x, y, currentAngle, isFreeMode, onRotate, onMouseUp, onToggleSnap
 }) => {
-    const wheelRef = useRef<HTMLDivElement>(null);
+    const dragAreaRef = useRef<HTMLDivElement>(null);
     const [isActive, setIsActive] = useState(false);
 
     // Spawn animasyonu tetikleme
@@ -27,50 +29,77 @@ export const RotationWheel: React.FC<Props> = ({
         return () => setIsActive(false);
     }, []);
 
-    const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-        if (!wheelRef.current) return;
-        const rect = wheelRef.current.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
+    // Merkezi x/y prop'larından hesapla (viewport koordinatına çevir)
+    // dragArea fixed: inset:0 olduğu için clientX/Y ile doğrudan karşılaştırılabilir
+    // Ancak x/y canvas'a göre relative; container offsetini bulmamız lazım
+    const containerRef = useRef<HTMLDivElement>(null);
 
-        const dx = e.clientX - cx;
-        const dy = e.clientY - cy;
+    const computeAngle = useCallback((clientX: number, clientY: number): number => {
+        if (!containerRef.current) return 0;
+        // Canvas container'ın viewport'a göre konumunu bul
+        const rect = containerRef.current.getBoundingClientRect();
+        // Ayna merkezinin viewport konumu = container offset + x/y
+        const cx = rect.left + x;
+        const cy = rect.top + y;
 
-        // Açı hesabı (-180 / 180) -> (0 - 360)
+        const dx = clientX - cx;
+        const dy = clientY - cy;
+
         let degrees = (Math.atan2(dy, dx) * 180) / Math.PI;
         degrees = ((degrees % 360) + 360) % 360;
 
-        // Snap moduna göre zımparala
         if (!isFreeMode) {
             degrees = Math.round(degrees / 5) * 5;
         } else {
             degrees = Math.round(degrees);
         }
 
-        // Uygulama motoruna bildir -> o da ephemerala aktarıp Raycast'i tetikler
+        return degrees;
+    }, [x, y, isFreeMode]);
+
+    const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+        // Pointer'ı yakala: parmak her yere giderse gitsin olaylar bu elemana gelsin
+        e.currentTarget.setPointerCapture(e.pointerId);
+        // İlk dokunuşta da açıyı hesapla (hareketsiz tap için)
+        const degrees = computeAngle(e.clientX, e.clientY);
         onRotate(degrees);
     };
 
+    const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+        // Sadece capture edilmiş pointer (basılı parmak) hareketi
+        if (!e.currentTarget.hasPointerCapture(e.pointerId)) return;
+        const degrees = computeAngle(e.clientX, e.clientY);
+        onRotate(degrees);
+    };
+
+    const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+        onMouseUp();
+    };
+
     return (
-        <>
+        // containerRef: canvas container'ın konumunu bulmak için gizli bir anchor
+        <div ref={containerRef} style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
             {/* Görünmez, tüm ekranı kaplayan dokunmatik algılama alanı */}
             <div
+                ref={dragAreaRef}
                 className="rotation-drag-area"
                 style={{
                     position: 'fixed',
                     inset: 0,
-                    zIndex: 999, // Arkaplandan üstte, butonlardan altta
-                    touchAction: 'none'
+                    zIndex: 999,
+                    touchAction: 'none',
+                    pointerEvents: 'auto',
+                    cursor: 'crosshair',
                 }}
+                onPointerDown={handlePointerDown}
                 onPointerMove={handlePointerMove}
-                onPointerUp={onMouseUp}
-                onPointerCancel={onMouseUp}
-                onPointerLeave={onMouseUp}
+                onPointerUp={handlePointerUp}
+                onPointerCancel={handlePointerUp}
             />
 
-            {/* Sadece Görsel Tekerlek (pointerEvents kapalı ki alttaki drag alanı çalışsın) */}
+            {/* Sadece Görsel Tekerlek (pointerEvents kapalı ki drag alanı çalışsın) */}
             <div
-                ref={wheelRef}
                 className={`rotation-wheel ${isActive ? 'active' : 'closing'}`}
                 style={{
                     left: x,
@@ -87,13 +116,13 @@ export const RotationWheel: React.FC<Props> = ({
                 <div className="wheel-arrow"></div>
             </div>
 
-            {/* Kilit Butonu (wheel dışına alındı ve tam koordinatta) */}
+            {/* Kilit Butonu */}
             <button
                 className={`snap-toggle-btn ${isActive ? 'active' : 'closing'}`}
                 style={{
                     left: x,
-                    top: y + 90, // Aynanın hemen altı
-                    transform: 'translate(-50%, 0)', // Merkeze hizala, 
+                    top: y + 75,
+                    transform: 'translate(-50%, 0)',
                     pointerEvents: 'auto',
                     zIndex: 1001
                 }}
@@ -101,6 +130,6 @@ export const RotationWheel: React.FC<Props> = ({
             >
                 {isFreeMode ? '🔓' : '🔒'}
             </button>
-        </>
+        </div>
     );
 };
